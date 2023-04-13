@@ -18,17 +18,6 @@ public class Role {
 	@Column(length = 150, nullable = false)
 	private String description;
 
-	@ManyToMany(mappedBy = "roles")
-	private Set<User> users = new HashSet<>();
-
-	public void addUser(User user) {
-		users.add(user);
-	}
-
-	public void removeUser(User user) {
-		users.remove(user);
-	}
-
 	public Role() {
 	}
 
