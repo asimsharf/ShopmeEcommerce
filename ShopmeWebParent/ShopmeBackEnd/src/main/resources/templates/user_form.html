@@ -70,7 +70,7 @@
 
         <div>
             <form th:action="@{/users/save}" method="post" style="max-width: 850px; margin: 0 auto;" th:object="${user}"
-                onsubmit="return checkEmailUnique(this);">
+                onsubmit="return checkEmailUnique(this);" enctype="multipart/form-data">
 
                 <input type="hidden" th:field="*{id}" />
 
@@ -142,6 +142,15 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label th:for="image" class="col-sm-2 col-form-label">Image:</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name="image" th:field="*{photos}" />
+                            <input type="file" name="image" accept="image/png, image/jpeg" id="fileImage" class="mb-3" />
+                            <img th:src="@{${user.getPhotosImagePath}}" id="thumbnail" width="50" height="50"  alt="User Image" />
+                        </div>
+                    </div>
+
                     <div class="text-center">
                         <input type="submit" value="save" class="btn btn-primary m-3">
                         <input type="button" value="cancel" class="btn btn-secondary" id="theBtnCancel">
@@ -185,10 +194,36 @@
             $("#theBtnCancel").click(function () {
                 window.location.href = "[[@{/users}]]";
             });
+
+            $("#fileImage").change(function() {
+
+                fileSize = this.files[0].size;
+                <!--2097152 = 2MB | 1048576 = 1MB-->
+                if (fileSize > 2097152) {
+                    $("#modalTitle").text("Warning");
+                    $("#modalBody").text("The file size must not exceed 2MB.");
+                    $("#modalDialog").modal();
+                    this.value = "";
+                    this.reportValidity();
+                    return false;
+                }
+
+                showThumbnail(this, "#thumbnail");
+            });
+
         });
 
-        function checkEmailUnique(form) {
+        function showThumbnail(fileInput, img) {
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(img).attr('src', e.target.result);
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
 
+        function checkEmailUnique(form) {
             url = "[[@{/users/check_email}]]";
             userEmail = $("[name='email']").val();
             csrfToken = $("input[name='_csrf']").val();
@@ -198,7 +233,6 @@
                 email: userEmail,
                 _csrf: csrfToken
             };
-
             $.post(url, params, function (res) {
                 if (res == "OK") {
                     form.submit();
@@ -210,7 +244,6 @@
             }).fail(function (xhr, status, error) {
                 showModalDialog("Error", "Could not connect to server: " + error);
             });
-
             return false;
         }
 

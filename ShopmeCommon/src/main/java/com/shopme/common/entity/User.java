@@ -1,6 +1,7 @@
 package com.shopme.common.entity;
 
 import jakarta.persistence.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -129,5 +130,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", photos='" + photos + '\'' + '}';
+    }
+
+
+    @Transient
+    public  String getPhotosImagePath() {
+    	if (id == null || photos == null) return "/images/default-user.png";
+    	return "/user-photos/" + this.id + "/" + this.photos;
     }
 }

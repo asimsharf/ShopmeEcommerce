@@ -6,12 +6,14 @@ import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
@@ -31,7 +33,7 @@ public class UserService {
         return (List<User>) userRepo.findAll();
     }
 
-    public void save(User user) {
+    public User save(User user) {
         boolean isUpdatingUser = (user.getId() != null);
         if (isUpdatingUser) {
             User existingUser = userRepo.findById(user.getId()).get();
@@ -44,6 +46,7 @@ public class UserService {
             encodePassword(user);
         }
         userRepo.save(user);
+        return user;
     }
 
     private void encodePassword(User user) {
@@ -86,5 +89,10 @@ public class UserService {
         }
         userRepo.deleteById(id);
     }
+
+    public void updateEnabledStatus(Integer id, boolean enabled) {
+        userRepo.updateEnabledStatus(id, enabled);
+    }
+
 
 }
