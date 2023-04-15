@@ -6,164 +6,198 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
 
     <title>Home - Shopme Admin</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div>
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <a class="navbar-brand" th:href="@{/}">
-                    <img th:src="@{/images/ShopmeAdminSmall.png}" />
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="topNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/users}">Users</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/categories}">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/brands}">Brands</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/products}">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/customers}">Customers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/shipping}">Shipping</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/orders}">Orders</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/report}">Sales Report</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/articles}">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/menus}">Menus</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/settings}">Settings</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
-        </div>
-        <div>
-            <h2>Manage Users</h2>
-            <a th:href="@{/users/new}" class="">
-                <i class="fas fa-square-plus fa-bounce"></i> Create New User
+<div class="container-fluid">
+    <div>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <a class="navbar-brand" th:href="@{/}">
+                <img th:src="@{/images/ShopmeAdminSmall.png}"/>
             </a>
-            <br />
-            <br />
-        </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/users}">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/categories}">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/brands}">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/products}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/customers}">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/shipping}">Shipping</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/orders}">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/report}">Sales Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/articles}">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/menus}">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/settings}">Settings</a>
+                    </li>
+                </ul>
+            </div>
 
-        <div th:if="${message != null}" class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <span th:text="${message}"></span>
-        </div>
+        </nav>
+    </div>
+    <div>
+        <h2>Manage Users</h2>
+        <a th:href="@{/users/new}" class="">
+            <i class="fas fa-square-plus fa-bounce"></i> Create New User
+        </a>
+        <br/>
+        <br/>
+    </div>
 
-        <div>
-            <table class="table table-responsive-xl table-striped table-bordered table-hover">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="text-center">User ID</th>
-                        <th class="text-center">Photos</th>
-                        <th>Email</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Roles</th>
-                        <th class="text-center">Enabled</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="user : ${listUsers}">
-                        <td th:text="${user.id}" class="text-center align-middle"></td>
-                        <td class="text-center align-middle">
-                            <span th:if="${user.photos == null}" class="fas fa-user-secret fa-2xl icon-silver"></span>
-                            <img class="zoom" th:if="${user.photos != null}" th:src="@{${user.getPhotosImagePath}}" width="50" height="50"   alt="User Image"/>
-                        </td>
-                        <th th:text="${user.email}" class="align-middle"></th>
-                        <td th:text="${user.firstName}" class="align-middle"></td>
-                        <td th:text="${user.lastName}" class="align-middle"></td>
-                        <td th:text="${user.roles}" class="align-middle"></td>
-                        <td class="text-center align-middle">
-                            <a th:if="${user.enabled}" class="fas fa-check-circle fa-lg fa-fade text-success"
-                               title="Click to disable"
-                               th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}"
-                            ></a>
-                            <a th:if="${!user.enabled}" class="fas fa-times-circle fa-lg fa-fade text-danger"
-                               title="Click to enable"
-                               th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}"
-                            ></a>
-                        </td>
-                        <td class="text-center align-middle" style="width: 8%;">
-                            <a th:href="@{/users/edit/{id}(id=${user.id})}"
-                               title="Click to edit"
-                               class="btn btn-sm btn-outline-primary">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a th:userId="${user.id}" th:href="@{/users/delete/{id}(id=${user.id})}"
-                               title="Click to delete"
-                               class="btn btn-sm btn-outline-danger link-delete">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div th:if="${message != null}" class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <span th:text="${message}"></span>
+    </div>
 
-        <!-- The Modal -->
-        <div class="modal" id="confirmModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <div>
+        <table class="table table-responsive-xl table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">Photos</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Roles</th>
+                <th class="text-center">Enabled</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${listUsers}">
+                <td th:text="${user.id}" class="text-center align-middle"></td>
+                <td class="text-center align-middle">
+                    <span th:if="${user.photos == null}" class="fas fa-user-secret fa-2xl icon-silver"></span>
+                    <img class="zoom" th:if="${user.photos != null}" th:src="@{${user.getPhotosImagePath}}" width="50"
+                         height="50" alt="User Image"/>
+                </td>
+                <th th:text="${user.email}" class="align-middle"></th>
+                <td th:text="${user.firstName}" class="align-middle"></td>
+                <td th:text="${user.lastName}" class="align-middle"></td>
+                <td th:text="${user.roles}" class="align-middle"></td>
+                <td class="text-center align-middle">
+                    <a th:if="${user.enabled}" class="fas fa-check-circle fa-lg fa-fade text-success"
+                       title="Click to disable"
+                       th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}"
+                    ></a>
+                    <a th:if="${!user.enabled}" class="fas fa-times-circle fa-lg fa-fade text-danger"
+                       title="Click to enable"
+                       th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}"
+                    ></a>
+                </td>
+                <td class="text-center align-middle" style="width: 8%;">
+                    <a th:href="@{/users/edit/{id}(id=${user.id})}"
+                       title="Click to edit"
+                       class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a th:userId="${user.id}" th:href="@{/users/delete/{id}(id=${user.id})}"
+                       title="Click to delete"
+                       class="btn btn-sm btn-outline-danger link-delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Delete Confirmation</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+    <div>
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a th:href="@{/users/page/1}" class="page-link">First</a>
+                </li>
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a th:href="@{'/users/page/' + ${currentPage - 1}}" class="page-link">Previous</a>
+                </li>
 
-                    <!-- Modal body -->
-                    <div class="modal-body" id="modalBody">
-                        <span id="confirmText"></span>
-                    </div>
+                <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
+                    th:each="i : ${#numbers.sequence(1, totalPage)}">
+                    <a th:href="@{'/users/page/' + ${i}}" class="page-link">[[${i}]]</a>
+                </li>
 
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <a class="btn btn-success" href="" id="yesButton">Yes</a>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
-                    </div>
+                <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
+                    <a th:href="@{'/users/page/' + ${currentPage + 1}}" class="page-link">Next</a>
+                </li>
 
+                <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
+                    <a th:href="@{'/users/page/' + ${totalPage}}" class="page-link">Last</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <div class="text-center m-1" th:if="${totalItems > 0}">
+        <span>Showing users # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+    </div>
+    <div class="text-center m-1" th:unless="${totalItems > 0}">
+        <span>No users found</span>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="modalBody">
+                    <span id="confirmText"></span>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <a class="btn btn-success" href="" id="yesButton">Yes</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+
             </div>
         </div>
-
-
-        <div class="text-center">
-            <p>Shopme Control Panel - Copyright &copy; Shopme</p>
-        </div>
-
     </div>
 
 
-    <script type="text/javascript">
+    <div class="text-center">
+        <p>Shopme Control Panel - Copyright &copy; Shopme</p>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
         $(document).ready(function () {
             $(".link-delete").on("click", function (e) {
                 e.preventDefault();
@@ -176,8 +210,9 @@
                 $("#confirmModal").modal();
             });
         });
-    </script>
+
+
+</script>
 
 </body>
-
 </html>

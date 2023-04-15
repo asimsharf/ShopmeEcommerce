@@ -15,15 +15,15 @@ public class FileUploadUtil {
     public static void saveFile(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException {
         Path uploadPath = Paths.get(uploadDir);
 
-        if (!Files.exists(uploadPath)){
+        if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
         }
 
-        try(InputStream inputStream = multipartFile.getInputStream()){
+        try (InputStream inputStream = multipartFile.getInputStream()) {
             Path filePath = uploadPath.resolve(fileName);
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException ex){
-            throw new IOException("Could Not Save file: " + fileName , ex);
+        } catch (IOException ex) {
+            throw new IOException("Could Not Save file: " + fileName, ex);
         }
     }
 
@@ -31,7 +31,7 @@ public class FileUploadUtil {
         try {
             Path dirPath = Paths.get(dir);
             Files.list(dirPath).forEach(file -> {
-                if (!Files.isDirectory(file)){
+                if (!Files.isDirectory(file)) {
                     try {
                         Files.delete(file);
                     } catch (IOException e) {
@@ -40,14 +40,14 @@ public class FileUploadUtil {
                     }
                 }
             });
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Could not delete files" + e.getMessage());
             e.printStackTrace();
         }
     }
 
     public static String renameFile(String fileName) {
-        if (fileName.contains("..")){
+        if (fileName.contains("..")) {
             throw new IllegalArgumentException("Sorry! Filename contains invalid path sequence " + fileName);
         }
         String[] tokens = fileName.split("\\.");
@@ -58,7 +58,7 @@ public class FileUploadUtil {
     public static void removeDir(String dir) throws IOException {
         Path dirPath = Paths.get(dir);
         Files.list(dirPath).forEach(file -> {
-            if (!Files.isDirectory(file)){
+            if (!Files.isDirectory(file)) {
                 try {
                     Files.delete(file);
                 } catch (IOException e) {

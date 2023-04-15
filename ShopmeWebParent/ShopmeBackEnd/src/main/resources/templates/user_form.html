@@ -224,7 +224,7 @@
         }
 
         function checkEmailUnique(form) {
-            url = "[[@{/users/check_email}]]";
+            url = "[[@{/api/users/check_email}]]";
             userEmail = $("[name='email']").val();
             csrfToken = $("input[name='_csrf']").val();
             theUserId = $("[name='id']").val();

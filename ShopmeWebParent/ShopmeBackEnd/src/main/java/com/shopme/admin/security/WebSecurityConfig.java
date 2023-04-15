@@ -16,13 +16,13 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain  filterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests().anyRequest().permitAll();
         return http.build();
     }
 
     @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() throws Exception{
+    public WebSecurityCustomizer webSecurityCustomizer() throws Exception {
         return (web) -> web.ignoring().requestMatchers((request) -> request.getHeader("User-Agent").contains("curl"));
     }
 

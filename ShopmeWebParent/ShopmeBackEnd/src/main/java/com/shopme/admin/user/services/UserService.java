@@ -1,9 +1,15 @@
-package com.shopme.admin.user;
+package com.shopme.admin.user.services;
 
 
+import com.shopme.admin.user.exceptions.UserNotFoundException;
+import com.shopme.admin.user.repositories.RoleRepository;
+import com.shopme.admin.user.repositories.UserRepository;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +22,8 @@ import java.util.Objects;
 @Transactional
 public class UserService {
 
+    public static final int USER_PER_PAGE = 4;
+
     @Autowired
     private final UserRepository userRepo;
 
@@ -27,6 +35,11 @@ public class UserService {
 
     public UserService(UserRepository theRepo) {
         this.userRepo = theRepo;
+    }
+
+    public Page<User> listByPage(int pageNum) {
+        Pageable pageable = PageRequest.of(pageNum - 1, USER_PER_PAGE);
+        return userRepo.findAll(pageable);
     }
 
     public List<User> listAll() {
