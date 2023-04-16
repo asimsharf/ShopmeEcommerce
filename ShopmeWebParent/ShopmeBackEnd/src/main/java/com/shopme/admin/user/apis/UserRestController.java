@@ -43,7 +43,7 @@ public class UserRestController {
 
     @GetMapping("/users/list_users/page/{pageNum}")
     public ResponseEntity<Object> listByPage(@PathVariable(name = "pageNum") int pageNum) {
-        Page<User> page = service.listByPage(pageNum, "firstName", "asc");
+        Page<User> page = service.listByPage(pageNum, "firstName", "asc", null);
         List<User> listUsers = page.getContent();
 
         long startCount = (long) (pageNum - 1) * UserService.USER_PER_PAGE + 1;

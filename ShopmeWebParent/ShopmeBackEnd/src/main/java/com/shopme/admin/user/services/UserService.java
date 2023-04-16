@@ -38,11 +38,16 @@ public class UserService {
         this.userRepo = theRepo;
     }
 
-    public Page<User> listByPage(int pageNum, String sortField, String sortDir) {
+    public Page<User> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
         Sort sort = Sort.by(sortField);
         sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
 
         Pageable pageable = PageRequest.of(pageNum - 1, USER_PER_PAGE, sort);
+
+        if (keyword != null) {
+            return userRepo.findAll(keyword, pageable);
+        }
+
         return userRepo.findAll(pageable);
     }
 

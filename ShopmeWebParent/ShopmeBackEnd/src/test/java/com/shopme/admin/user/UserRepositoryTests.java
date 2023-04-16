@@ -89,10 +89,8 @@ public class UserRepositoryTests {
         User user = userRepository.findById(theRemovedID).get();
         Role roleEditor = entityManager.find(Role.class, 3);
         Role roleAssistant = entityManager.find(Role.class, 4);
-
         user.getRoles().remove(roleAssistant);
         user.addRoles(roleEditor);
-
         userRepository.save(user);
     }
 
@@ -133,7 +131,6 @@ public class UserRepositoryTests {
 
     @Test
     public void testListFirstPage() {
-        System.out.println("********** Test List First Page Started **********");
         int pageNumber = 0;
         int pageSize = 5;
 
@@ -143,7 +140,20 @@ public class UserRepositoryTests {
         listUsers.forEach(System.out::println);
 
         assertThat(listUsers.size()).isEqualTo(pageSize);
-        System.out.println("********** Test List First Page Ended **********");
+    }
+
+    @Test
+    public void testSearchUsers() {
+        String keyword = "asim";
+        int pageNumber = 0;
+        int pageSize = 5;
+
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        Page<User> page = userRepository.findAll(keyword,pageable);
+        List<User> listUsers = page.getContent();
+        listUsers.forEach(System.out::println);
+
+        assertThat(listUsers.size()).isGreaterThan(0);
     }
 
 }
