@@ -13,13 +13,55 @@
 *.icon-dark {
     color: grey;
 }
-.zoom {
-  padding: 0px;
-  transition: transform .3s;
 
-  margin: 0 auto;
+*.main-orange {
+    color: #e16717;
 }
 
-.zoom:hover {
-  transform: scale(1.5);
+*.main-blue {
+    color: #0771bb;
+}
+
+*.thead-dark {
+    color: #232937;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #232937;
+    border-color: #454d55;
+}
+
+@media screen and (max-width: 768px) {
+    /* small screen */
+    div.full-details{
+        display: none;
+    }
+    div.less-details{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* medium screen */
+    div.full-details{
+        display: block;
+    }
+    div.less-details{
+        display: none;
+    }
+    .hideable-column {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* large screen */
+    div.less-details{
+        display: none;
+    }
+    .hideable-column {
+        display: table-cell;
+    }
+
 }

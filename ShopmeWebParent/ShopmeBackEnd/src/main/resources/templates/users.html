@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0" name="viewport">
 
     <title>Home - Shopme Admin</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
-    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/fontawesome/all.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}" type="text/javascript"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
 </head>
 
 <body>
 <div class="container-fluid">
     <div>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #232937">
             <a class="navbar-brand" th:href="@{/}">
-                <img th:src="@{/images/ShopmeAdminSmall.png}" alt=""/>
+                <img alt="Shopme Logo" style="max-width:50px; " th:src="@{/images/ShopmeAdminSmall.png}"/>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+            <button class="navbar-toggler" data-target="#topNavbar" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="topNavbar">
@@ -63,126 +63,90 @@
 
         </nav>
     </div>
+
     <div>
         <h2>Manage Users</h2>
-        <a th:href="@{/users/new}" class="">
-            <i class="fas fa-square-plus fa-bounce"></i> Create New User
-        </a>
-        <br/>
-        <br/>
-    </div>
+        <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/users/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
+        <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/users/export/csv}"><i class="fas fa-file-csv"></i></a>
+        <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/users/export/excel}"><i class="fas fa-file-excel"></i></a>
+        <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/users/export/pdf}"><i class="fas fa-file-pdf"></i></a>
 
-    <div th:if="${message != null}" class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <span th:text="${message}"></span>
-    </div>
-
-    <div>
-        <form th:action="@{/users/page/1}" method="GET" class="form-inline mb-2">
-            <input type="hidden" name="sortField" th:value="${sortField}">
-            <input type="hidden" name="sortDir" th:value="${sortDir}">
-            <input type="text" name="keyword" class="form-control" placeholder="Search by email or name" th:value="${keyword}" required>
-            <button type="submit" class="btn btn-primary">
+        <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/users/page/1}">
+            <input name="sortField" th:value="${sortField}" type="hidden">
+            <input name="sortDir" th:value="${sortDir}" type="hidden">
+            <label class="input-group">
+                <input class="form-control" name="keyword" placeholder="Search by email or name" required
+                       th:value="${keyword}" type="text">
+            </label>
+            <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
                 <i class="fas fa-search"></i>
             </button>
-
-            <button type="button" class="btn btn-secondary ml-2" onclick="clearFilter()">
+            <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter()" type="button">
                 <i class="fas fa-sync"></i>
             </button>
-
         </form>
     </div>
 
-    <div>
+    <div class="alert alert-success alert-dismissible" th:if="${message != null}">
+        <button class="close" data-dismiss="alert" type="button">&times;</button>
+        <span th:text="${message}"></span>
+    </div>
+
+    <div class="full-details">
         <table class="table table-responsive-xl table-striped table-bordered table-hover">
             <thead class="thead-dark">
             <tr>
-                <th class="text-center">
-                    <a th:if="${sortField != 'id'}"
-                       th:href="@{'/users/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"
-                       class="text-white"> ID </a>
-                    <a th:if="${sortField == 'id'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"  class="text-white">
-                        ID
-                    </a>
-                    <span th:if="${sortField == 'id'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+
+                <th class="hideable-column">
+                    <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag')}"/>
                 </th>
+
                 <th class="text-center">Photos</th>
-                <th>
-                    <a th:if="${sortField != 'email'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=email&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">
-                        Email
-                    </a>
-                    <a th:if="${sortField == 'email'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=email&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"  class="text-white">
-                        Email
-                    </a>
-                    <span th:if="${sortField == 'email'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+
+                <th class="hideable-column">
+                    <th  th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag')}"/>
                 </th>
 
-                <th>
-                    <a th:if="${sortField != 'firstName'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">
-                        First Name
-                    </a>
-                    <a th:if="${sortField == 'firstName'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"  class="text-white">
-                        First Name
-                    </a>
-                    <span th:if="${sortField == 'firstName'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
-                </th>
-
-                <th>
-                    <a th:if="${sortField != 'lastName'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=lastName&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">
-                        Last Name
-                    </a>
-                    <a th:if="${sortField == 'lastName'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=lastName&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"  class="text-white">
-                        Last Name
-                    </a>
-                    <span th:if="${sortField == 'lastName'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
-                </th>
-
-                <th>Roles</th>
-
-                <th class="text-center">
-                    <a th:if="${sortField != 'enabled'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=enabled&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">
-                        Enabled
-                    </a>
-                    <a th:if="${sortField == 'enabled'}" th:href="@{'/users/page/' + ${currentPage} + '?sortField=enabled&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"  class="text-white">
-                        Enabled
-                    </a>
-                    <span th:if="${sortField == 'enabled'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
-                </th>
-
+                <th th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none')}" ></th>
+                <th th:replace="~{fragments/column_link :: column_link('lastName', 'Last Name', 'none')}" ></th>
+                <th th:replace="~{fragments/column_link :: column_link('roles', 'Roles', 'none')}"></th>
+                <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none')}"></th>
                 <th class="text-center">Actions</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="user : ${listUsers}">
-                <td th:text="${user.id}" class="text-center align-middle"></td>
+                <td class="text-center align-middle hideable-column" th:text="${user.id}" style="width: 5%;"></td>
                 <td class="text-center align-middle">
-                    <span th:if="${user.photos == null}" class="fas fa-user-secret fa-2xl icon-silver"></span>
-                    <img class="zoom" th:if="${user.photos != null}" th:src="@{${user.getPhotosImagePath}}" width="50"
-                         height="50" alt="User Image"/>
+                    <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.photos == null}"></span>
+                    <img alt="User Image" height="50" th:if="${user.photos != null}"
+                         th:src="@{${user.getPhotosImagePath}}" width="50"/>
                 </td>
-                <th th:text="${user.email}" class="align-middle"></th>
-                <td th:text="${user.firstName}" class="align-middle"></td>
-                <td th:text="${user.lastName}" class="align-middle"></td>
-                <td th:text="${user.roles}" class="align-middle"></td>
-                <td class="text-center align-middle">
-                    <a th:if="${user.enabled}" class="fas fa-check-circle fa-lg fa-fade text-success"
-                       title="Click to disable"
+                <th class="align-middle hideable-column" th:text="${user.email}"  style="width: 5%;"></th>
+                <td class="align-middle" th:text="${user.firstName}" style="width: 20%;"></td>
+                <td class="align-middle" th:text="${user.lastName}" style="width: 20%;"></td>
+                <td class="align-middle" th:text="${user.roles}"  style="width: 20%;"></td>
+                <td class="text-center align-middle" style="width: 14%;">
+                    <a class="btn btn-sm btn-outline-success"
                        th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}"
-                    ></a>
-                    <a th:if="${!user.enabled}" class="fas fa-times-circle fa-lg fa-fade text-danger"
-                       title="Click to enable"
+                       th:if="${user.enabled}"
+                       title="Click to disable"
+                    ><i class="fas fa-check-circle fa-lg fa-fade"></i></a>
+                    <a class="btn btn-sm btn-outline-danger"
                        th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}"
-                    ></a>
+                       th:if="${!user.enabled}"
+                       title="Click to enable"
+                    ><i class="fas fa-times-circle fa-lg fa-fade"></i></a>
                 </td>
-                <td class="text-center align-middle" style="width: 8%;">
-                    <a th:href="@{/users/edit/{id}(id=${user.id})}"
-                       title="Click to edit"
-                       class="btn btn-sm btn-outline-primary">
+                <td class="text-center align-middle" style="width: 14%;">
+                    <a class="btn btn-sm btn-outline-primary"
+                       th:href="@{/users/edit/{id}(id=${user.id})}"
+                       title="Click to edit">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a th:userId="${user.id}" th:href="@{/users/delete/{id}(id=${user.id})}"
-                       title="Click to delete"
-                       class="btn btn-sm btn-outline-danger link-delete">
+                    <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/users/delete/{id}(id=${user.id})}"
+                       th:userId="${user.id}"
+                       title="Click to delete">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>
@@ -191,14 +155,55 @@
         </table>
     </div>
 
+    <div class="less-details">
+        <div class="row m-1" th:each="user : ${listUsers}">
+            <div class="col-3">
+                <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.photos == null}"></span>
+                <img alt="User Image" height="80" th:if="${user.photos != null}"
+                     th:src="@{${user.getPhotosImagePath}}" width="70"/>
+            </div>
+            <div class="col-9">
+                <div>[[${user.getFullName}]]</div>
+                <div>[[${user.roles}]]</div>
+                <div class="mt-2">
+                    <a class="btn btn-sm btn-outline-primary"
+                       th:href="@{/users/edit/{id}(id=${user.id})}"
+                       title="Click to edit">
+                        <i class="fas fa-edit"></i>
+                    </a>
+
+                    <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/users/delete/{id}(id=${user.id})}"
+                       th:userId="${user.id}"
+                       title="Click to delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    &nbsp;
+                    <a class="btn btn-sm btn-outline-success" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}"
+                       th:if="${user.enabled}"
+                       title="Click to disable"
+                    ><i class="fas fa-check-circle fa-lg fa-fade"></i></a>
+                    &nbsp;
+                    <a class="btn btn-sm btn-outline-danger" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}"
+                       th:if="${!user.enabled}"
+                       title="Click to enable"
+                    ><i class="fas fa-times-circle fa-lg fa-fade"></i></a>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+
+        </div>
+    </div>
+
     <div th:if="${totalItems > 0}">
         <nav>
-            <ul class="pagination justify-content-center">
+            <ul class="pagination justify-content-center flex-wrap">
                 <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                    <a th:href="@{'/users/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">First</a>
+                    <a class="page-link"
+                       th:href="@{'/users/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">First</a>
                 </li>
                 <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                    <a th:href="@{'/users/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">Previous</a>
+                    <a class="page-link"
+                       th:href="@{'/users/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Previous</a>
                 </li>
 
                 <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
@@ -207,11 +212,13 @@
                 </li>
 
                 <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
-                    <a th:href="@{'/users/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">Next</a>
+                    <a class="page-link"
+                       th:href="@{'/users/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Next</a>
                 </li>
 
                 <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
-                    <a th:href="@{'/users/page/' + ${totalPage} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">Last</a>
+                    <a class="page-link"
+                       th:href="@{'/users/page/' + ${totalPage} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Last</a>
                 </li>
 
             </ul>
@@ -232,7 +239,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Confirmation</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
                 </div>
 
                 <!-- Modal body -->
@@ -243,7 +250,7 @@
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <a class="btn btn-success" href="" id="yesButton">Yes</a>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">No</button>
                 </div>
 
             </div>

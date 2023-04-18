@@ -2,26 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0" name="viewport">
 
     <title>[[${pageTitle}]]</title>
 
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
-    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/fontawesome/all.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}" type="text/javascript"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
 </head>
 
 <body>
     <div class="container-fluid">
         <div>
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #232937">
                 <a class="navbar-brand" th:href="@{/}">
-                    <img th:src="@{/images/ShopmeAdminSmall.png}" />
+                    <img th:src="@{/images/ShopmeAdminSmall.png}" style="max-width:50px; " alt="Shopme Logo"/>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+                <button class="navbar-toggler" data-target="#topNavbar" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="topNavbar">
@@ -69,53 +69,59 @@
         </div>
 
         <div>
-            <form th:action="@{/users/save}" method="post" style="max-width: 850px; margin: 0 auto;" th:object="${user}"
-                onsubmit="return checkEmailUnique(this);" enctype="multipart/form-data">
+            <form enctype="multipart/form-data" method="post" onsubmit="return checkEmailUnique(this);" style="max-width: 850px; margin: 0 auto;"
+                  th:action="@{/users/save}" th:object="${user}">
 
-                <input type="hidden" th:field="*{id}" />
+                <input th:field="*{id}" type="hidden"/>
 
                 <div class="border border-secondary rounded p-3">
 
                     <div class="form-group row">
-                        <label th:for="email" class="col-sm-2 col-form-label">E-mail:</label>
+                        <label class="col-sm-2 col-form-label" th:for="email">E-mail:</label>
                         <div class="col-sm-10">
-                            <input type="email" name="email" class="form-control" th:field="*{email}" required
-                                minlength="8" maxlength="28" autocomplete="email" />
+                            <input autocomplete="email" class="form-control" maxlength="28" minlength="8" name="email"
+                                   required th:field="*{email}" type="email"/>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label th:for="firstName" class="col-sm-2 col-form-label">First Name:</label>
+                        <label class="col-sm-2 col-form-label" th:for="firstName">First Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" name="firstName" class="form-control" th:field="*{firstName}" required
-                                minlength="2" maxlength="45" autocomplete="given-name" />
+                            <input autocomplete="given-name" class="form-control" maxlength="45" minlength="2" name="firstName"
+                                   required th:field="*{firstName}" type="text"/>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label th:for="lastName" class="col-sm-2 col-form-label">Last Name:</label>
+                        <label class="col-sm-2 col-form-label" th:for="lastName">Last Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" name="lastName" class="form-control" th:field="*{lastName}" required
-                                minlength="2" maxlength="45" autocomplete="family-name" />
+                            <input autocomplete="family-name" class="form-control" maxlength="45" minlength="2" name="lastName"
+                                   required th:field="*{lastName}" type="text"/>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label th:for="password" class="col-sm-2 col-form-label">Password:</label>
+                        <label class="col-sm-2 col-form-label" th:for="password">Password:</label>
                         <div class="col-sm-10">
 
                             <!-- Create New Password -->
-                            <input th:unless="${user.id}" type="password" name="password" class="form-control" th:field="*{password}" required
-                                   minlength="8" maxlength="20" autocomplete="new-password" />
-                            <small th:unless="${user.id}" class="form-text text-muted">
+                            <label>
+                                <input autocomplete="new-password" class="form-control" maxlength="20" minlength="8"
+                                       name="password" required
+                                       th:field="*{password}" th:unless="${user.id}" type="password"/>
+                            </label>
+                            <small class="form-text text-muted" th:unless="${user.id}">
                                 Enter a password with at least 8 characters.
                             </small>
 
 
                             <!-- Update Password -->
-                            <input th:if="${user.id}" type="password" name="password" class="form-control" th:field="*{password}"
-                                minlength="8" maxlength="20" autocomplete="current-password" />
-                            <small th:if="${user.id}" class="form-text text-muted">
+                            <label>
+                                <input autocomplete="current-password" class="form-control" maxlength="20" minlength="8"
+                                       name="password"
+                                       th:field="*{password}" th:if="${user.id}" type="password"/>
+                            </label>
+                            <small class="form-text text-muted" th:if="${user.id}">
                                 Leave it blank if you don't want to change the password.
                             </small>
 
@@ -123,11 +129,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <label th:for="roles" class="col-sm-2 col-form-label">Roles:</label>
+                        <label class="col-sm-2 col-form-label" th:for="roles">Roles:</label>
                         <div class="col-sm-10">
-                            <th:block th:each="role : ${listRoles}" class="form-check">
-                                <input type="checkbox" name="roles" th:value="${role.id}" th:field="*{roles}"
-                                    th:text="${role.name}" class="m-2" />
+                            <th:block class="form-check" th:each="role : ${listRoles}">
+                                <label>
+                                    <input class="m-2" name="roles" th:field="*{roles}" th:text="${role.name}"
+                                           th:value="${role.id}" type="checkbox"/>
+                                </label>
                                 - <small th:text="${role.description}"></small>
                                 <br>
                             </th:block>
@@ -136,24 +144,27 @@
                     </div>
 
                     <div class="form-group row">
-                        <label th:for="enabled" class="col-sm-2 col-form-label">Enabled:</label>
+                        <label class="col-sm-2 col-form-label" th:for="enabled">Enabled:</label>
                         <div class="col-sm-10">
-                            <input type="checkbox" th:field="*{enabled}" class="m-2">
+                            <label>
+                                <input class="m-2" th:field="*{enabled}" type="checkbox">
+                            </label>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label th:for="image" class="col-sm-2 col-form-label">Image:</label>
+                        <label class="col-sm-2 col-form-label" th:for="image">Image:</label>
                         <div class="col-sm-10">
-                            <input type="hidden" name="image" th:field="*{photos}" />
-                            <input type="file" name="image" accept="image/png, image/jpeg" id="fileImage" class="mb-3" />
-                            <img th:src="@{${user.getPhotosImagePath}}" id="thumbnail" width="50" height="50"  alt="User Image" />
+                            <input name="image" th:field="*{photos}" type="hidden"/>
+                            <input accept="image/png, image/jpeg" class="mb-3" id="fileImage" name="image" type="file"/>
+                            <img alt="User Image" height="50" id="thumbnail" th:src="@{${user.getPhotosImagePath}}"
+                                 width="50"/>
                         </div>
                     </div>
 
                     <div class="text-center">
-                        <input type="submit" value="save" class="btn btn-primary m-3">
-                        <input type="button" value="cancel" class="btn btn-secondary" id="theBtnCancel">
+                        <input class="btn btn-primary m-3" type="submit" value="save">
+                        <input class="btn btn-secondary" id="theBtnCancel" type="button" value="cancel">
                     </div>
 
                 </div>
@@ -168,7 +179,7 @@
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h4 class="modal-title" id="modalTitle">Warning</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button class="close" data-dismiss="modal" type="button">&times;</button>
                     </div>
 
                     <!-- Modal body -->
@@ -176,7 +187,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
                     </div>
 
                 </div>

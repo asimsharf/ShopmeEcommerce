@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="15">
+          <list size="19">
             <item index="0" class="java.lang.String" itemvalue="th:href" />
             <item index="1" class="java.lang.String" itemvalue="th:src" />
             <item index="2" class="java.lang.String" itemvalue="th:each" />
@@ -20,6 +20,10 @@
             <item index="12" class="java.lang.String" itemvalue="th:userid" />
             <item index="13" class="java.lang.String" itemvalue="th:theid" />
             <item index="14" class="java.lang.String" itemvalue="th:class" />
+            <item index="15" class="java.lang.String" itemvalue="th:fragment" />
+            <item index="16" class="java.lang.String" itemvalue="th:replace" />
+            <item index="17" class="java.lang.String" itemvalue="th:style" />
+            <item index="18" class="java.lang.String" itemvalue="th:remove" />
           </list>
         </value>
       </option>
@@ -28,7 +32,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="8">
+          <list size="9">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -37,6 +41,7 @@
             <item index="5" class="java.lang.String" itemvalue="script" />
             <item index="6" class="java.lang.String" itemvalue="scritp" />
             <item index="7" class="java.lang.String" itemvalue="th:block" />
+            <item index="8" class="java.lang.String" itemvalue="th" />
           </list>
         </value>
       </option>
