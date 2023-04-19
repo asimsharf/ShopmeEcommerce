@@ -1,6 +1,5 @@
 package com.shopme.admin.user.services;
 
-
 import com.shopme.admin.user.exceptions.UserNotFoundException;
 import com.shopme.admin.user.repositories.RoleRepository;
 import com.shopme.admin.user.repositories.UserRepository;
@@ -78,7 +77,8 @@ public class UserService {
 
     public User isEmailUnique(Integer id, String email) {
         User userByEmail = userRepo.getUserByEmail(email);
-        if (userByEmail == null) return null;
+        if (userByEmail == null)
+            return null;
 
         boolean isCreatingNew = (id == null);
         if (isCreatingNew) {
@@ -115,6 +115,5 @@ public class UserService {
     public void updateEnabledStatus(Integer id, boolean enabled) {
         userRepo.updateEnabledStatus(id, enabled);
     }
-
 
 }

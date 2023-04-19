@@ -1,7 +1,6 @@
 package com.shopme.common.entity;
 
 import jakarta.persistence.*;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -31,26 +30,17 @@ public class User {
     @Column(length = 64)
     private String photos;
 
-
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = @JoinColumn(
-                    name = "user_id"
-            ),
-            inverseJoinColumns = @JoinColumn(
-                    name = "role_id"
-            )
-    )
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     private Set<Role> roles = new HashSet<>();
 
     public void addRoles(Role role) {
-    	roles.add(role);
+        roles.add(role);
     }
 
     public void removeRoles(Role role) {
-    	roles.remove(role);
+        roles.remove(role);
     }
 
     public User() {
@@ -129,18 +119,20 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", photos='" + photos + '\'' + '}';
+        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='"
+                + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", photos='" + photos
+                + '\'' + '}';
     }
 
-
     @Transient
-    public  String getPhotosImagePath() {
-    	if (id == null || photos == null) return "/images/default-user.png";
-    	return "/user-photos/" + this.id + "/" + this.photos;
+    public String getPhotosImagePath() {
+        if (id == null || photos == null)
+            return "/images/default-user.png";
+        return "/user-photos/" + this.id + "/" + this.photos;
     }
 
     @Transient
     public String getFullName() {
-    	return firstName + " " + lastName;
+        return firstName + " " + lastName;
     }
 }

@@ -1,6 +1,5 @@
 package com.shopme.admin.user.apis;
 
-
 import com.shopme.admin.response.TheResponse;
 import com.shopme.admin.user.services.UserService;
 import com.shopme.common.entity.User;
@@ -51,6 +50,7 @@ public class UserRestController {
         if (endCount > page.getTotalElements()) {
             endCount = page.getTotalElements();
         }
-        return TheResponse.getResponse("Request Course", HttpStatus.OK, listUsers, 1, pageNum, page.getTotalPages(), startCount, endCount, "/ShopmeAdmin/api/users/list_users");
+        return TheResponse.getResponse("Request Course", HttpStatus.OK, listUsers, 1, pageNum, page.getTotalPages(),
+                startCount, endCount, "/ShopmeAdmin/api/users/list_users");
     }
 }

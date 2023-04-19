@@ -62,7 +62,6 @@ public class UserExcelExporter extends AbstractExporter {
         workbook.close();
         outputStream.close();
 
-
     }
 
     private void writeDataLines(List<User> listUsers) {

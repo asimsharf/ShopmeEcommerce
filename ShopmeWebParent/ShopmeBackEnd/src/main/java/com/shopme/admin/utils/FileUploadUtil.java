@@ -1,4 +1,4 @@
-package com.shopme.admin;
+package com.shopme.admin.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.List;
 
 public class FileUploadUtil {
 

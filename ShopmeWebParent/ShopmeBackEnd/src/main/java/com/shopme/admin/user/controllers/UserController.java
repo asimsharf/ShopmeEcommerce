@@ -1,6 +1,6 @@
 package com.shopme.admin.user.controllers;
 
-import com.shopme.admin.FileUploadUtil;
+import com.shopme.admin.utils.FileUploadUtil;
 import com.shopme.admin.user.export.UserCsvExporter;
 import com.shopme.admin.user.export.UserExcelExporter;
 import com.shopme.admin.user.exceptions.UserNotFoundException;
@@ -55,9 +55,7 @@ public class UserController {
             endCount = page.getTotalElements();
         }
 
-
         String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-
 
         model.addAttribute("totalPage", page.getTotalPages());
         model.addAttribute("currentPage", pageNum);
@@ -65,11 +63,9 @@ public class UserController {
         model.addAttribute("endCount", endCount);
         model.addAttribute("totalItems", page.getTotalElements());
         model.addAttribute("listUsers", listUsers);
-
         model.addAttribute("sortField", sortField);
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("reverseSortDir", reverseSortDir);
-
         model.addAttribute("keyword", keyword);
         return "users";
     }
@@ -86,7 +82,8 @@ public class UserController {
     }
 
     @PostMapping("/users/save")
-    public String saveUser(User user, RedirectAttributes thRa, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+    public String saveUser(User user, RedirectAttributes thRa, @RequestParam("image") MultipartFile multipartFile)
+            throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
             fileName = FileUploadUtil.renameFile(fileName);
@@ -96,17 +93,18 @@ public class UserController {
             FileUploadUtil.cleanDir(uploadDir);
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         } else {
-            if (user.getPhotos().isEmpty()) user.setPhotos(null);
+            if (user.getPhotos().isEmpty())
+                user.setPhotos(null);
             thRa.addFlashAttribute("message", "The user has been saved successfully.");
             service.save(user);
         }
 
-        return  getRedirectURLtoAffectedUser(user);
+        return getRedirectURLtoAffectedUser(user);
     }
 
     private String getRedirectURLtoAffectedUser(User user) {
         String firstPartOfEmail = user.getEmail().split("@")[0];
-        return "redirect:/users/page/1?sortField=id&sortDir=asc&keyword="+firstPartOfEmail;
+        return "redirect:/users/page/1?sortField=id&sortDir=asc&keyword=" + firstPartOfEmail;
     }
 
     @GetMapping("/users/edit/{id}")
@@ -136,7 +134,8 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}/enabled/{status}")
-    public String updateUserEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes ra) {
+    public String updateUserEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled,
+            RedirectAttributes ra) {
         service.updateEnabledStatus(id, enabled);
         String status = enabled ? "enabled" : "disabled";
         String message = "The user ID " + id + " has been " + status;

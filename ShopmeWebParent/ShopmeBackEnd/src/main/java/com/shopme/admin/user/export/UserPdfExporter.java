@@ -40,7 +40,7 @@ public class UserPdfExporter extends AbstractExporter {
         table.setWidthPercentage(100f);
         table.setSpacingBefore(10);
         table.setSpacingAfter(10);
-        table.setWidths(new float[] {1.2f, 3.5f, 3.0f, 3.0f, 3.0f, 1.7f});
+        table.setWidths(new float[] { 1.2f, 3.5f, 3.0f, 3.0f, 3.0f, 1.7f });
 
         writeTableHeader(table);
         writeTableData(table, listUsers);
