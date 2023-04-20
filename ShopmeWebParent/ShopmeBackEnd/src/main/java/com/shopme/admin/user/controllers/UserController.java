@@ -67,7 +67,7 @@ public class UserController {
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("reverseSortDir", reverseSortDir);
         model.addAttribute("keyword", keyword);
-        return "users";
+        return "users/index";
     }
 
     @GetMapping("/users/new")
@@ -78,7 +78,7 @@ public class UserController {
         user.setEnabled(true);
         List<Role> listRoles = service.listRoles();
         model.addAttribute("listRoles", listRoles);
-        return "user_form";
+        return "users/user_form";
     }
 
     @PostMapping("/users/save")
@@ -115,7 +115,7 @@ public class UserController {
             model.addAttribute("user", user);
             List<Role> listRoles = service.listRoles();
             model.addAttribute("listRoles", listRoles);
-            return "user_form";
+            return "users/user_form";
         } catch (UserNotFoundException ex) {
             thRa.addFlashAttribute("message", ex.getMessage());
             return "redirect:/users";

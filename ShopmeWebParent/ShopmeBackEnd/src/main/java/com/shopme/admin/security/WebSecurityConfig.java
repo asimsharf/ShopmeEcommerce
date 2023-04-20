@@ -42,22 +42,20 @@ public class WebSecurityConfig {
         http.authorizeHttpRequests()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .usernameParameter("email")
-                .defaultSuccessUrl("/", true)
-                .permitAll()
+                .formLogin().loginPage("/login").usernameParameter("email")
+                .defaultSuccessUrl("/", true).permitAll()
                 .and()
-                .logout()
-                .permitAll();
-
+                .logout().permitAll()
+                .and().rememberMe()
+                .key("AbcDefgHijKlmnOpqrs_1234567890")
+                .tokenValiditySeconds(7 * 24 * 60 * 60);
+        http.headers().frameOptions().sameOrigin();
         return http.build();
     }
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() throws Exception {
-        return (web) -> web.ignoring()
-                .requestMatchers("/images/**", "/js/**", "/css/**", "/webjars/**");
+        return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/css/**", "/webjars/**");
     }
 
 }

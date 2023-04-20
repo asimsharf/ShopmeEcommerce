@@ -73,4 +73,13 @@ public class ShompeUserDetails implements UserDetails {
         return user.getLastName();
     }
 
+    public void setFirstName(String firstName) {
+        user.setFirstName(firstName);
+    }
+
+    public void setLastName(String lastName) {
+        user.setLastName(lastName);
+    }
+
+
 }
