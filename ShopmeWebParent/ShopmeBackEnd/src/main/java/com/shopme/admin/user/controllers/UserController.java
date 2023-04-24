@@ -75,14 +75,16 @@ public class UserController {
         model.addAttribute("pageTitle", "Create New User");
         User user = new User();
         model.addAttribute("user", user);
+
         user.setEnabled(true);
         List<Role> listRoles = service.listRoles();
         model.addAttribute("listRoles", listRoles);
+
         return "users/user_form";
     }
 
     @PostMapping("/users/save")
-    public String saveUser(User user, RedirectAttributes thRa, @RequestParam("image") MultipartFile multipartFile)
+    public String saveUser(User user, RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile)
             throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
@@ -90,14 +92,16 @@ public class UserController {
             user.setPhotos(fileName);
             User savedUser = service.save(user);
             String uploadDir = "user-photos/" + savedUser.getId();
-            FileUploadUtil.cleanDir(uploadDir);
+
+            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        } else {
-            if (user.getPhotos().isEmpty())
-                user.setPhotos(null);
-            thRa.addFlashAttribute("message", "The user has been saved successfully.");
-            service.save(user);
         }
+
+        if (user.getPhotos().isEmpty()) user.setPhotos(null);
+        thRa.addFlashAttribute("message", "The Category has been saved successfully.");
+        service.save(user);
+
 
         return getRedirectURLtoAffectedUser(user);
     }
@@ -123,9 +127,11 @@ public class UserController {
     }
 
     @GetMapping("/users/delete/{id}")
-    public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa) {
+    public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa) throws IOException {
         try {
             service.delete(id);
+            FileUploadUtil.removeDir("user-photos/" + id);
+
             thRa.addFlashAttribute("message", "The user ID " + id + " has been deleted successfully.");
         } catch (UserNotFoundException ex) {
             thRa.addFlashAttribute("message", ex.getMessage());

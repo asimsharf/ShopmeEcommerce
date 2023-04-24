@@ -40,15 +40,22 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .anyRequest().authenticated()
+                .requestMatchers("/users/**").hasAuthority("Admin")
+                .requestMatchers("/settings/**").hasAuthority("Admin")
+                .requestMatchers("/categories/**").hasAnyAuthority("Admin", "Editor")
+                .anyRequest()
+                .authenticated()
                 .and()
-                .formLogin().loginPage("/login").usernameParameter("email")
-                .defaultSuccessUrl("/", true).permitAll()
+                .formLogin().loginPage("/login")
+                .usernameParameter("email")
+                .defaultSuccessUrl("/", true)
+                .permitAll()
                 .and()
                 .logout().permitAll()
                 .and().rememberMe()
                 .key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60);
+
         http.headers().frameOptions().sameOrigin();
         return http.build();
     }

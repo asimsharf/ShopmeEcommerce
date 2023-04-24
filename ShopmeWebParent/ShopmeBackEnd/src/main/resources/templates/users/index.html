@@ -29,7 +29,7 @@
                 <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter()" type="button">
+                <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/users')" type="button">
                     <i class="fas fa-sync"></i>
                 </button>
             </form>
@@ -46,20 +46,24 @@
                     <tr>
 
                         <th class="hideable-column">
-                            <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag')}" />
+                            <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','users')}" />
                         </th>
 
                         <th class="text-center">Photos</th>
 
                         <th class="hideable-column">
-                            <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag')}" />
+                            <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag','users')}" />
                         </th>
 
-                        <th th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none')}">
+                        <th
+                            th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none','users')}">
                         </th>
-                        <th th:replace="~{fragments/column_link :: column_link('lastName', 'Last Name', 'none')}"></th>
-                        <th th:replace="~{fragments/column_link :: column_link('roles', 'Roles', 'none')}"></th>
-                        <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none')}"></th>
+                        <th
+                            th:replace="~{fragments/column_link :: column_link('lastName', 'Last Name', 'none','users')}">
+                        </th>
+                        <th th:replace="~{fragments/column_link :: column_link('roles', 'Roles', 'none','users')}"></th>
+                        <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','users')}">
+                        </th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -92,7 +96,7 @@
                                 <i class="fas fa-edit"></i>
                             </a>
                             <a class="btn btn-sm btn-outline-danger link-delete"
-                                th:href="@{/users/delete/{id}(id=${user.id})}" th:userId="${user.id}"
+                                th:href="@{/users/delete/{id}(id=${user.id})}" th:theID="${user.id}"
                                 title="Click to delete">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
@@ -119,7 +123,7 @@
                         </a>
 
                         <a class="btn btn-sm btn-outline-danger link-delete"
-                            th:href="@{/users/delete/{id}(id=${user.id})}" th:userId="${user.id}"
+                            th:href="@{/users/delete/{id}(id=${user.id})}" th:theID="${user.id}"
                             title="Click to delete">
                             <i class="fas fa-trash-alt"></i>
                         </a>
@@ -210,4 +214,5 @@
     </div>
 
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 package com.shopme.admin.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -10,6 +12,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class FileUploadUtil {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileUploadUtil.class);
 
     public static void saveFile(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException {
         Path uploadPath = Paths.get(uploadDir);
@@ -34,14 +38,12 @@ public class FileUploadUtil {
                     try {
                         Files.delete(file);
                     } catch (IOException e) {
-                        System.out.println("Could not delete file" + e.getMessage());
-                        e.printStackTrace();
+                        throw new IllegalArgumentException("Could not delete file" + e.getMessage());
                     }
                 }
             });
         } catch (IOException e) {
-            System.out.println("Could not delete files" + e.getMessage());
-            e.printStackTrace();
+            throw new IOException("Could not delete files", e);
         }
     }
 
@@ -66,6 +68,16 @@ public class FileUploadUtil {
             }
         });
         Files.delete(dirPath);
+    }
+
+    public static boolean isDirExists(String uploadDir) {
+        Path uploadPath = Paths.get(uploadDir);
+        return Files.exists(uploadPath);
+    }
+
+    public static void removeFile(String dir, String fileName) throws IOException {
+        Path filePath = Paths.get(dir + "/" + fileName);
+        Files.delete(filePath);
     }
 
 }

@@ -33,14 +33,14 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    public UserService(UserRepository theRepo) {
+        this.userRepo = theRepo;
+    }
 
     public User getUserByEmail(String email) {
         return userRepo.getUserByEmail(email);
     }
 
-    public UserService(UserRepository theRepo) {
-        this.userRepo = theRepo;
-    }
 
     public Page<User> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
         Sort sort = Sort.by(sortField);
