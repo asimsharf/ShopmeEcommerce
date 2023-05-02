@@ -1,6 +1,5 @@
 package com.shopme.admin.category.apis;
 
-
 import com.shopme.admin.category.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -29,7 +28,7 @@ public class RestCategoryController {
     //checkUnique
     @PostMapping("/categories/check_unique")
     public String checkUnique(@Param("id") Integer id, @Param("name") String name, @Param("alias") String alias) {
-        return service.isCategoryUnique(id, name, alias) == null ? "OK" : "Duplicated";
+        return service.checkUnique(id, name, alias);
     }
 
 }

@@ -148,6 +148,7 @@
             </div>
         </div>
 
+
         <div th:if="${totalItems > 0}">
             <nav>
                 <ul class="pagination justify-content-center flex-wrap">
@@ -161,19 +162,19 @@
                     </li>
 
                     <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
-                        th:each="i : ${#numbers.sequence(1, totalPage)}">
+                        th:each="i : ${#numbers.sequence(1, totalPages)}">
                         <a th:href="@{'/categories/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"
                             class="page-link">[[${i}]]</a>
                     </li>
 
-                    <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
+                    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
                         <a class="page-link"
                             th:href="@{'/categories/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Next</a>
                     </li>
 
-                    <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
+                    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
                         <a class="page-link"
-                            th:href="@{'/categories/page/' + ${totalPage} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Last</a>
+                            th:href="@{'/categories/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Last</a>
                     </li>
 
                 </ul>
@@ -212,11 +213,9 @@
             </div>
         </div>
 
-
         <div th:replace="~{fragments/page_footer}"> </div>
 
     </div>
 
 </body>
-
 </html>

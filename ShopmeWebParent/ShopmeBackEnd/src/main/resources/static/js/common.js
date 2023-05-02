@@ -142,7 +142,7 @@ function checkCategoryAndAliasUnique(form) {
     $.post(url, params, function (res) {
         if (res == "OK") {
             form.submit();
-        } else if (res == "Duplicated") {
+        } else if (res == "DuplicateName" || res == "DuplicateAlias") {
             showModalDialog("Warning", "The Category name " + categoryName + " or Alias name " + aliasName + " is already in use ");
         } else {
             showModalDialog("Error", "Unknown response from server: ");

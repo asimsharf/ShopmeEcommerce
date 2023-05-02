@@ -56,7 +56,7 @@ public class UserService {
     }
 
     public List<User> listAll() {
-        return (List<User>) userRepo.findAll(Sort.by("id").descending());
+        return userRepo.findAll(Sort.by("id").descending());
     }
 
     public User save(User user) {
@@ -120,7 +120,7 @@ public class UserService {
     }
 
     public List<Role> listRoles() {
-        return (List<Role>) roleRepo.findAll();
+        return roleRepo.findAll();
     }
 
     public void delete(Integer id) throws UserNotFoundException {
