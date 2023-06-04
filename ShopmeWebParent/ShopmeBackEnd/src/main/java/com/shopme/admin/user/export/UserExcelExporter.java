@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class UserExcelExporter extends AbstractExporter {
-    private XSSFWorkbook workbook;
+    private final XSSFWorkbook workbook;
     private XSSFSheet sheet;
 
     public UserExcelExporter() {

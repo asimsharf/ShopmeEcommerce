@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 import com.shopme.admin.category.CategoryPageInfo;
-import com.shopme.admin.category.export.CategoryCsvExporter;
+import com.shopme.admin.category.exports.CategoryCsvExporter;
 import com.shopme.admin.category.services.CategoryService;
 import com.shopme.admin.utils.FileUploadUtil;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,7 +36,11 @@ public class CategoryController {
     }
 
     @GetMapping("/categories/page/{pageNum}")
-    public String listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortDir") String sortDir, @Param("keyword")  String keyword, Model model) {
+    public String listByPage(
+            @PathVariable(name = "pageNum") int pageNum,
+            @Param("sortDir") String sortDir,
+            @Param("keyword")  String keyword, Model model) {
+
         if (sortDir ==  null || sortDir.isEmpty()) {
             sortDir = "asc";
         }
@@ -55,6 +59,7 @@ public class CategoryController {
         model.addAttribute("totalPages", pageInfo.getTotalPages());
         model.addAttribute("totalItems", pageInfo.getTotalElements());
         model.addAttribute("currentPage", pageNum);
+
         model.addAttribute("sortField", "name");
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("keyword", keyword);
@@ -91,7 +96,6 @@ public class CategoryController {
             if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 
-
         } else {
             service.save(category);
         }
@@ -101,8 +105,7 @@ public class CategoryController {
     }
 
     @GetMapping("/categories/edit/{id}")
-    public String editCategory(@PathVariable(name = "id") Integer id, Model model,
-                               RedirectAttributes ra) {
+    public String editCategory(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes ra) {
         try {
             Category category = service.get(id);
             List<Category> listCategories = service.listCategoriesUsedInForm();
@@ -119,8 +122,7 @@ public class CategoryController {
     }
 
     @GetMapping("/categories/{id}/enabled/{status}")
-    public String updateCategoryEnabledStatus(@PathVariable("id") Integer id,
-                                              @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
+    public String updateCategoryEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
         service.updateCategoryEnabledStatus(id, enabled);
         String status = enabled ? "enabled" : "disabled";
         String message = "The category ID " + id + " has been " + status;

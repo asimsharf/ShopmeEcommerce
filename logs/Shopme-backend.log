@@ -1,43 +1,289 @@
-2023-05-02T15:11:13.957+03:00  WARN 38335 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:11:14.693+03:00  WARN 38335 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:11:15.058+03:00  WARN 38335 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:11:15.058+03:00  WARN 38335 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:11:15.058+03:00  WARN 38335 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:11:15.058+03:00  WARN 38335 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:10.022+03:00  WARN 39000 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:15:10.851+03:00  WARN 39000 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:15:11.203+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:11.203+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:11.203+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:11.203+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:17.758+03:00  WARN 39000 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:15:18.401+03:00  WARN 39000 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:15:18.840+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:18.841+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:18.841+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:18.841+03:00  WARN 39000 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:15:59.207+03:00  WARN 39161 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:15:59.961+03:00  WARN 39161 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:16:00.369+03:00  WARN 39161 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:00.369+03:00  WARN 39161 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:00.369+03:00  WARN 39161 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:00.369+03:00  WARN 39161 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:27.558+03:00  WARN 39242 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:16:28.314+03:00  WARN 39242 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:16:28.795+03:00  WARN 39242 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:28.795+03:00  WARN 39242 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:28.796+03:00  WARN 39242 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:16:28.796+03:00  WARN 39242 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:17:14.418+03:00  WARN 39385 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:17:15.354+03:00  WARN 39385 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:17:15.847+03:00  WARN 39385 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:17:15.848+03:00  WARN 39385 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:17:15.848+03:00  WARN 39385 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:17:15.848+03:00  WARN 39385 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:19:02.467+03:00  WARN 39729 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [F622BDF6EFED459E408EBA1E57D48097]
-2023-05-02T15:19:02.785+03:00  WARN 39729 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-02T15:19:03.607+03:00  WARN 39729 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-02T15:19:03.978+03:00  WARN 39729 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:19:03.978+03:00  WARN 39729 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:19:03.978+03:00  WARN 39729 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-05-02T15:19:03.978+03:00  WARN 39729 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:38:47.794+03:00  WARN 62885 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T07:38:48.722+03:00  WARN 62885 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T07:38:49.085+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:38:49.085+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:38:49.085+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:38:49.085+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:56:48.250+03:00  WARN 62885 --- [Thread-5] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+
+java.io.NotSerializableException: com.shopme.common.entity.User
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1192) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:358) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1625) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1050) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5114) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:491) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:966) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:495) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1045) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1003) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:614) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+
+2023-05-03T07:56:49.276+03:00  WARN 62885 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+2023-05-03T07:56:49.373+03:00  WARN 62885 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T07:56:49.921+03:00  WARN 62885 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T07:56:50.189+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:56:50.189+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:56:50.189+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T07:56:50.189+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:48.347+03:00  WARN 62885 --- [Thread-7] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+
+java.io.NotSerializableException: com.shopme.common.entity.User
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1192) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:358) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1625) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1050) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5114) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:491) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:966) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:495) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1045) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1003) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:614) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+
+2023-05-03T08:33:48.968+03:00  WARN 62885 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+2023-05-03T08:33:49.015+03:00  WARN 62885 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T08:33:49.223+03:00  WARN 62885 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T08:33:49.414+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:49.415+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:49.415+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:49.415+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:51.082+03:00  WARN 62885 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T08:33:51.166+03:00  WARN 62885 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T08:33:51.242+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:51.242+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:51.242+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:33:51.242+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:34:29.018+03:00  WARN 62885 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T08:34:29.110+03:00  WARN 62885 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T08:34:29.171+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:34:29.171+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:34:29.172+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:34:29.172+03:00  WARN 62885 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:35:39.197+03:00  WARN 72989 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+2023-05-03T08:35:39.516+03:00  WARN 72989 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T08:35:40.291+03:00  WARN 72989 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T08:35:40.740+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:35:40.740+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:35:40.740+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:35:40.740+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:39:20.661+03:00  WARN 72989 --- [Thread-5] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+
+java.io.NotSerializableException: com.shopme.common.entity.User
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1192) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:358) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1625) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1050) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5114) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:491) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:966) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:495) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1045) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1003) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:614) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+
+2023-05-03T08:39:20.969+03:00  WARN 72989 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+2023-05-03T08:39:21.012+03:00  WARN 72989 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T08:39:21.264+03:00  WARN 72989 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T08:39:21.396+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:39:21.396+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:39:21.396+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:39:21.396+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:45:49.067+03:00  WARN 72989 --- [Thread-7] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+
+java.io.NotSerializableException: com.shopme.common.entity.User
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1192) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1577) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1534) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1443) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1186) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:358) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1625) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1050) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5114) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:491) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:966) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:495) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1045) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1003) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:614) ~[spring-boot-devtools-3.0.5.jar:3.0.5]
+
+2023-05-03T08:45:49.613+03:00  WARN 72989 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [BF42C912BE587FADD4881772D35A507D]
+2023-05-03T08:45:49.643+03:00  WARN 72989 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-03T08:45:49.778+03:00  WARN 72989 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03T08:45:49.990+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:45:49.990+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:45:49.990+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-05-03T08:45:49.990+03:00  WARN 72989 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.

@@ -2,9 +2,7 @@ package com.shopme.common.entity;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import jakarta.persistence.*;
-
 
 @Entity
 @Table(name = "categories")

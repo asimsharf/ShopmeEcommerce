@@ -80,17 +80,12 @@ public class CategoryService {
         return hierarchicalCategories;
     }
 
-    private void listSubHierarchicalCategories(List<Category> hierarchicalCategories,
-                                               Category parent, int subLevel, String sortDir) {
+    private void listSubHierarchicalCategories(List<Category> hierarchicalCategories, Category parent, int subLevel, String sortDir) {
         Set<Category> children = sortSubCategories(parent.getChildren(), sortDir);
         int newSubLevel = subLevel + 1;
 
         for (Category subCategory : children) {
-            String name = "";
-            for (int i = 0; i < newSubLevel; i++) {
-                name += "--";
-            }
-            name += subCategory.getName();
+            String name = "--".repeat(Math.max(0, newSubLevel)) + subCategory.getName();
 
             hierarchicalCategories.add(Category.copyFull(subCategory, name));
 
@@ -103,7 +98,7 @@ public class CategoryService {
         Category parent = category.getParent();
         if (parent != null) {
             String allParentIds = parent.getAllParentIDs() == null ? "-" : parent.getAllParentIDs();
-            allParentIds += String.valueOf(parent.getId()) + "-";
+            allParentIds += parent.getId() + "-";
             category.setAllParentIDs(allParentIds);
         }
 
@@ -131,19 +126,18 @@ public class CategoryService {
         return categoriesUsedInForm;
     }
 
-    private void listSubCategoriesUsedInForm(List<Category> categoriesUsedInForm,
-                                             Category parent, int subLevel) {
+    private void listSubCategoriesUsedInForm(List<Category> categoriesUsedInForm, Category parent, int subLevel) {
         int newSubLevel = subLevel + 1;
         Set<Category> children = sortSubCategories(parent.getChildren());
 
         for (Category subCategory : children) {
-            String name = "";
+            StringBuilder name = new StringBuilder();
             for (int i = 0; i < newSubLevel; i++) {
-                name += "--";
+                name.append("--");
             }
-            name += subCategory.getName();
+            name.append(subCategory.getName());
 
-            categoriesUsedInForm.add(Category.copyIdAndName(subCategory.getId(), name));
+            categoriesUsedInForm.add(Category.copyIdAndName(subCategory.getId(), name.toString()));
 
             listSubCategoriesUsedInForm(categoriesUsedInForm, subCategory, newSubLevel);
         }
@@ -191,14 +185,11 @@ public class CategoryService {
     }
 
     private SortedSet<Category> sortSubCategories(Set<Category> children, String sortDir) {
-        SortedSet<Category> sortedChildren = new TreeSet<>(new Comparator<Category>() {
-            @Override
-            public int compare(Category cat1, Category cat2) {
-                if (sortDir.equals("asc")) {
-                    return cat1.getName().compareTo(cat2.getName());
-                } else {
-                    return cat2.getName().compareTo(cat1.getName());
-                }
+        SortedSet<Category> sortedChildren = new TreeSet<>((cat1, cat2) -> {
+            if (sortDir.equals("asc")) {
+                return cat1.getName().compareTo(cat2.getName());
+            } else {
+                return cat2.getName().compareTo(cat1.getName());
             }
         });
 

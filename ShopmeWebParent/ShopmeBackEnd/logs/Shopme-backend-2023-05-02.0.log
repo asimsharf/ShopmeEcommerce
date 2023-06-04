@@ -1,7 +1,8 @@
-2023-05-03T07:41:06.004+03:00  WARN 63375 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-05-03T07:41:07.040+03:00  WARN 63375 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
-2023-05-03T07:41:07.040+03:00 ERROR 63375 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'admin@admin.com' for key 'UK_6dotkott2kjsp8vw4d0m25fb7'
-2023-05-03T07:41:07.048+03:00  WARN 63375 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] for test method [public void com.shopme.admin.user.UserRepositoryTests.testCreateNewUserWithOneRole()] and test instance [com.shopme.admin.user.UserRepositoryTests@751526a7]
+2023-05-02T15:15:17.652+03:00  WARN 39032 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-02T15:16:38.371+03:00  WARN 39287 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-02T15:16:39.362+03:00  WARN 39287 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2023-05-02T15:16:39.362+03:00 ERROR 39287 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'admin@admin.com' for key 'UK_6dotkott2kjsp8vw4d0m25fb7'
+2023-05-02T15:16:39.369+03:00  WARN 39287 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] for test method [public void com.shopme.admin.user.UserRepositoryTests.testCreateNewUserWithOneRole()] and test instance [com.shopme.admin.user.UserRepositoryTests@518ed9b4]
 
 org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:752) ~[spring-tx-6.0.7.jar:6.0.7]
@@ -62,4 +63,4 @@ org.springframework.transaction.UnexpectedRollbackException: Transaction silentl
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-2.22.2.jar:2.22.2]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-2.22.2.jar:2.22.2]
 
-2023-05-03T07:41:29.497+03:00  WARN 63484 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-02T15:17:30.126+03:00  WARN 39443 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
