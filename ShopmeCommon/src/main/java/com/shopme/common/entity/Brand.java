@@ -1,6 +1,5 @@
 package com.shopme.common.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity

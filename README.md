@@ -65,8 +65,20 @@ Shopme is a simple ecommerce website built with Spring Boot and bootstrap. It is
 - Change MySQL username and password as per your MySQL installation
 - Open terminal and run the following command to run the project -
 
-```
-mvn spring-boot:run
+- Below are the commands to run, build, clean and package the project etc.
+```bash
+mvn spring-boot:run # Run the project
+mvn clean # Clean the project
+mvn clean package -DskipTests # Clean and package the project
+mvn package # Package the project
+mvn install # Install the project
+mvn test # Test the project
+mvn compile # Compile the project
+mvn spring-boot:run # Run the project
+mvn spring-boot:build-image # Build the project
+mvn spring-boot:help # Help for the project
+mvn spring-boot:stop # Stop the project
+mvn spring-boot:start # Start the project
 ```
 
 - Open your favorite browser and go to http://localhost:8080

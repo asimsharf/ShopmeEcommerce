@@ -42,7 +42,8 @@ public class UserController {
     }
 
     @GetMapping("/users/page/{pageNum}")
-    public String listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortField") String sortField, @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
+    public String listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortField") String sortField,
+            @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
         Page<User> page = service.listByPage(pageNum, sortField, sortDir, keyword);
         List<User> listUsers = page.getContent();
 
@@ -90,15 +91,16 @@ public class UserController {
             User savedUser = service.save(user);
             String uploadDir = "user-photos/" + savedUser.getId();
 
-            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+            if (FileUploadUtil.isDirExists(uploadDir))
+                FileUploadUtil.cleanDir(uploadDir);
 
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         }
 
-        if (user.getPhotos().isEmpty()) user.setPhotos(null);
+        if (user.getPhotos().isEmpty())
+            user.setPhotos(null);
         thRa.addFlashAttribute("message", "The Category has been saved successfully.");
         service.save(user);
-
 
         return getRedirectURLtoAffectedUser(user);
     }
@@ -124,7 +126,8 @@ public class UserController {
     }
 
     @GetMapping("/users/delete/{id}")
-    public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa) throws IOException {
+    public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa)
+            throws IOException {
         try {
             service.delete(id);
             FileUploadUtil.removeDir("user-photos/" + id);
@@ -137,7 +140,8 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}/enabled/{status}")
-    public String updateUserEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes ra) {
+    public String updateUserEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled,
+            RedirectAttributes ra) {
         service.updateEnabledStatus(id, enabled);
         String status = enabled ? "enabled" : "disabled";
         String message = "The user ID " + id + " has been " + status;

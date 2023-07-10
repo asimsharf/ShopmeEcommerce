@@ -33,7 +33,8 @@ public class AccountController {
     }
 
     @PostMapping("/account/update")
-    public String updateDetails(@AuthenticationPrincipal ShompeUserDetails loggedUser,User user, RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile)
+    public String updateDetails(@AuthenticationPrincipal ShompeUserDetails loggedUser, User user,
+            RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile)
             throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
@@ -42,11 +43,13 @@ public class AccountController {
             User savedUser = service.updateAccount(user);
             String uploadDir = "user-photos/" + savedUser.getId();
 
-            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+            if (FileUploadUtil.isDirExists(uploadDir))
+                FileUploadUtil.cleanDir(uploadDir);
 
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         } else {
-            if (user.getPhotos().isEmpty()) user.setPhotos(null);
+            if (user.getPhotos().isEmpty())
+                user.setPhotos(null);
             service.updateAccount(user);
         }
 

@@ -41,7 +41,6 @@ public class UserService {
         return userRepo.getUserByEmail(email);
     }
 
-
     public Page<User> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
         Sort sort = Sort.by(sortField);
         sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
@@ -75,7 +74,7 @@ public class UserService {
         return user;
     }
 
-    public User updateAccount(User userInForm){
+    public User updateAccount(User userInForm) {
         User userInDB = userRepo.findById(userInForm.getId()).get();
         if (!userInForm.getPassword().isEmpty()) {
             userInDB.setPassword(userInForm.getPassword());

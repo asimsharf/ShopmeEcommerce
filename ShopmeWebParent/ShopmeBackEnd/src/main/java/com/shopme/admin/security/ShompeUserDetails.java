@@ -81,5 +81,4 @@ public class ShompeUserDetails implements UserDetails {
         user.setLastName(lastName);
     }
 
-
 }

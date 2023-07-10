@@ -46,17 +46,14 @@ public class WebSecurityConfig {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .formLogin().loginPage("/login")
-                .usernameParameter("email")
-                .defaultSuccessUrl("/", true)
-                .permitAll()
-                .and()
-                .logout().permitAll()
-                .and().rememberMe()
+                .formLogin(login -> login.loginPage("/login")
+                        .usernameParameter("email")
+                        .defaultSuccessUrl("/", true)
+                        .permitAll())
+                .logout(logout -> logout.permitAll()).rememberMe(me -> me
                 .key("AbcDefgHijKlmnOpqrs_1234567890")
-                .tokenValiditySeconds(7 * 24 * 60 * 60);
-
-        http.headers().frameOptions().sameOrigin();
+                .tokenValiditySeconds(7 * 24 * 60 * 60));
+        http.headers(headers -> headers.frameOptions().sameOrigin());
         return http.build();
     }
 

@@ -1,4 +1,5 @@
 package com.shopme.admin.category.repositories;
+
 import com.shopme.common.entity.Category;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

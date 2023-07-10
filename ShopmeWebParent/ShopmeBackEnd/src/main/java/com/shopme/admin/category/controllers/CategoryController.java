@@ -39,9 +39,9 @@ public class CategoryController {
     public String listByPage(
             @PathVariable(name = "pageNum") int pageNum,
             @Param("sortDir") String sortDir,
-            @Param("keyword")  String keyword, Model model) {
+            @Param("keyword") String keyword, Model model) {
 
-        if (sortDir ==  null || sortDir.isEmpty()) {
+        if (sortDir == null || sortDir.isEmpty()) {
             sortDir = "asc";
         }
 
@@ -85,7 +85,8 @@ public class CategoryController {
     }
 
     @PostMapping("/categories/save")
-    public String saveCategory(Category category, @RequestParam("fileImage") MultipartFile multipartFile, RedirectAttributes ra) throws IOException {
+    public String saveCategory(Category category, @RequestParam("fileImage") MultipartFile multipartFile,
+            RedirectAttributes ra) throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
             category.setImage(fileName);
@@ -93,7 +94,8 @@ public class CategoryController {
             Category savedCategory = service.save(category);
             String uploadDir = "category-images/" + savedCategory.getId();
 
-            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+            if (FileUploadUtil.isDirExists(uploadDir))
+                FileUploadUtil.cleanDir(uploadDir);
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 
         } else {
@@ -122,7 +124,8 @@ public class CategoryController {
     }
 
     @GetMapping("/categories/{id}/enabled/{status}")
-    public String updateCategoryEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
+    public String updateCategoryEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled,
+            RedirectAttributes redirectAttributes) {
         service.updateCategoryEnabledStatus(id, enabled);
         String status = enabled ? "enabled" : "disabled";
         String message = "The category ID " + id + " has been " + status;
@@ -132,7 +135,8 @@ public class CategoryController {
     }
 
     @GetMapping("/categories/delete/{id}")
-    public String deleteCategory(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes redirectAttributes) {
+    public String deleteCategory(@PathVariable(name = "id") Integer id, Model model,
+            RedirectAttributes redirectAttributes) {
         try {
             service.delete(id);
             String categoryDir = "category-images/" + id;

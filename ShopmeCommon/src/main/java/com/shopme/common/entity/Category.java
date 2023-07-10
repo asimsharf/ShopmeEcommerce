@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "categories")
-public class Category  {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -152,7 +152,8 @@ public class Category  {
 
     @Transient
     public String getImagePath() {
-        if (this.id == null || this.image == null) return "/images/image-thumbnail.png";
+        if (this.id == null || this.image == null)
+            return "/images/image-thumbnail.png";
 
         return "/category-images/" + this.id + "/" + this.image;
     }
@@ -180,6 +181,5 @@ public class Category  {
     public void setAllParentIDs(String allParentIDs) {
         this.allParentIDs = allParentIDs;
     }
-
 
 }
