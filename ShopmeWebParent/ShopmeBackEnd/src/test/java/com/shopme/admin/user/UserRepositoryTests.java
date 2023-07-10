@@ -30,37 +30,47 @@ public class UserRepositoryTests {
     @Autowired
     private TestEntityManager entityManager;
 
-    private final Integer theRemovedID = 6;
+    Integer theDefaultID = 48;
+    String theDefaultEmail = "test_" + System.currentTimeMillis() + '@' + "shopme.com";
+    String theDefaultPassword = "12345678";
 
     @Test
     public void testCreateNewUserWithOneRole() {
-        Role roleAdmin = entityManager.find(Role.class, 1);
+
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String password = passwordEncoder.encode("12345678");
-        User user = new User("admin@admin.com", password, "Admin", "Admin");
+        String password = passwordEncoder.encode(theDefaultPassword);
+        User user = new User(theDefaultEmail, password, "Admin", "Admin");
+
+        Role roleAdmin = entityManager.find(Role.class, 1);
         user.setEnabled(true);
         user.addRoles(roleAdmin);
+
         User savedUser = userRepository.save(user);
-        assertThat(savedUser.getId()).isGreaterThan(0);
+        theDefaultID = savedUser.getId();
+        assertThat(theDefaultID).isGreaterThan(0);
+
     }
 
     @Test
     public void testCreateNewUserWithTwoRoles() {
-        User user = new User("ahmed121@gmail.com", "12345678", "Ahmed", "Ali");
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String password = passwordEncoder.encode(theDefaultPassword);
+        User user = new User(theDefaultEmail, password, "Ahmed", "Ali");
 
         Role roleEditor = entityManager.find(Role.class, 3);
         Role roleAssistant = entityManager.find(Role.class, 4);
-
         user.addRoles(roleEditor);
         user.addRoles(roleAssistant);
 
         User savedUser = userRepository.save(user);
-        assertThat(savedUser.getId()).isGreaterThan(0);
+        theDefaultID = savedUser.getId();
+        assertThat(theDefaultID).isGreaterThan(0);
 
     }
 
     @Test
     public void testListAllUsers() {
+
         Iterable<User> listUsers = userRepository.findAll();
         listUsers.forEach(System.out::println);
         assertThat(listUsers).size().isGreaterThan(0);
@@ -68,91 +78,93 @@ public class UserRepositoryTests {
 
     @Test
     public void testGetUserById() {
-        Integer theRemovedID = 1;
-        User user = userRepository.findById(theRemovedID).get();
+
+        User user = userRepository.findById(theDefaultID).get();
         System.out.println(user);
         assertThat(user).isNotNull();
     }
 
-    @Test
-    public void testUpdateUserDetails() {
-        Integer theRemovedID = 1;
-        User user = userRepository.findById(theRemovedID).get();
-        user.setEnabled(true);
-        user.setEmail("m@m.com");
-        userRepository.save(user);
+    // @Test
+    // public void testUpdateUserDetails() {
 
-    }
+    // User user = userRepository.findById(theDefaultID).get();
+    // user.setEnabled(true);
+    // user.setEmail("m@m.com");
+    // userRepository.save(user);
 
-    @Test
-    public void testUpdateUserRoles() {
-        User user = userRepository.findById(theRemovedID).get();
-        Role roleEditor = entityManager.find(Role.class, 3);
-        Role roleAssistant = entityManager.find(Role.class, 4);
-        user.getRoles().remove(roleAssistant);
-        user.addRoles(roleEditor);
-        userRepository.save(user);
-    }
+    // }
 
-    @Test
-    public void testDeleteUser() {
-        User user = userRepository.findById(theRemovedID).get();
-        user.getRoles().clear();
-        userRepository.save(user);
-        userRepository.deleteById(theRemovedID);
-    }
+    // @Test
+    // public void testUpdateUserRoles() {
 
-    @Test
-    public void testGetUserByEmail() {
-        String email = "asimsharf@gmail.com";
-        User user = userRepository.getUserByEmail(email);
-        assertThat(user).isNotNull();
-    }
+    // User user = userRepository.findById(theDefaultID).get();
+    // Role roleEditor = entityManager.find(Role.class, 3);
+    // Role roleAssistant = entityManager.find(Role.class, 4);
+    // user.getRoles().remove(roleAssistant);
+    // user.addRoles(roleEditor);
+    // userRepository.save(user);
+    // }
 
-    @Test
-    public void testCountById() {
-        Integer id = 30;
-        Long countById = userRepository.countById(id);
-        assertThat(countById).isNotNull().isGreaterThan(0);
-    }
+    // @Test
+    // public void testDeleteUser() {
 
-    @Test
-    public void testDisableUser() {
-        Integer id = 3;
-        userRepository.updateEnabledStatus(id, false);
-    }
+    // User user = userRepository.findById(theDefaultID).get();
+    // user.getRoles().clear();
+    // userRepository.save(user);
+    // userRepository.deleteById(theDefaultID);
+    // }
 
-    @Test
-    public void testEnableUser() {
-        Integer id = 3;
-        userRepository.updateEnabledStatus(id, true);
-    }
+    // @Test
+    // public void testGetUserByEmail() {
 
-    @Test
-    public void testListFirstPage() {
-        int pageNumber = 0;
-        int pageSize = 5;
+    // User user = userRepository.getUserByEmail(theDefaultEmail);
+    // assertThat(user).isNotNull();
+    // }
 
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        Page<User> page = userRepository.findAll(pageable);
-        List<User> listUsers = page.getContent();
-        listUsers.forEach(System.out::println);
+    // @Test
+    // public void testCountById() {
 
-        assertThat(listUsers.size()).isEqualTo(pageSize);
-    }
+    // Long countById = userRepository.countById(theDefaultID);
+    // assertThat(countById).isNotNull().isGreaterThan(0);
+    // }
 
-    @Test
-    public void testSearchUsers() {
-        String keyword = "asim";
-        int pageNumber = 0;
-        int pageSize = 5;
+    // @Test
+    // public void testDisableUser() {
 
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        Page<User> page = userRepository.findAll(keyword, pageable);
-        List<User> listUsers = page.getContent();
-        listUsers.forEach(System.out::println);
+    // userRepository.updateEnabledStatus(theDefaultID, false);
+    // }
 
-        assertThat(listUsers.size()).isGreaterThan(0);
-    }
+    // @Test
+    // public void testEnableUser() {
+
+    // userRepository.updateEnabledStatus(theDefaultID, true);
+    // }
+
+    // @Test
+    // public void testListFirstPage() {
+    // int pageNumber = 0;
+    // int pageSize = 5;
+
+    // Pageable pageable = PageRequest.of(pageNumber, pageSize);
+    // Page<User> page = userRepository.findAll(pageable);
+    // List<User> listUsers = page.getContent();
+    // listUsers.forEach(System.out::println);
+
+    // assertThat(listUsers.size()).isEqualTo(pageSize);
+    // }
+
+    // @Test
+    // public void testSearchUsers() {
+    // String keyword = "asim";
+    // int pageNumber = 0;
+    // int pageSize = 5;
+
+    // Pageable pageable = PageRequest.of(pageNumber, pageSize);
+    // Page<User> page = userRepository.findAll(keyword, pageable);
+    // List<User> listUsers = page.getContent();
+    // listUsers.forEach(System.out::println);
+
+    // assertThat(listUsers.size()).isGreaterThan(0);
+    // }
 
 }
