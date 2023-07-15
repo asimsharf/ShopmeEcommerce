@@ -42,8 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/users/page/{pageNum}")
-    public String listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortField") String sortField,
-            @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
+    public String listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortField") String sortField, @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
         Page<User> page = service.listByPage(pageNum, sortField, sortDir, keyword);
         List<User> listUsers = page.getContent();
 
@@ -82,23 +81,20 @@ public class UserController {
     }
 
     @PostMapping("/users/save")
-    public String saveUser(User user, RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile)
-            throws IOException {
+    public String saveUser(User user, RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
             fileName = FileUploadUtil.renameFile(fileName);
-            user.setPhotos(fileName);
+            user.setImage(fileName);
             User savedUser = service.save(user);
-            String uploadDir = "user-photos/" + savedUser.getId();
+            String uploadDir = "user-image/" + savedUser.getId();
 
-            if (FileUploadUtil.isDirExists(uploadDir))
-                FileUploadUtil.cleanDir(uploadDir);
+            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
 
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         }
 
-        if (user.getPhotos().isEmpty())
-            user.setPhotos(null);
+        if (user.getImage().isEmpty()) user.setImage(null);
         thRa.addFlashAttribute("message", "The Category has been saved successfully.");
         service.save(user);
 
@@ -126,11 +122,10 @@ public class UserController {
     }
 
     @GetMapping("/users/delete/{id}")
-    public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa)
-            throws IOException {
+    public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa) throws IOException {
         try {
             service.delete(id);
-            FileUploadUtil.removeDir("user-photos/" + id);
+            FileUploadUtil.removeDir("user-image/" + id);
 
             thRa.addFlashAttribute("message", "The user ID " + id + " has been deleted successfully.");
         } catch (UserNotFoundException ex) {
@@ -140,8 +135,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}/enabled/{status}")
-    public String updateUserEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled,
-            RedirectAttributes ra) {
+    public String updateUserEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes ra) {
         service.updateEnabledStatus(id, enabled);
         String status = enabled ? "enabled" : "disabled";
         String message = "The user ID " + id + " has been " + status;

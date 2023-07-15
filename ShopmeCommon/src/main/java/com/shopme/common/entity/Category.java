@@ -155,7 +155,7 @@ public class Category {
         if (this.id == null || this.image == null)
             return "/images/image-thumbnail.png";
 
-        return "/category-images/" + this.id + "/" + this.image;
+        return "/category-image/" + this.id + "/" + this.image;
     }
 
     public boolean isHasChildren() {

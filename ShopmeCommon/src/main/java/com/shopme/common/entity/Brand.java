@@ -13,4 +13,7 @@ public class Brand {
     @Column(length = 128, nullable = false, unique = true)
     private String name;
 
+    @Column(length = 128, nullable = false)
+    private String image;
+
 }

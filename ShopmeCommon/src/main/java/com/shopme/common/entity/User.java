@@ -28,8 +28,8 @@ public class User {
     @Column(nullable = false)
     private boolean enabled;
 
-    @Column(length = 64)
-    private String photos;
+    @Column(length = 128, nullable = false)
+    private String image;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -102,12 +102,12 @@ public class User {
         this.enabled = enabled;
     }
 
-    public String getPhotos() {
-        return photos;
+    public String getImage() {
+        return image;
     }
 
-    public void setPhotos(String photos) {
-        this.photos = photos;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Set<Role> getRoles() {
@@ -121,15 +121,15 @@ public class User {
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='"
-                + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", photos='" + photos
+                + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", image='" + image
                 + '\'' + '}';
     }
 
     @Transient
-    public String getPhotosImagePath() {
-        if (id == null || photos == null)
-            return "/images/default-user.png";
-        return "/user-photos/" + this.id + "/" + this.photos;
+    public String getImagePath() {
+        if (id == null || image == null)
+            return "/ShopmeAdmin/images/default-user.png";
+        return "/user-image/" + this.id + "/" + this.image;
     }
 
     @Transient

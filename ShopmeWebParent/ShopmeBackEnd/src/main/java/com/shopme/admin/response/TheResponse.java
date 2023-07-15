@@ -20,8 +20,7 @@ public class TheResponse {
         return new ResponseEntity<>(response, status);
     }
 
-    public static ResponseEntity<Object> getResponse(String message, HttpStatus status, Object data, Integer code,
-            Integer currentPage, Integer totalPage, Long startCount, Long endCount, String path) {
+    public static ResponseEntity<Object> getResponse(String message, HttpStatus status, Object data, Integer code, Integer currentPage, Integer totalPage, Long startCount, Long endCount, String path) {
         Map<String, Object> response = new HashMap<>();
         Map<String, Object> links = new HashMap<>();
 

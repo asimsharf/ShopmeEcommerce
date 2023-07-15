@@ -17,6 +17,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class UserRestController {
+
+    private User user;
+
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -50,8 +53,7 @@ public class UserRestController {
         if (endCount > page.getTotalElements()) {
             endCount = page.getTotalElements();
         }
-        return TheResponse.getResponse("Request Course", HttpStatus.OK, listUsers, 1, pageNum, page.getTotalPages(),
-                startCount, endCount, "/ShopmeAdmin/api/users/list_users");
+        return TheResponse.getResponse("list_users", HttpStatus.OK, listUsers, 1, pageNum, page.getTotalPages(), startCount, endCount, "/ShopmeAdmin/api/users/list_users");
     }
 
 }

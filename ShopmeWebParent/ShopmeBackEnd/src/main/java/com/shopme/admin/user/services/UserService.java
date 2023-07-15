@@ -80,8 +80,8 @@ public class UserService {
             userInDB.setPassword(userInForm.getPassword());
             encodePassword(userInDB);
         }
-        if (userInForm.getPhotos() != null) {
-            userInDB.setPhotos(userInForm.getPhotos());
+        if (userInForm.getImage() != null) {
+            userInDB.setImage(userInForm.getImage());
         }
         userInDB.setFirstName(userInForm.getFirstName());
         userInDB.setLastName(userInForm.getLastName());
@@ -95,8 +95,7 @@ public class UserService {
 
     public User isEmailUnique(Integer id, String email) {
         User userByEmail = userRepo.getUserByEmail(email);
-        if (userByEmail == null)
-            return null;
+        if (userByEmail == null) return null;
 
         boolean isCreatingNew = (id == null);
         if (isCreatingNew) {

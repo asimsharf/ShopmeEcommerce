@@ -521,7 +521,7 @@ org.springframework.transaction.UnexpectedRollbackException: Transaction silentl
 2023-07-10T14:31:12.516+03:00  WARN 11146 --- [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
 2023-07-10T14:32:26.075+03:00 ERROR 11146 --- [http-nio-3000-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/ShopmeAdmin] threw exception
 
-java.nio.file.NoSuchFileException: user-photos/52
+java.nio.file.NoSuchFileException: user-image/52
 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[na:na]
 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106) ~[na:na]
 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[na:na]

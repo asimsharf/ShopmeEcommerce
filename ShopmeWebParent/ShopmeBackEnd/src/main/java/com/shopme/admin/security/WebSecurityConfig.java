@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -39,20 +40,7 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests()
-                .requestMatchers("/users/**").hasAuthority("Admin")
-                .requestMatchers("/settings/**").hasAuthority("Admin")
-                .requestMatchers("/categories/**").hasAnyAuthority("Admin", "Editor")
-                .anyRequest()
-                .authenticated()
-                .and()
-                .formLogin(login -> login.loginPage("/login")
-                        .usernameParameter("email")
-                        .defaultSuccessUrl("/", true)
-                        .permitAll())
-                .logout(logout -> logout.permitAll()).rememberMe(me -> me
-                .key("AbcDefgHijKlmnOpqrs_1234567890")
-                .tokenValiditySeconds(7 * 24 * 60 * 60));
+        http.authorizeHttpRequests().requestMatchers("/users/**").hasAuthority("Admin").requestMatchers("/settings/**").hasAuthority("Admin").requestMatchers("/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor").anyRequest().authenticated().and().formLogin(login -> login.loginPage("/login").usernameParameter("email").defaultSuccessUrl("/", true).permitAll()).logout(LogoutConfigurer::permitAll).rememberMe(me -> me.key("abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").tokenValiditySeconds(7 * 24 * 60 * 60));
         http.headers(headers -> headers.frameOptions().sameOrigin());
         return http.build();
     }

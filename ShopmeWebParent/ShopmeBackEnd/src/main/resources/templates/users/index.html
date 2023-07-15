@@ -50,7 +50,7 @@
                             <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','users')}" />
                         </th>
 
-                        <th class="text-center">Photos</th>
+                        <th class="text-center">Image</th>
 
                         <th class="hideable-column">
                             <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag','users')}" />
@@ -73,9 +73,9 @@
                         <td class="text-center align-middle hideable-column" th:text="${user.id}" style="width: 5%;">
                         </td>
                         <td class="text-center align-middle">
-                            <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.photos == null}"></span>
-                            <img alt="User Image" height="50" th:if="${user.photos != null}"
-                                th:src="@{${user.getPhotosImagePath}}" width="50" />
+                            <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.image == null}"></span>
+                            <img alt="User Image" height="50" th:if="${user.image != null}"
+                                th:src="@{${user.getImagePath}}" width="50" />
                         </td>
                         <th class="align-middle hideable-column" th:text="${user.email}" style="width: 5%;"></th>
                         <td class="align-middle" th:text="${user.firstName}" style="width: 20%;"></td>
@@ -110,9 +110,9 @@
         <div class="less-details">
             <div class="row m-1" th:each="user : ${listUsers}">
                 <div class="col-3">
-                    <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.photos == null}"></span>
-                    <img alt="User Image" height="80" th:if="${user.photos != null}"
-                        th:src="@{${user.getPhotosImagePath}}" width="70" />
+                    <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.image == null}"></span>
+                    <img alt="User Image" height="80" th:if="${user.image != null}"
+                        th:src="@{${user.getImagePath}}" width="70" />
                 </div>
                 <div class="col-9">
                     <div>[[${user.getFullName}]]</div>

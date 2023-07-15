@@ -76,9 +76,9 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" th:for="image">Image:</label>
                         <div class="col-sm-10">
-                            <input name="fileImage" th:field="*{photos}" type="hidden" />
+                            <input name="fileImage" th:field="*{image}" type="hidden" />
                             <input accept="image/png, image/jpeg" class="mb-3" name="fileImage" type="file" />
-                            <img alt="User Image" height="50" id="thumbnail" th:src="@{${user.getPhotosImagePath}}"
+                            <img alt="User Image" height="50" id="thumbnail" th:src="@{${user.getImagePath}}"
                                 width="50" />
                         </div>
                     </div>
