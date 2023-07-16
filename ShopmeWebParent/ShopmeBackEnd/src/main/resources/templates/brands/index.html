@@ -43,42 +43,44 @@
 
     <div class="full-details">
         <table class="table table-responsive-xl table-striped table-bordered table-hover">
+
             <thead class="thead-dark">
-            <tr>
+                <tr>
 
-                <th class="hideable-column">
-                <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','brands')}"/>
-                </th>
+                    <th class="hideable-column">
+                    <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','brands')}"></th>
 
-                <th class="text-center" style="width: 10%;">Image</th>
+                    <th class="text-center" style="width: 10%;">Image</th>
 
-                <th th:replace="~{fragments/column_link :: column_link('name', 'Name', 'none','brands')}"></th>
+                    <th th:replace="~{fragments/column_link :: column_link('name', 'Name', 'none','brands')}"></th>
 
-                <th class="hideable-column">Categories</th>
+                    <th class="hideable-column">Categories</th>
 
-                <th class="hideable-column"
-                    th:replace="~{fragments/column_link :: column_link('alias', 'Categories', 'tag','categories')}"/>
-                </th>
+                    <th class="hideable-column"
+                        th:replace="~{fragments/column_link :: column_link('alias', 'Categories', 'tag','categories')}"></th>
 
-                <th class="text-center">Actions</th>
+                    <th class="text-center">Actions</th>
 
-            </tr>
+                </tr>
             </thead>
+
             <tbody>
             <tr th:each="brand : ${listBrands}">
-                <td class="text-center align-middle hideable-column" th:text="${brand.id}"
-                    style="width: 5%;"></td>
+                <td class="text-center align-middle hideable-column" th:text="${brand.id}" style="width: 5%;"></td>
 
                 <td class="text-center align-middle">
-                            <span class="fas fa-user-secret fa-2xl icon-silver"
-                                  th:if="${brand.image == null}"></span>
-                    <img alt="User Image" height="50" th:if="${brand.image != null}"
-                         th:src="@{${brand.getImagePath}}" width="50"/>
+                    <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${brand.image == null}"></span>
+                    <img alt="User Image" height="50" th:if="${brand.image != null}" th:src="@{${brand.getImagePath}}"
+                         width="50"/>
                 </td>
 
                 <th class="align-middle hideable-column" th:text="${brand.name}" style="width: 20%;"></th>
 
-                <td class="align-middle" th:text="${brand.categories}" style="width: 20%;"></td>
+                <td>
+                    <th:block th:each="cat : ${brand.categories}">
+                        <span class="badge badge-secondary" th:text="${cat.name}"></span>
+                    </th:block>
+                </td>
 
                 <td class="text-center align-middle" style="width: 14%;">
                     <a class="btn btn-sm btn-outline-primary"

@@ -31,7 +31,7 @@ public class User {
     @Column(length = 128, nullable = false)
     private String image;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     private Set<Role> roles = new HashSet<>();
@@ -120,15 +120,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='"
-                + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", image='" + image
-                + '\'' + '}';
+        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", image='" + image + '\'' + '}';
     }
 
     @Transient
     public String getImagePath() {
-        if (id == null || image == null)
-            return "/ShopmeAdmin/images/default-user.png";
+        if (id == null || image == null) return "/ShopmeAdmin/images/default-user.png";
         return "/user-image/" + this.id + "/" + this.image;
     }
 

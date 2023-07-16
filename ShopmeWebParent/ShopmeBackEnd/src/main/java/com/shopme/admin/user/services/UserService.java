@@ -70,6 +70,7 @@ public class UserService {
         } else {
             encodePassword(user);
         }
+
         userRepo.save(user);
         return user;
     }

@@ -44,27 +44,28 @@
     <div class="full-details">
         <table class="table table-responsive-xl table-striped table-bordered table-hover">
             <thead class="thead-dark">
-            <tr>
 
-                <th class="hideable-column">
-                <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','categories')}"/>
-                </th>
+                <tr>
 
-                <th class="text-center" style="width: 10%;">Image</th>
+                    <th class="hideable-column">
 
-                <th th:replace="~{fragments/column_link :: column_link('name', 'Name', 'none','categories')}"></th>
+                    <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','categories')}"></th>
 
-                <th class="hideable-column">Categories</th>
+                    <th class="text-center" style="width: 10%;">Image</th>
 
-                <th class="hideable-column"
-                    th:replace="~{fragments/column_link :: column_link('alias', 'Alias', 'tag','categories')}"/>
-                </th>
+                    <th th:replace="~{fragments/column_link :: column_link('name', 'Name', 'none','categories')}"></th>
 
-                <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','categories')}"></th>
+                    <th class="hideable-column">Categories</th>
 
-                <th class="text-center">Actions</th>
+                    <th class="hideable-column"
+                        th:replace="~{fragments/column_link :: column_link('alias', 'Alias', 'tag','categories')}"></th>
 
-            </tr>
+                    <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','categories')}"></th>
+
+                    <th class="text-center">Actions</th>
+
+                </tr>
+
             </thead>
             <tbody>
             <tr th:each="category : ${listCategories}">

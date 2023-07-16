@@ -2,6 +2,7 @@ package com.shopme.common.entity;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -152,8 +153,7 @@ public class Category {
 
     @Transient
     public String getImagePath() {
-        if (this.id == null || this.image == null)
-            return "/images/image-thumbnail.png";
+        if (this.id == null || this.image == null) return "/images/image-thumbnail.png";
 
         return "/category-image/" + this.id + "/" + this.image;
     }

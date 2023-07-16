@@ -43,6 +43,7 @@ public class CategoryController {
         }
 
         CategoryPageInfo pageInfo = new CategoryPageInfo();
+
         List<Category> listCategories = service.listByPage(pageInfo, pageNum, sortDir, keyword);
 
         long startCount = (long) (pageNum - 1) * CategoryService.ROOT_CATEGORIES_PER_PAGE + 1;

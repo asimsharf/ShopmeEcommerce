@@ -43,31 +43,31 @@
 
         <div class="full-details">
             <table class="table table-responsive-xl table-striped table-bordered table-hover">
+
                 <thead class="thead-dark">
                     <tr>
 
                         <th class="hideable-column">
-                            <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','users')}" />
-                        </th>
+                        <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','users')}"></th>
 
                         <th class="text-center">Image</th>
 
                         <th class="hideable-column">
-                            <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag','users')}" />
-                        </th>
+                        <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag','users')}"></th>
 
-                        <th
-                            th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none','users')}">
-                        </th>
-                        <th
-                            th:replace="~{fragments/column_link :: column_link('lastName', 'Last Name', 'none','users')}">
-                        </th>
+                        <th th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none','users')}"> </th>
+
+                        <th th:replace="~{fragments/column_link :: column_link('lastName', 'Last Name', 'none','users')}"> </th>
+
                         <th th:replace="~{fragments/column_link :: column_link('roles', 'Roles', 'none','users')}"></th>
-                        <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','users')}">
-                        </th>
+
+                        <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','users')}"> </th>
+
                         <th class="text-center">Actions</th>
+
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr th:each="user : ${listUsers}">
                         <td class="text-center align-middle hideable-column" th:text="${user.id}" style="width: 5%;">
