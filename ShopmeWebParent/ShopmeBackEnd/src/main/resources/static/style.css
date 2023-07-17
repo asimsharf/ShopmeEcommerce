@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Greta Arabic';
+  src: url('/fonts/greta.ttf');
+}
+
+body {
+    font-family: 'Greta Arabic';
+}
+
 *.icon-white {
     color: white;
 }
