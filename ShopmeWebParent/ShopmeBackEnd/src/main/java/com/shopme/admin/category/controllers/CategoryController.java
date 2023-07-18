@@ -28,7 +28,7 @@ import com.shopme.common.exception.CategoryNotFoundException;
 @Controller
 public class CategoryController {
     @Autowired
-    private CategoryService service;
+    private CategoryService categorySservice;
 
     @GetMapping("/categories")
     public String listFirstPage(String sortDir, Model model) {
@@ -44,7 +44,7 @@ public class CategoryController {
 
         CategoryPageInfo pageInfo = new CategoryPageInfo();
 
-        List<Category> listCategories = service.listByPage(pageInfo, pageNum, sortDir, keyword);
+        List<Category> listCategories = categorySservice.listByPage(pageInfo, pageNum, sortDir, keyword);
 
         long startCount = (long) (pageNum - 1) * CategoryService.ROOT_CATEGORIES_PER_PAGE + 1;
         long endCount = startCount + CategoryService.ROOT_CATEGORIES_PER_PAGE - 1;
@@ -73,7 +73,7 @@ public class CategoryController {
 
     @GetMapping("/categories/new")
     public String newCategory(Model model) {
-        List<Category> listCategories = service.listCategoriesUsedInForm();
+        List<Category> listCategories = categorySservice.listCategoriesUsedInForm();
 
         model.addAttribute("category", new Category());
         model.addAttribute("listCategories", listCategories);
@@ -88,14 +88,14 @@ public class CategoryController {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
             category.setImage(fileName);
 
-            Category savedCategory = service.save(category);
+            Category savedCategory = categorySservice.save(category);
             String uploadDir = "category-image/" + savedCategory.getId();
 
             if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 
         } else {
-            service.save(category);
+            categorySservice.save(category);
         }
 
         ra.addFlashAttribute("message", "The category has been saved successfully.");
@@ -105,8 +105,8 @@ public class CategoryController {
     @GetMapping("/categories/edit/{id}")
     public String editCategory(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes ra) {
         try {
-            Category category = service.get(id);
-            List<Category> listCategories = service.listCategoriesUsedInForm();
+            Category category = categorySservice.get(id);
+            List<Category> listCategories = categorySservice.listCategoriesUsedInForm();
 
             model.addAttribute("category", category);
             model.addAttribute("listCategories", listCategories);
@@ -121,7 +121,7 @@ public class CategoryController {
 
     @GetMapping("/categories/{id}/enabled/{status}")
     public String updateCategoryEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
-        service.updateCategoryEnabledStatus(id, enabled);
+        categorySservice.updateCategoryEnabledStatus(id, enabled);
         String status = enabled ? "enabled" : "disabled";
         String message = "The category ID " + id + " has been " + status;
         redirectAttributes.addFlashAttribute("message", message);
@@ -132,7 +132,7 @@ public class CategoryController {
     @GetMapping("/categories/delete/{id}")
     public String deleteCategory(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {
-            service.delete(id);
+            categorySservice.delete(id);
             String categoryDir = "category-image/" + id;
             FileUploadUtil.removeDir(categoryDir);
 
@@ -146,7 +146,7 @@ public class CategoryController {
 
     @GetMapping("/categories/export/csv")
     public void exportToCSV(HttpServletResponse response) throws IOException {
-        List<Category> listCategories = service.listCategoriesUsedInForm();
+        List<Category> listCategories = categorySservice.listCategoriesUsedInForm();
         CategoryCsvExporter exporter = new CategoryCsvExporter();
         exporter.export(listCategories, response);
     }

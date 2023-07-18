@@ -90,6 +90,8 @@ mvn spring-boot:start # Start the project
 ![Create User](screenshots/3.png)
 ![Update User](screenshots/4.png)
 ![Remove User](screenshots/5.png)
+![Remove User](screenshots/6.png)
+![Remove User](screenshots/7.png)
 
 
 ## License

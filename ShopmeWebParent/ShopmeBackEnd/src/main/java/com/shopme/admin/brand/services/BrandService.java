@@ -3,6 +3,7 @@ package com.shopme.admin.brand.services;
 
 import java.util.List;
 
+
 import com.shopme.admin.brand.repositories.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,4 +28,7 @@ public class BrandService {
 
     }
 
+    public Brand save(Brand brand) {
+        return repo.save(brand);
+    }
 }

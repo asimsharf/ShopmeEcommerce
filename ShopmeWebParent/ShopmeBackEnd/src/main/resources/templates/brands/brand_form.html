@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <form enctype="multipart/form-data" method="post" style="max-width: 850px; margin: 0 auto;" th:action="@{/brand/save}" th:object="${brand}" onsubmit="return checkCategoryAndAliasUnique(this);">
+        <form enctype="multipart/form-data" method="post" style="max-width: 850px; margin: 0 auto;" th:action="@{/brands/save}" th:object="${brand}" onsubmit="">
 
             <input th:field="*{id}" type="hidden" />
 

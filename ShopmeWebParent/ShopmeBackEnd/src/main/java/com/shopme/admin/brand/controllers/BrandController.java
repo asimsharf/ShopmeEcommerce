@@ -4,15 +4,14 @@ import com.shopme.admin.brand.services.BrandService;
 import com.shopme.admin.category.services.CategoryService;
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.paging.PagingAndSortingParam;
+import com.shopme.admin.utils.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -53,8 +52,8 @@ public class BrandController {
         return "brands/brand_form";
     }
 
-    @GetMapping("/brands/save")
-    public String saveBrand(Brand brand, MultipartFile multipartFile, RedirectAttributes ra) throws IOException {
+    @PostMapping("/brands/save")
+    public String saveBrand(Brand brand, @RequestParam("fileImage") MultipartFile multipartFile, RedirectAttributes ra) throws IOException {
         if(!multipartFile.isEmpty()){
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
             brand.setImage(fileName);
@@ -62,7 +61,14 @@ public class BrandController {
             Brand savedBrand = brandService.save(brand);
             String uploadDir = "brand-image/" + savedBrand.getId();
 
+            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+
+        }else{
+            brandService.save(brand);
         }
+
+        ra.addFlashAttribute("message", "The Brand has been saved successfully.");
         return "redirect:/brands";
     }
 
