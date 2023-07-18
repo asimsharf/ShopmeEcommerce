@@ -154,6 +154,31 @@ function checkCategoryAndAliasUnique(form) {
     return false;
 }
 
+function checkBrandUnique(form) {
+    url = "/ShopmeAdmin/api/brands/check_unique";
+    brandName = $("[name='name']").val();
+    csrfToken = $("input[name='_csrf']").val();
+    theBrandId = $("[name='id']").val();
+    params = {
+        id: theBrandId,
+        name: brandName,
+        _csrf: csrfToken
+    };
+    $.post(url, params, function (res) {
+        if (res == "OK") {
+            form.submit();
+        } else if (res == "DuplicateName") {
+            showModalDialog("Warning", "The Brand name " + brandName + " is already in use ");
+        } else {
+            showModalDialog("Error", "Unknown response from server");
+        }
+    }).fail(function (xhr, status, error) {
+        showModalDialog("Error", "Could not connect to server: " + error);
+    });
+    return false;
+}
+
+
 function chosenCategories(){
     url = "[[@{/brands}]]";
 
