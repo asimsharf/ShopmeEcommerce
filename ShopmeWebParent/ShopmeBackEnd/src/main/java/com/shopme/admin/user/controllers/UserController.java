@@ -82,6 +82,7 @@ public class UserController {
 
     @PostMapping("/users/save")
     public String saveUser(User user, RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
+
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
             fileName = FileUploadUtil.renameFile(fileName);
@@ -95,7 +96,8 @@ public class UserController {
         }
 
         if (user.getImage().isEmpty()) user.setImage(null);
-        thRa.addFlashAttribute("message", "The Category has been saved successfully.");
+
+        thRa.addFlashAttribute("message", "The User has been saved successfully.");
         service.save(user);
 
         return getRedirectURLtoAffectedUser(user);

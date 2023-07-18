@@ -28,7 +28,7 @@ public class User {
     @Column(nullable = false)
     private boolean enabled;
 
-    @Column(length = 128, nullable = false)
+    @Column(length = 128)
     private String image;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
@@ -125,7 +125,7 @@ public class User {
 
     @Transient
     public String getImagePath() {
-        if (id == null || image == null) return "/ShopmeAdmin/images/default-user.png";
+        if (id == null || image == null) return "/images/default-user.png";
         return "/user-image/" + this.id + "/" + this.image;
     }
 

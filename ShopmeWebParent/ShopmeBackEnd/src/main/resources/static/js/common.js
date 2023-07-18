@@ -4,6 +4,7 @@ $(document).ready(function () {
     logoutLink();
     fileImage();
     linkDelete();
+    chosenCategories();
 });
 
 function showThumbnail(fileInput, img) {
@@ -151,4 +152,21 @@ function checkCategoryAndAliasUnique(form) {
         showModalDialog("Error", "Could not connect to server: " + error);
     });
     return false;
+}
+
+function chosenCategories(){
+    url = "[[@{/brands}]]";
+
+    $("#categories").change(function(){
+        $("#chosenCategories").empty();
+
+        $("#categories").children("option:selected").each(function(){
+            selectedCategory = $(this);
+            id = selectedCategory.val();
+            name = selectedCategory.text().replace(/-/g, "");
+
+            $("#chosenCategories").append("<span class='badge badge-secondary m-1'>" + name + "</span>");
+        })
+    })
+
 }

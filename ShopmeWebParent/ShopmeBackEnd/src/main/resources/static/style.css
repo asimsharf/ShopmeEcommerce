@@ -1,10 +1,11 @@
 @font-face {
   font-family: 'Greta Arabic';
-  src: url('/fonts/greta.ttf');
+  src: url(greta.ttf) format('truetype');
 }
 
 body {
-    font-family: 'Greta Arabic';
+    font-family: 'Greta Arabic', sans-serif;
+    color: dart;
 }
 
 *.icon-white {
@@ -44,6 +45,19 @@ body {
     color: #fff;
     background-color: #232937;
     border-color: #454d55;
+}
+
+.table .thead-dark td {
+    color: #fff;
+    background-color: #232937;
+    border-color: #454d55;
+}
+
+.table-responsive-xl {
+    display: inline-table!important;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 @media screen and (max-width: 768px) {
@@ -86,3 +100,4 @@ body {
     }
 
 }
+
