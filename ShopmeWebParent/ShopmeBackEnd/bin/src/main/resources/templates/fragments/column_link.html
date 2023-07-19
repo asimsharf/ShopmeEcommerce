@@ -1,0 +1,10 @@
+<th th:class="${fieldName == 'id' || fieldName == 'enabled' ? 'text-center' : ''}"
+    th:fragment="column_link(fieldName, columnLabel, removeTag, page)" th:remove="${removeTag}"
+    xmlns:th="http://www.w3.org/1999/xhtml">
+    <a class="text-white"
+        th:href="@{'/'+${page}+'/page/' + ${currentPage} + '?sortField='+ ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+        [[${columnLabel}]]
+    </a>
+    <span th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"
+        th:if="${sortField == fieldName}"></span>
+</th>

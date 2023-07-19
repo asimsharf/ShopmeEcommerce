@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div th:replace="~{fragments/page_head('Your Account Details')}"> </div>
+
+<body>
+    <div class="container-fluid">
+        <div th:replace="~{fragments/page_navbar}"> </div>
+
+        <div>
+            <form enctype="multipart/form-data" method="post" style="max-width: 600px; margin: 0 auto;"
+                th:action="@{/account/update}" th:object="${user}">
+
+                <div class="text-center">
+                    <h2>Your Account Details</h2>
+                </div>
+
+                <div class="alert alert-success alert-dismissible" th:if="${message != null}">
+                    <button class="close" data-dismiss="alert" type="button">&times;</button>
+                    <span th:text="${message}"></span>
+                </div>
+
+                <input th:field="*{id}" type="hidden" />
+
+                <div class="border border-secondary rounded p-3">
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="email">E-mail:</label>
+                        <div class="col-sm-10">
+                            <input autocomplete="email" class="form-control" name="email" readonly="readonly"
+                                th:field="*{email}" type="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="firstName">First Name:</label>
+                        <div class="col-sm-10">
+                            <input autocomplete="given-name" class="form-control" maxlength="45" minlength="2"
+                                name="firstName" required th:field="*{firstName}" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="lastName">Last Name:</label>
+                        <div class="col-sm-10">
+                            <input autocomplete="family-name" class="form-control" maxlength="20" minlength="8"
+                                name="lastName" required th:field="*{lastName}" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="password">Password:</label>
+                        <div class="col-sm-10">
+                            <input autocomplete="new-password" class="form-control" maxlength="20" minlength="8"
+                                name="password" oninput="checkPasswordMath(document.getElementById('confirmPassword'))"
+                                placeholder="Leave blank if you don't want to to change" th:field="*{password}"
+                                type="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="password">Confirm Password:</label>
+                        <div class="col-sm-10">
+                            <input autocomplete="new-password" class="form-control" minlength="8" name="confirmPassword"
+                                oninput="checkPasswordMath(this)" type="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="roles">Assigned Roles:</label>
+                        <div class="col-sm-10">
+                            <span> <b>[[${user.roles}]]</b></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" th:for="image">Image:</label>
+                        <div class="col-sm-10">
+                            <input name="fileImage" th:field="*{image}" type="hidden" />
+                            <input accept="image/png, image/jpeg" class="mb-3" name="fileImage" type="file" />
+                            <img alt="User Image" height="50" id="thumbnail" th:src="@{${user.getImagePath}}"
+                                width="50" />
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <input class="btn btn-primary m-3" type="submit" value="save">
+                        <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/users');" type="button"
+                            value="cancel">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div th:replace="~{fragments/page_footer}"> </div>
+
+    </div>
+
+</body>
+
+</html>

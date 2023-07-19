@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div th:replace="~{fragments/page_head(${pageTitle})}"> </div>
+
+<body>
+    <div class="container-fluid">
+        <div th:replace="~{fragments/page_navbar}"> </div>
+
+        <div>
+            <h2>Manage Categories | [[${pageTitle}]]</h2>
+        </div>
+
+        <div>
+            <form enctype="multipart/form-data" method="post" style="max-width: 850px; margin: 0 auto;"
+                th:action="@{/categories/save}" th:object="${category}"
+                onsubmit="return checkCategoryAndAliasUnique(this);">
+
+                <input th:field="*{id}" type="hidden" />
+
+                <div class="border border-secondary rounded p-3">
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" th:for="name">Category Name:</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="name" class="form-control" maxlength="28" minlength="8" name="name"
+                                required th:field="*{name}" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" th:for="alias">Alias:</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="alias" class="form-control" maxlength="45" minlength="2" name="alias"
+                                required th:field="*{alias}" type="text" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" th:for="parent">Parent Category:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="parent" th:field="*{parent}">
+                                <option value="0">-- Choose Parent Category --</option>
+                                <th:block th:each="category : ${listCategories}">
+                                    <option th:text="${category.name}" th:value="${category.id}"></option>
+                                </th:block>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" th:for="image">Image:</label>
+                        <div class="col-sm-9">
+                            <input name="image" th:field="*{image}" type="hidden" />
+                            <input accept="image/png, image/jpeg" class="mb-3" id="fileImage" name="fileImage"
+                                type="file" required />
+                            <img alt="Category Image" height="50" id="thumbnail" th:src="@{${category.getImagePath}}"
+                                width="50" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" th:for="enabled">Enabled:</label>
+                        <div class="col-sm-9">
+                            <label>
+                                <input class="m-2" th:field="*{enabled}" type="checkbox">
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center">
+                        <input class="btn btn-primary m-3" type="submit" value="save">
+                        <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/categories');"
+                            type="button" value="cancel" />
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="modalDialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modalTitle">Warning</h4>
+                        <button class="close" data-dismiss="modal" type="button">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" id="modalBody">Modal Body</div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="~{fragments/page_footer}"> </div>
+
+    </div>
+
+</body>
+
+</html>

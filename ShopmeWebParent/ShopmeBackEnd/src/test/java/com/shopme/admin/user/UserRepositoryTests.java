@@ -18,6 +18,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 @DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -31,15 +33,26 @@ public class UserRepositoryTests {
     private TestEntityManager entityManager;
 
     Integer theDefaultID = 48;
-    String theDefaultEmail = "test_" + System.currentTimeMillis() + '@' + "shopme.com";
     String theDefaultPassword = "12345678";
+
+    public String theDefaultEmail(){
+        String domain = "@shopme.com";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 5; i++) {
+            char c = (char) (random.nextInt(26) + 'a');
+            sb.append(c);
+        }
+        return  sb + domain;
+    }
 
     @Test
     public void testCreateNewUserWithOneRole() {
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(theDefaultPassword);
-        User user = new User(theDefaultEmail, password, "Admin", "Admin");
+        User user = new User(theDefaultEmail(), password, "Admin", "Admin");
+        user.setImage("null");
 
         Role roleAdmin = entityManager.find(Role.class, 1);
         user.setEnabled(true);
@@ -55,7 +68,7 @@ public class UserRepositoryTests {
     public void testCreateNewUserWithTwoRoles() {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(theDefaultPassword);
-        User user = new User(theDefaultEmail, password, "Ahmed", "Ali");
+        User user = new User(theDefaultEmail(), password, "Ahmed", "Ali");
 
         Role roleEditor = entityManager.find(Role.class, 3);
         Role roleAssistant = entityManager.find(Role.class, 4);
