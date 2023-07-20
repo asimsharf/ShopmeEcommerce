@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
 
 <div th:replace="~{fragments/page_head(${pageTitle})}"> </div>
 
@@ -7,8 +7,8 @@
     <div class="container-fluid">
         <div th:replace="~{fragments/page_navbar}"> </div>
 
-        <div>
-            <h2>Manage Categories | [[${pageTitle}]]</h2>
+        <div class="table-header mx-2 my-2">
+            <h2 class="table-header-title mx-2 my-2">Manage Categories | [[${pageTitle}]]</h2>
         </div>
 
         <div>

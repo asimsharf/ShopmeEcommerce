@@ -1,5 +1,7 @@
-
-
+@font-face {
+  font-family: 'Greta Arabic';
+  src: url(greta.ttf) format('truetype');
+}
 /* Error Page */
 .error .clip .shadow {
     height: 180px;

@@ -2,10 +2,18 @@
   font-family: 'Greta Arabic';
   src: url(greta.ttf) format('truetype');
 }
-
 body {
-    font-family: 'Greta Arabic', sans-serif;
-    color: dart;
+    margin: 0;
+    font-family: 'Greta Arabic';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+     text-align: right!important;
+    background-color: #fff;
+}
+body {
+    font-family: 'Greta Arabic';
 }
 
 *.icon-white {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
 
 <div th:replace="~{fragments/page_head('Users | Shopme Admin')}"> </div>
 
@@ -8,23 +8,18 @@
 
         <div th:replace="~{fragments/page_navbar}"> </div>
 
-        <div>
-            <h2>Manage Users</h2>
-            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/users/new}"><i
-                    class="fas fa-square-plus fa-bounce"></i></a>
-            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/users/export/csv}"><i
-                    class="fas fa-file-csv"></i></a>
-            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/users/export/excel}"><i
-                    class="fas fa-file-excel"></i></a>
-            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/users/export/pdf}"><i
-                    class="fas fa-file-pdf"></i></a>
+        <div class="mx-2 my-2">
+            <h2 class="mx-2 my-2">إدارة المستخدمين</h2>
+            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/users/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
+            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/users/export/csv}"><i class="fas fa-file-csv"></i></a>
+            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/users/export/excel}"><i class="fas fa-file-excel"></i></a>
+            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/users/export/pdf}"><i class="fas fa-file-pdf"></i></a>
 
             <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/users/page/1}">
                 <input name="sortField" th:value="${sortField}" type="hidden">
                 <input name="sortDir" th:value="${sortDir}" type="hidden">
                 <label class="input-group">
-                    <input class="form-control" name="keyword" placeholder="Search by email or name" required
-                        th:value="${keyword}" type="text">
+                    <input class="form-control" name="keyword" placeholder="إبحث بلإيميل أو الإسم" th:value="${keyword}" type="text" required>
                 </label>
                 <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
                     <i class="fas fa-search"></i>
@@ -46,25 +41,16 @@
 
                 <thead class="thead-dark">
                     <tr>
-
                         <th class="hideable-column">
-                        <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','users')}"></th>
-
-                        <th class="text-center">Image</th>
-
+                        <th th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','users')}"></th>
+                        <th class="text-center" style="width: 10%;">الصورة</th>
                         <th class="hideable-column">
-                        <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag','users')}"></th>
-
-                        <th th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none','users')}"> </th>
-
-                        <th th:replace="~{fragments/column_link :: column_link('lastName', 'Last Name', 'none','users')}"> </th>
-
-                        <th th:replace="~{fragments/column_link :: column_link('roles', 'Roles', 'none','users')}"></th>
-
-                        <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','users')}"> </th>
-
-                        <th class="text-center">Actions</th>
-
+                        <th th:replace="~{fragments/column_link :: column_link('email', 'البريد الإلكتروني', 'tag','users')}"></th>
+                        <th th:replace="~{fragments/column_link :: column_link('firstName', 'الإسم الإول', 'none','users')}"> </th>
+                        <th th:replace="~{fragments/column_link :: column_link('lastName', 'إسم العائلة', 'none','users')}"> </th>
+                        <th th:replace="~{fragments/column_link :: column_link('roles', 'الادوار', 'none','users')}"></th>
+                        <th th:replace="~{fragments/column_link :: column_link('enabled', 'الحالة', 'none','users')}"> </th>
+                        <th class="text-center">الخيارات</th>
                     </tr>
                 </thead>
 
@@ -74,31 +60,21 @@
                         </td>
                         <td class="text-center align-middle">
                             <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.image == null}"></span>
-                            <img alt="User Image" height="50" th:if="${user.image != null}"
-                                th:src="@{${user.getImagePath}}" width="50" />
+                            <img alt="User Image" height="50" th:if="${user.image != null}" th:src="@{${user.getImagePath}}" width="50" />
                         </td>
                         <th class="align-middle hideable-column" th:text="${user.email}" style="width: 5%;"></th>
                         <td class="align-middle" th:text="${user.firstName}" style="width: 20%;"></td>
                         <td class="align-middle" th:text="${user.lastName}" style="width: 20%;"></td>
                         <td class="align-middle" th:text="${user.roles}" style="width: 20%;"></td>
                         <td class="text-center align-middle" style="width: 14%;">
-                            <a class="btn btn-sm btn-outline-success"
-                                th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}"
-                                th:if="${user.enabled}" title="Click to disable"><i
-                                    class="fas fa-check-circle fa-lg fa-fade"></i></a>
-                            <a class="btn btn-sm btn-outline-danger"
-                                th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}"
-                                th:if="${!user.enabled}" title="Click to enable"><i
-                                    class="fas fa-times-circle fa-lg fa-fade"></i></a>
+                            <a class="btn btn-sm btn-outline-success" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}" th:if="${user.enabled}" title="Click to disable"><i class="fas fa-check-circle fa-lg fa-fade"></i></a>
+                            <a class="btn btn-sm btn-outline-danger" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}" th:if="${!user.enabled}" title="Click to enable"><i class="fas fa-times-circle fa-lg fa-fade"></i></a>
                         </td>
                         <td class="text-center align-middle" style="width: 14%;">
-                            <a class="btn btn-sm btn-outline-primary" th:href="@{/users/edit/{id}(id=${user.id})}"
-                                title="Click to edit">
+                            <a class="btn btn-sm btn-outline-primary" th:href="@{/users/edit/{id}(id=${user.id})}" title="Click to edit">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-sm btn-outline-danger link-delete"
-                                th:href="@{/users/delete/{id}(id=${user.id})}" th:theID="${user.id}"
-                                title="Click to delete">
+                            <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/users/delete/{id}(id=${user.id})}" th:theID="${user.id}" title="Click to delete">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
@@ -111,33 +87,27 @@
             <div class="row m-1" th:each="user : ${listUsers}">
                 <div class="col-3">
                     <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.image == null}"></span>
-                    <img alt="User Image" height="80" th:if="${user.image != null}"
-                        th:src="@{${user.getImagePath}}" width="70" />
+                    <img alt="User Image" height="80" th:if="${user.image != null}" th:src="@{${user.getImagePath}}" width="70" />
                 </div>
                 <div class="col-9">
                     <div>[[${user.getFullName}]]</div>
                     <div>[[${user.roles}]]</div>
                     <div class="mt-2">
-                        <a class="btn btn-sm btn-outline-primary" th:href="@{/users/edit/{id}(id=${user.id})}"
-                            title="Click to edit">
+                        <a class="btn btn-sm btn-outline-primary" th:href="@{/users/edit/{id}(id=${user.id})}" title="Click to edit">
                             <i class="fas fa-edit"></i>
                         </a>
 
-                        <a class="btn btn-sm btn-outline-danger link-delete"
-                            th:href="@{/users/delete/{id}(id=${user.id})}" th:theID="${user.id}"
-                            title="Click to delete">
+                        <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/users/delete/{id}(id=${user.id})}" th:theID="${user.id}" title="Click to delete">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                         &nbsp;
-                        <a class="btn btn-sm btn-outline-success"
-                            th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}"
-                            th:if="${user.enabled}" title="Click to disable"><i
-                                class="fas fa-check-circle fa-lg fa-fade"></i></a>
+                        <a class="btn btn-sm btn-outline-success" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}" th:if="${user.enabled}" title="Click to disable">
+                            <i class="fas fa-check-circle fa-lg fa-fade"></i>
+                        </a>
                         &nbsp;
-                        <a class="btn btn-sm btn-outline-danger"
-                            th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}"
-                            th:if="${!user.enabled}" title="Click to enable"><i
-                                class="fas fa-times-circle fa-lg fa-fade"></i></a>
+                        <a class="btn btn-sm btn-outline-danger" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}" th:if="${!user.enabled}" title="Click to enable">
+                            <i class="fas fa-times-circle fa-lg fa-fade"></i>
+                        </a>
                     </div>
                 </div>
                 <div>&nbsp;</div>
@@ -149,38 +119,32 @@
             <nav>
                 <ul class="pagination justify-content-center flex-wrap">
                     <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link"
-                            th:href="@{'/users/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">First</a>
+                        <a class="page-link" th:href="@{'/users/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الإول</a>
                     </li>
                     <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link"
-                            th:href="@{'/users/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Previous</a>
+                        <a class="page-link" th:href="@{'/users/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاخير</a>
                     </li>
 
-                    <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
-                        th:each="i : ${#numbers.sequence(1, totalPage)}">
-                        <a th:href="@{'/users/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"
-                            class="page-link">[[${i}]]</a>
+                    <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" th:each="i : ${#numbers.sequence(1, totalPage)}">
+                        <a th:href="@{'/users/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">[[${i}]]</a>
                     </li>
 
                     <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link"
-                            th:href="@{'/users/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Next</a>
+                        <a class="page-link" th:href="@{'/users/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">التالي</a>
                     </li>
 
                     <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link"
-                            th:href="@{'/users/page/' + ${totalPage} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Last</a>
+                        <a class="page-link" th:href="@{'/users/page/' + ${totalPage} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">السابق</a>
                     </li>
 
                 </ul>
             </nav>
         </div>
         <div class="text-center m-1" th:if="${totalItems > 0}">
-            <span>Showing users # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+            <span>عرض المستخدمين # [[${startCount}]] من [[${endCount}]] الى [[${totalItems}]]</span>
         </div>
         <div class="text-center m-1" th:unless="${totalItems > 0}">
-            <span>No users found</span>
+            <span>لا يوجد مستخدمين</span>
         </div>
 
         <!-- The Modal -->

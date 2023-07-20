@@ -52,7 +52,6 @@ public class UserRepositoryTests {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(theDefaultPassword);
         User user = new User(theDefaultEmail(), password, "Admin", "Admin");
-        user.setImage("null");
 
         Role roleAdmin = entityManager.find(Role.class, 1);
         user.setEnabled(true);
