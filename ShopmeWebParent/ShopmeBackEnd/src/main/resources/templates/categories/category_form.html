@@ -8,7 +8,7 @@
         <div th:replace="~{fragments/page_navbar}"> </div>
 
         <div class="table-header mx-2 my-2">
-            <h2 class="table-header-title mx-2 my-2">Manage Categories | [[${pageTitle}]]</h2>
+            <h2 class="table-header-title mx-2 my-2">إدارة الإصناف | [[${pageTitle}]]</h2>
         </div>
 
         <div>
@@ -21,7 +21,7 @@
                 <div class="border border-secondary rounded p-3">
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" th:for="name">Category Name:</label>
+                        <label class="col-sm-3 col-form-label text-left" th:for="name">إسم الصنف:</label>
                         <div class="col-sm-9">
                             <input autocomplete="name" class="form-control" maxlength="28" minlength="8" name="name"
                                 required th:field="*{name}" type="text" />
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" th:for="alias">Alias:</label>
+                        <label class="col-sm-3 col-form-label text-left" th:for="alias">الإسم المستعار:</label>
                         <div class="col-sm-9">
                             <input autocomplete="alias" class="form-control" maxlength="45" minlength="2" name="alias"
                                 required th:field="*{alias}" type="text" />
@@ -38,10 +38,10 @@
 
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" th:for="parent">Parent Category:</label>
+                        <label class="col-sm-3 col-form-label text-left" th:for="parent">الصنف الرئيسي:</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="parent" th:field="*{parent}">
-                                <option value="0">-- Choose Parent Category --</option>
+                                <option value="0">-- إختر الصنف الرئيسي --</option>
                                 <th:block th:each="category : ${listCategories}">
                                     <option th:text="${category.name}" th:value="${category.id}"></option>
                                 </th:block>
@@ -51,7 +51,7 @@
 
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" th:for="image">Image:</label>
+                        <label class="col-sm-3 col-form-label text-left" th:for="image">الصورة:</label>
                         <div class="col-sm-9">
                             <input name="image" th:field="*{image}" type="hidden" />
                             <input accept="image/png, image/jpeg" class="mb-3" id="fileImage" name="fileImage"
@@ -63,7 +63,7 @@
 
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" th:for="enabled">Enabled:</label>
+                        <label class="col-sm-3 col-form-label text-left" th:for="enabled">الحالة:</label>
                         <div class="col-sm-9">
                             <label>
                                 <input class="m-2" th:field="*{enabled}" type="checkbox">
@@ -73,9 +73,9 @@
 
 
                     <div class="text-center">
-                        <input class="btn btn-primary m-3" type="submit" value="save">
+                        <input class="btn btn-primary m-3" type="submit" value="حفظ">
                         <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/categories');"
-                            type="button" value="cancel" />
+                            type="button" value="إلغاء" />
                     </div>
 
                 </div>

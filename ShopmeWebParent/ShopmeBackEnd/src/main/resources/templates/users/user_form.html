@@ -8,7 +8,7 @@
         <div th:replace="~{fragments/page_navbar}"> </div>
 
         <div class="table-header mx-2 my-2">
-            <h2 class="table-header-title mx-2 my-2">Manage Users | [[${pageTitle}]]</h2>
+            <h2 class="table-header-title mx-2 my-2">إداة المستخدمين | [[${pageTitle}]]</h2>
         </div>
 
         <div>
@@ -20,7 +20,7 @@
                 <div class="border border-secondary rounded p-3">
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="email">E-mail:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="email">البريد الإلكتروني:</label>
                         <div class="col-sm-10">
                             <input autocomplete="email" class="form-control" maxlength="28" minlength="8" name="email"
                                 required th:field="*{email}" type="email" />
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="firstName">First Name:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="firstName">الإسم الأول:</label>
                         <div class="col-sm-10">
                             <input autocomplete="given-name" class="form-control" maxlength="45" minlength="2"
                                 name="firstName" required th:field="*{firstName}" type="text" />
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="lastName">Last Name:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="lastName">الإسم الأخير:</label>
                         <div class="col-sm-10">
                             <input autocomplete="family-name" class="form-control" maxlength="45" minlength="2"
                                 name="lastName" required th:field="*{lastName}" type="text" />
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="password">Password:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="password">كلمة المرور:</label>
                         <div class="col-sm-10">
 
                             <!-- Create New Password -->
@@ -54,7 +54,7 @@
                                     type="password" />
                             </label>
                             <small class="form-text text-muted" th:unless="${user.id}">
-                                Enter a password with at least 8 characters.
+                                أدخل كلمة مرور تتكون على الأقل من 8 أحرف.
                             </small>
 
 
@@ -64,14 +64,14 @@
                                     name="password" th:field="*{password}" th:if="${user.id}" type="password" />
                             </label>
                             <small class="form-text text-muted" th:if="${user.id}">
-                                Leave it blank if you don't want to change the password.
+                                اتركها فارغة إذا لم ترغب في تغيير كلمة المرور.
                             </small>
 
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="roles">Roles:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="roles">الأدوار:</label>
                         <div class="col-sm-10">
                             <th:block class="form-check" th:each="role : ${listRoles}">
                                 <label>
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="enabled">Enabled:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="enabled">الحالة:</label>
                         <div class="col-sm-10">
                             <label>
                                 <input class="m-2" th:field="*{enabled}" type="checkbox">
@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="image">Image:</label>
+                        <label class="col-sm-2 col-form-label text-left" th:for="image">الصورة:</label>
                         <div class="col-sm-10">
                             <input name="fileImage" th:field="*{image}" type="hidden" />
                             <input accept="image/png, image/jpeg" class="mb-3" name="fileImage" type="file" />
@@ -105,9 +105,9 @@
                     </div>
 
                     <div class="text-center">
-                        <input class="btn btn-primary m-3" type="submit" value="save">
+                        <input class="btn btn-primary m-3" type="submit" value="حفظ">
                         <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/users');" type="button"
-                            value="cancel">
+                            value="إلغاء">
                     </div>
 
                 </div>
@@ -130,7 +130,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                        <button class="btn btn-danger" data-dismiss="modal" type="button">إغلاق</button>
                     </div>
 
                 </div>
