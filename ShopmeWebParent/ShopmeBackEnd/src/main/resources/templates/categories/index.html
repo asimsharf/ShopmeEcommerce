@@ -10,10 +10,18 @@
 
     <div class="mx-2 my-2">
         <h2 class="mx-2 my-2">إدارة الاصناف</h2>
-        <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/categories/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
-        <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/categories/export/csv}"><i class="fas fa-file-csv"></i></a>
-        <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/categories/export/excel}"><i class="fas fa-file-excel"></i></a>
-        <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/categories/export/pdf}"><i class="fas fa-file-pdf"></i></a>
+        <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/categories/new}">
+            <i class="fas fa-square-plus fa-bounce"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/categories/export/csv}">
+            <i class="fas fa-file-csv"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/categories/export/excel}">
+            <i class="fas fa-file-excel"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/categories/export/pdf}">
+            <i class="fas fa-file-pdf"></i>
+        </a>
 
         <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/categories/page/1}">
             <input name="sortField" th:value="${sortField}" type="hidden">
@@ -66,8 +74,12 @@
                 <td class="align-middle" th:text="${category.alias}" style="width: 20%;"></td>
 
                 <td class="text-center align-middle" style="width: 14%;">
-                    <a class="btn btn-sm btn-outline-success" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}" th:if="${category.enabled}" title="Click to disable"><i class="fas fa-check-circle fa-lg fa-fade"></i></a>
-                    <a class="btn btn-sm btn-outline-danger" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}" th:if="${!category.enabled}" title="Click to enable"><i class="fas fa-times-circle fa-lg fa-fade"></i></a>
+                    <a class="btn btn-sm btn-outline-success" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}" th:if="${category.enabled}" title="Click to disable">
+                        <i class="fas fa-check-circle fa-lg fa-fade"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-danger" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}" th:if="${!category.enabled}" title="Click to enable">
+                        <i class="fas fa-times-circle fa-lg fa-fade"></i>
+                    </a>
                 </td>
 
                 <td class="text-center align-middle" style="width: 14%;">
@@ -102,9 +114,13 @@
                         <i class="fas fa-trash-alt"></i>
                     </a>
                     &nbsp;
-                    <a class="btn btn-sm btn-outline-success" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}" th:if="${category.enabled}" title="Click to disable"><i class="fas fa-check-circle fa-lg fa-fade"></i></a>
+                    <a class="btn btn-sm btn-outline-success" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}" th:if="${category.enabled}" title="Click to disable">
+                        <i class="fas fa-check-circle fa-lg fa-fade"></i>
+                    </a>
                     &nbsp;
-                    <a class="btn btn-sm btn-outline-danger" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}" th:if="${!category.enabled}" title="Click to enable"><i class="fas fa-times-circle fa-lg fa-fade"></i></a>
+                    <a class="btn btn-sm btn-outline-danger" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}" th:if="${!category.enabled}" title="Click to enable">
+                        <i class="fas fa-times-circle fa-lg fa-fade"></i>
+                    </a>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -112,56 +128,18 @@
         </div>
     </div>
 
+    <div th:replace="~{fragments/page_pagination :: page_pagination(${totalItems}, ${currentPage}, 'categories', ${sortField}, ${sortDir}, ${keyword}, ${totalPages}, ${endCount}, ${startCount})}"></div>
 
-    <div th:if="${totalItems > 0}">
-        <nav>
-            <ul class="pagination justify-content-center flex-wrap">
-                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                    <a class="page-link" th:href="@{'/categories/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاول</a>
-                </li>
-                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                    <a class="page-link" th:href="@{'/categories/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">السابق</a>
-                </li>
-
-                <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" th:each="i : ${#numbers.sequence(1, totalPages)}">
-                    <a th:href="@{'/categories/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">[[${i}]]</a>
-                </li>
-
-                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                    <a class="page-link" th:href="@{'/categories/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">التالي</a>
-                </li>
-
-                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                    <a class="page-link" th:href="@{'/categories/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاخير</a>
-                </li>
-
-            </ul>
-        </nav>
-    </div>
-    <div class="text-center m-1" th:if="${totalItems > 0}">
-        <span>عرض الاصناف # [[${startCount}]] الى [[${endCount}]] من [[${totalItems}]]</span>
-    </div>
-    <div class="text-center m-1" th:unless="${totalItems > 0}">
-        <span>لا توجد اصناف</span>
-    </div>
-
-    <!-- The Modal -->
     <div class="modal" id="confirmModal">
         <div class="modal-dialog">
             <div class="modal-content">
-
-                <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Confirmation</h4>
                     <button class="close" data-dismiss="modal" type="button">&times;</button>
                 </div>
-
-                <!-- Modal body -->
                 <div class="modal-body" id="modalBody">
                     <span id="confirmText"></span>
                 </div>
-
-                <!-- Modal footer -->
                 <div class="modal-footer">
                     <a class="btn btn-success" href="" id="yesButton">Yes</a>
                     <button class="btn btn-danger" data-dismiss="modal" type="button">No</button>

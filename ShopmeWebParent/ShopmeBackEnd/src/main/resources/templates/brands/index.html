@@ -8,10 +8,18 @@
 
         <div class="mx-2 my-2">
             <h2 class="mx-2 my-2">إدارة الماركات</h2>
-            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/brands/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
-            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/brands/export/csv}"><i class="fas fa-file-csv"></i></a>
-            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/brands/export/excel}"><i class="fas fa-file-excel"></i></a>
-            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/brands/export/pdf}"><i class="fas fa-file-pdf"></i></a>
+            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/brands/new}">
+                <i class="fas fa-square-plus fa-bounce"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/brands/export/csv}">
+                <i class="fas fa-file-csv"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/brands/export/excel}">
+                <i class="fas fa-file-excel"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/brands/export/pdf}">
+                <i class="fas fa-file-pdf"></i>
+            </a>
 
             <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/brands/page/1}">
                 <input name="sortField" th:value="${sortField}" type="hidden" />
@@ -103,39 +111,7 @@
             </div>
         </div>
 
-        <div th:if="${totalItems > 0}">
-            <nav>
-                <ul class="pagination justify-content-center flex-wrap">
-                    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/brands/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاول</a>
-                    </li>
-
-                    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/brands/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">السابق</a>
-                    </li>
-
-                    <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" th:each="i : ${#numbers.sequence(1, totalPages)}">
-                        <a th:href="@{'/brands/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">[[${i}]]</a>
-                    </li>
-
-                    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/brands/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">التالي</a>
-                    </li>
-
-                    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/brands/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاخير</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="text-center m-1" th:if="${totalItems > 0}">
-            <span>عرض الماركات # [[${startCount}]] الى [[${endCount}]] من [[${totalItems}]]</span>
-        </div>
-
-        <div class="text-center m-1" th:unless="${totalItems > 0}">
-            <span>لا توجد ماركات</span>
-        </div>
+        <div th:replace="~{fragments/page_pagination :: page_pagination(${totalItems}, ${currentPage}, 'brands', ${sortField}, ${sortDir}, ${keyword}, ${totalPages}, ${endCount}, ${startCount})}"></div>
 
         <div class="modal" id="confirmModal">
             <div class="modal-dialog">

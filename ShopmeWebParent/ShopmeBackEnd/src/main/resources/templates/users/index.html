@@ -10,10 +10,18 @@
 
         <div class="mx-2 my-2">
             <h2 class="mx-2 my-2">إدارة المستخدمين</h2>
-            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/users/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
-            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/users/export/csv}"><i class="fas fa-file-csv"></i></a>
-            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/users/export/excel}"><i class="fas fa-file-excel"></i></a>
-            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/users/export/pdf}"><i class="fas fa-file-pdf"></i></a>
+            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/users/new}">
+                <i class="fas fa-square-plus fa-bounce"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/users/export/csv}">
+                <i class="fas fa-file-csv"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/users/export/excel}">
+                <i class="fas fa-file-excel"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/users/export/pdf}">
+                <i class="fas fa-file-pdf"></i>
+            </a>
 
             <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/users/page/1}">
                 <input name="sortField" th:value="${sortField}" type="hidden">
@@ -67,8 +75,12 @@
                         <td class="align-middle" th:text="${user.lastName}" style="width: 20%;"></td>
                         <td class="align-middle" th:text="${user.roles}" style="width: 20%;"></td>
                         <td class="text-center align-middle" style="width: 14%;">
-                            <a class="btn btn-sm btn-outline-success" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}" th:if="${user.enabled}" title="Click to disable"><i class="fas fa-check-circle fa-lg fa-fade"></i></a>
-                            <a class="btn btn-sm btn-outline-danger" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}" th:if="${!user.enabled}" title="Click to enable"><i class="fas fa-times-circle fa-lg fa-fade"></i></a>
+                            <a class="btn btn-sm btn-outline-success" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${false})}" th:if="${user.enabled}" title="Click to disable">
+                                <i class="fas fa-check-circle fa-lg fa-fade"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-danger" th:href="@{/users/{id}/enabled/{status}(id=${user.id}, status=${true})}" th:if="${!user.enabled}" title="Click to enable">
+                                <i class="fas fa-times-circle fa-lg fa-fade"></i>
+                            </a>
                         </td>
                         <td class="text-center align-middle" style="width: 14%;">
                             <a class="btn btn-sm btn-outline-primary" th:href="@{/users/edit/{id}(id=${user.id})}" title="Click to edit">
@@ -115,37 +127,7 @@
             </div>
         </div>
 
-        <div th:if="${totalItems > 0}">
-            <nav>
-                <ul class="pagination justify-content-center flex-wrap">
-                    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/users/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الإول</a>
-                    </li>
-                    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/users/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاخير</a>
-                    </li>
-
-                    <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" th:each="i : ${#numbers.sequence(1, totalPage)}">
-                        <a th:href="@{'/users/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">[[${i}]]</a>
-                    </li>
-
-                    <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/users/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">التالي</a>
-                    </li>
-
-                    <li th:class="${currentPage < totalPage ? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" th:href="@{'/users/page/' + ${totalPage} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">السابق</a>
-                    </li>
-
-                </ul>
-            </nav>
-        </div>
-        <div class="text-center m-1" th:if="${totalItems > 0}">
-            <span>عرض المستخدمين # [[${startCount}]] من [[${endCount}]] الى [[${totalItems}]]</span>
-        </div>
-        <div class="text-center m-1" th:unless="${totalItems > 0}">
-            <span>لا يوجد مستخدمين</span>
-        </div>
+        <div th:replace="~{fragments/page_pagination :: page_pagination(${totalItems}, ${currentPage}, 'users', ${sortField}, ${sortDir}, ${keyword}, ${totalPages}, ${endCount}, ${startCount})}"></div>
 
         <!-- The Modal -->
         <div class="modal" id="confirmModal">
