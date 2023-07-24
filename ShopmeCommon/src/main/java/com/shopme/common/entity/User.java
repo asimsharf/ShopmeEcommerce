@@ -25,7 +25,6 @@ public class User {
     @Column(name = "last_name", length = 45, nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
     private boolean enabled;
 
     @Column(length = 128)

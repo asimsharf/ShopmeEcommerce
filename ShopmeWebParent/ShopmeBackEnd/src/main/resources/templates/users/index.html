@@ -8,8 +8,10 @@
 
         <div th:replace="~{fragments/page_navbar}"> </div>
 
-        <div class="mx-2 my-2">
-            <h2 class="mx-2 my-2">إدارة المستخدمين</h2>
+        <h2 class="mx-2 my-1">إدارة المستخدمين</h2>
+
+        <div class="col-6">
+
             <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/users/new}">
                 <i class="fas fa-square-plus fa-bounce"></i>
             </a>
@@ -22,8 +24,10 @@
             <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/users/export/pdf}">
                 <i class="fas fa-file-pdf"></i>
             </a>
+        </div>
 
-            <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/users/page/1}">
+        <div class="col-6">
+            <form class="form-inline" method="GET" th:action="@{/users/page/1}">
                 <input name="sortField" th:value="${sortField}" type="hidden">
                 <input name="sortDir" th:value="${sortDir}" type="hidden">
                 <label class="input-group">
@@ -33,7 +37,7 @@
                     <i class="fas fa-search"></i>
                 </button>
                 <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/users')"
-                    type="button">
+                        type="button">
                     <i class="fas fa-sync"></i>
                 </button>
             </form>
@@ -154,7 +158,6 @@
                 </div>
             </div>
         </div>
-
 
         <div th:replace="~{fragments/page_footer}"> </div>
 

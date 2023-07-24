@@ -21,7 +21,7 @@ public class Category {
 
     @Column(length = 128, nullable = false)
     private String image;
-    @Column(nullable = false)
+
     private boolean enabled;
 
     @Column(name = "all_parent_ids", length = 256, nullable = true)
