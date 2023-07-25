@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="~{fragments/page_head('Categories | Shopme Admin')}"></div>
+<div th:replace="~{fragments/page_head :: page_head('Categories | Shopme Admin')}"></div>
 
 <body>
-    <div class="container-fluid">
 
-    <div th:replace="~{fragments/page_navbar}"></div>
+<div th:replace="~{fragments/page_navbar}"></div>
+
+<div class="container-fluid">
 
     <div class="mx-2 my-2">
         <h2 class="mx-2 my-2">إدارة الاصناف</h2>
@@ -27,12 +28,14 @@
             <input name="sortField" th:value="${sortField}" type="hidden">
             <input name="sortDir" th:value="${sortDir}" type="hidden">
             <label class="input-group">
-                <input class="form-control" name="keyword" placeholder="البحث بالاسم " th:value="${keyword}" type="text" required />
+                <input class="form-control" name="keyword" placeholder="البحث بالاسم " th:value="${keyword}" type="text"
+                       required/>
             </label>
             <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
                 <i class="fas fa-search"></i>
             </button>
-            <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/categories')" type="button">
+            <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/categories')"
+                    type="button">
                 <i class="fas fa-sync"></i>
             </button>
         </form>
@@ -47,17 +50,18 @@
         <table class="table table-responsive-xl table-striped table-bordered table-hover">
 
             <thead class="thead-dark">
-                <tr>
-                    <th class="hideable-column">
-                    <th th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','categories')}"></th>
-                    <th class="text-center" style="width: 10%;">الصورة</th>
-                    <th th:replace="~{fragments/column_link :: column_link('name', 'إسم الصنف', 'none','categories')}"></th>
-                    <th class="hideable-column">
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('alias', 'الإسم المستعار', 'tag','categories')}"></th>
-                    <th th:replace="~{fragments/column_link :: column_link('enabled', 'الحالة', 'none','categories')}"></th>
-                    <th class="text-center">الخيارات</th>
+            <tr>
+                <th class="hideable-column">
+                <th th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','categories')}"></th>
+                <th class="text-center" style="width: 10%;">الصورة</th>
+                <th th:replace="~{fragments/column_link :: column_link('name', 'إسم الصنف', 'none','categories')}"></th>
+                <th class="hideable-column">
+                <th class="hideable-column"
+                    th:replace="~{fragments/column_link :: column_link('alias', 'الإسم المستعار', 'tag','categories')}"></th>
+                <th th:replace="~{fragments/column_link :: column_link('enabled', 'الحالة', 'none','categories')}"></th>
+                <th class="text-center">الخيارات</th>
 
-                </tr>
+            </tr>
             </thead>
 
             <tbody>
@@ -66,7 +70,8 @@
 
                 <td class="text-center align-middle">
                     <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${category.image == null}"></span>
-                    <img alt="User Image" height="50" th:if="${category.image != null}" th:src="@{${category.getImagePath}}" width="50"/>
+                    <img alt="User Image" height="50" th:if="${category.image != null}"
+                         th:src="@{${category.getImagePath}}" width="50"/>
                 </td>
 
                 <th class="align-middle hideable-column" th:text="${category.name}" style="width: 20%;"></th>
@@ -74,19 +79,26 @@
                 <td class="align-middle" th:text="${category.alias}" style="width: 20%;"></td>
 
                 <td class="text-center align-middle" style="width: 14%;">
-                    <a class="btn btn-sm btn-outline-success" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}" th:if="${category.enabled}" title="Click to disable">
+                    <a class="btn btn-sm btn-outline-success"
+                       th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}"
+                       th:if="${category.enabled}" title="Click to disable">
                         <i class="fas fa-check-circle fa-lg fa-fade"></i>
                     </a>
-                    <a class="btn btn-sm btn-outline-danger" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}" th:if="${!category.enabled}" title="Click to enable">
+                    <a class="btn btn-sm btn-outline-danger"
+                       th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}"
+                       th:if="${!category.enabled}" title="Click to enable">
                         <i class="fas fa-times-circle fa-lg fa-fade"></i>
                     </a>
                 </td>
 
                 <td class="text-center align-middle" style="width: 14%;">
-                    <a class="btn btn-sm btn-outline-primary" th:href="@{/categories/edit/{id}(id=${category.id})}" title="Click to edit">
+                    <a class="btn btn-sm btn-outline-primary" th:href="@{/categories/edit/{id}(id=${category.id})}"
+                       title="Click to edit">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/categories/delete/{id}(id=${category.id})}" th:theID="${category.id}" title="Click to delete">
+                    <a class="btn btn-sm btn-outline-danger link-delete"
+                       th:href="@{/categories/delete/{id}(id=${category.id})}" th:theID="${category.id}"
+                       title="Click to delete">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>
@@ -100,25 +112,33 @@
         <div class="row m-1" th:each="category : ${listCategories}">
             <div class="col-3">
                 <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${category.image == null}"></span>
-                <img alt="Category Image" height="80" th:if="${category.image != null}" th:src="@{${category.getImagePath}}" width="70"/>
+                <img alt="Category Image" height="80" th:if="${category.image != null}"
+                     th:src="@{${category.getImagePath}}" width="70"/>
             </div>
             <div class="col-9">
                 <div>[[${category.name}]]</div>
                 <div>[[${category.alias}]]</div>
                 <div class="mt-2">
-                    <a class="btn btn-sm btn-outline-primary" th:href="@{/categories/edit/{id}(id=${category.id})}" title="Click to edit">
+                    <a class="btn btn-sm btn-outline-primary" th:href="@{/categories/edit/{id}(id=${category.id})}"
+                       title="Click to edit">
                         <i class="fas fa-edit"></i>
                     </a>
 
-                    <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/categories/delete/{id}(id=${category.id})}" th:theID="${category.id}" title="Click to delete">
+                    <a class="btn btn-sm btn-outline-danger link-delete"
+                       th:href="@{/categories/delete/{id}(id=${category.id})}" th:theID="${category.id}"
+                       title="Click to delete">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                     &nbsp;
-                    <a class="btn btn-sm btn-outline-success" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}" th:if="${category.enabled}" title="Click to disable">
+                    <a class="btn btn-sm btn-outline-success"
+                       th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${false})}"
+                       th:if="${category.enabled}" title="Click to disable">
                         <i class="fas fa-check-circle fa-lg fa-fade"></i>
                     </a>
                     &nbsp;
-                    <a class="btn btn-sm btn-outline-danger" th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}" th:if="${!category.enabled}" title="Click to enable">
+                    <a class="btn btn-sm btn-outline-danger"
+                       th:href="@{/categories/{id}/enabled/{status}(id=${category.id}, status=${true})}"
+                       th:if="${!category.enabled}" title="Click to enable">
                         <i class="fas fa-times-circle fa-lg fa-fade"></i>
                     </a>
                 </div>
@@ -149,9 +169,9 @@
         </div>
     </div>
 
-    <div th:replace="~{fragments/page_footer}"></div>
-
 </div>
+
+<div th:replace="~{fragments/page_footer}"></div>
 
 </body>
 

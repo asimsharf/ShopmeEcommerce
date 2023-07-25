@@ -1,138 +1,152 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"  xmlns:th="http://www.thymeleaf.org" >
-<div th:replace="~{fragments/page_head('Brands | Shopme Admin')}"></div>
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{fragments/page_head :: page_head('Brands | Shopme Admin')}"></div>
 
 <body>
-    <div class="container-fluid">
-        <div th:replace="~{fragments/page_navbar}"></div>
 
-        <div class="mx-2 my-2">
-            <h2 class="mx-2 my-2">إدارة الماركات</h2>
-            <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/brands/new}">
-                <i class="fas fa-square-plus fa-bounce"></i>
-            </a>
-            <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/brands/export/csv}">
-                <i class="fas fa-file-csv"></i>
-            </a>
-            <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/brands/export/excel}">
-                <i class="fas fa-file-excel"></i>
-            </a>
-            <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/brands/export/pdf}">
-                <i class="fas fa-file-pdf"></i>
-            </a>
+<div th:replace="~{fragments/page_navbar}"></div>
 
-            <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/brands/page/1}">
-                <input name="sortField" th:value="${sortField}" type="hidden" />
-                <input name="sortDir" th:value="${sortDir}" type="hidden" />
-                <label class="input-group">
-                    <input class="form-control" name="keyword" placeholder="البحث عن باسم الماركة" th:value="${keyword}" type="text" required/>
-                </label>
-                <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/brands')" type="button">
-                    <i class="fas fa-sync"></i>
-                </button>
-            </form>
-        </div>
+<div class="container-fluid">
 
-        <div class="alert alert-success alert-dismissible" th:if="${message != null}">
-            <button class="close" data-dismiss="alert" type="button">&times;</button>
-            <span th:text="${message}"></span>
-        </div>
 
-        <div class="full-details">
-            <table class="table table-responsive-xl table-striped table-bordered table-hover">
+    <div class="mx-2 my-2">
+        <h2 class="mx-2 my-2">إدارة الماركات</h2>
+        <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/brands/new}">
+            <i class="fas fa-square-plus fa-bounce"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/brands/export/csv}">
+            <i class="fas fa-file-csv"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/brands/export/excel}">
+            <i class="fas fa-file-excel"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/brands/export/pdf}">
+            <i class="fas fa-file-pdf"></i>
+        </a>
 
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="hideable-column">
-                        <th th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','brands')}"></th>
-                        <th class="text-center" style="width: 10%;">الصورة</th>
-                        <th th:replace="~{fragments/column_link :: column_link('name', 'الإسم', 'none','brands')}"></th>
-                        <th class="hideable-column">الاصناف</th>
-                        <th class="text-center">الخيارات</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr th:each="brand : ${listBrands}">
-
-                        <td class="text-center align-middle hideable-column" th:text="${brand.id}" style="width: 5%"></td>
-
-                        <td class="text-center align-middle">
-                            <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${brand.image == null}"></span>
-                            <img alt="User Image" height="50" th:if="${brand.image != null}" th:src="@{${brand.getImagePath}}" width="50" />
-                        </td>
-
-                        <th class="align-middle" th:text="${brand.name}" style="width: 20%"></th>
-
-                        <td class="hideable-column">
-                            <th:block th:each="cat : ${brand.categories}">
-                                <span class="badge badge-secondary" th:text="${cat.name}"></span>
-                            </th:block>
-                        </td>
-
-                        <td class="text-center align-middle" style="width: 14%">
-                            <a class="btn btn-sm btn-outline-primary" th:href="@{/brands/edit/{id}(id=${brand.id})}" title="Click to edit">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/brands/delete/{id}(id=${brand.id})}" th:theID="${brand.id}" title="Click to delete">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
-
-                    </tr>
-                </tbody>
-
-            </table>
-        </div>
-
-        <div class="less-details">
-            <div class="row m-1" th:each="brand : ${listBrands}">
-                <div class="col-3">
-                    <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${brand.image == null}"></span>
-                    <img alt="Brand Image" height="80" th:if="${brand.image != null}" th:src="@{${brand.getImagePath}}" width="70" />
-                </div>
-
-                <div class="col-9">
-                    <div>[[${brand.name}]]</div>
-                    <div class="mt-2">
-                        <a class="btn btn-sm btn-outline-primary" th:href="@{/brands/edit/{id}(id=${brand.id})}" title="Click to edit">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-sm btn-outline-danger link-delete" th:href="@{/brands/delete/{id}(id=${brand.id})}" th:theID="${brand.id}" title="Click to delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>&nbsp;</div>
-            </div>
-        </div>
-
-        <div th:replace="~{fragments/page_pagination :: page_pagination(${totalItems}, ${currentPage}, 'brands', ${sortField}, ${sortDir}, ${keyword}, ${totalPages}, ${endCount}, ${startCount})}"></div>
-
-        <div class="modal" id="confirmModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Delete Confirmation</h4>
-                        <button class="close" data-dismiss="modal" type="button">&times;</button>
-                    </div>
-                    <div class="modal-body" id="modalBody">
-                        <span id="confirmText"></span>
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn-success" href="" id="yesButton">Yes</a>
-                        <button class="btn btn-danger" data-dismiss="modal" type="button">No</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div th:replace="~{fragments/page_footer}"></div>
+        <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/brands/page/1}">
+            <input name="sortField" th:value="${sortField}" type="hidden"/>
+            <input name="sortDir" th:value="${sortDir}" type="hidden"/>
+            <label class="input-group">
+                <input class="form-control" name="keyword" placeholder="البحث عن باسم الماركة" th:value="${keyword}"
+                       type="text" required/>
+            </label>
+            <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/brands')"
+                    type="button">
+                <i class="fas fa-sync"></i>
+            </button>
+        </form>
     </div>
+
+    <div class="alert alert-success alert-dismissible" th:if="${message != null}">
+        <button class="close" data-dismiss="alert" type="button">&times;</button>
+        <span th:text="${message}"></span>
+    </div>
+
+    <div class="full-details">
+        <table class="table table-responsive-xl table-striped table-bordered table-hover">
+
+            <thead class="thead-dark">
+            <tr>
+                <th class="hideable-column">
+                <th th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','brands')}"></th>
+                <th class="text-center" style="width: 10%;">الصورة</th>
+                <th th:replace="~{fragments/column_link :: column_link('name', 'الإسم', 'none','brands')}"></th>
+                <th class="hideable-column">الاصناف</th>
+                <th class="text-center">الخيارات</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="brand : ${listBrands}">
+
+                <td class="text-center align-middle hideable-column" th:text="${brand.id}" style="width: 5%"></td>
+
+                <td class="text-center align-middle">
+                    <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${brand.image == null}"></span>
+                    <img alt="User Image" height="50" th:if="${brand.image != null}" th:src="@{${brand.getImagePath}}"
+                         width="50"/>
+                </td>
+
+                <th class="align-middle" th:text="${brand.name}" style="width: 20%"></th>
+
+                <td class="hideable-column">
+                    <th:block th:each="cat : ${brand.categories}">
+                        <span class="badge badge-secondary" th:text="${cat.name}"></span>
+                    </th:block>
+                </td>
+
+                <td class="text-center align-middle" style="width: 14%">
+                    <a class="btn btn-sm btn-outline-primary" th:href="@{/brands/edit/{id}(id=${brand.id})}"
+                       title="Click to edit">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-danger link-delete"
+                       th:href="@{/brands/delete/{id}(id=${brand.id})}" th:theID="${brand.id}" title="Click to delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="less-details">
+        <div class="row m-1" th:each="brand : ${listBrands}">
+            <div class="col-3">
+                <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${brand.image == null}"></span>
+                <img alt="Brand Image" height="80" th:if="${brand.image != null}" th:src="@{${brand.getImagePath}}"
+                     width="70"/>
+            </div>
+
+            <div class="col-9">
+                <div>[[${brand.name}]]</div>
+                <div class="mt-2">
+                    <a class="btn btn-sm btn-outline-primary" th:href="@{/brands/edit/{id}(id=${brand.id})}"
+                       title="Click to edit">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    &nbsp;
+                    <a class="btn btn-sm btn-outline-danger link-delete"
+                       th:href="@{/brands/delete/{id}(id=${brand.id})}" th:theID="${brand.id}" title="Click to delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/page_pagination :: page_pagination(${totalItems}, ${currentPage}, 'brands', ${sortField}, ${sortDir}, ${keyword}, ${totalPages}, ${endCount}, ${startCount})}"></div>
+
+    <div class="modal" id="confirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Confirmation</h4>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <span id="confirmText"></span>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-success" href="" id="yesButton">Yes</a>
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div th:replace="~{fragments/page_footer}"></div>
+
 </body>
 
 </html>
