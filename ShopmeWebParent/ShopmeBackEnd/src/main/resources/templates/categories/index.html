@@ -8,38 +8,31 @@
 <div th:replace="~{fragments/page_navbar}"></div>
 
 <div class="container-fluid">
+    <div class="row m-2">
+        <div class="col">
+            <h2 class="m-2">إدارة الأصناف</h2>
+            <form class="form-inline m-2" method="GET" th:action="@{/categories/page/1}">
 
-    <div class="mx-2 my-2">
-        <h2 class="mx-2 my-2">إدارة الاصناف</h2>
-        <a class="btn btn-sm btn-outline-primary mr-1 mb-1" th:href="@{/categories/new}">
-            <i class="fas fa-square-plus fa-bounce"></i>
-        </a>
-        <a class="btn btn-sm btn-outline-warning mr-1 mb-1" th:href="@{/categories/export/csv}">
-            <i class="fas fa-file-csv"></i>
-        </a>
-        <a class="btn btn-sm btn-outline-success mr-1 mb-1" th:href="@{/categories/export/excel}">
-            <i class="fas fa-file-excel"></i>
-        </a>
-        <a class="btn btn-sm btn-outline-danger mr-1 mb-1" th:href="@{/categories/export/pdf}">
-            <i class="fas fa-file-pdf"></i>
-        </a>
+                <button class="btn btn-sm btn-outline-secondary m-1" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-sm btn-outline-secondary m-1" onclick="clearFilter('/ShopmeAdmin/categories')" type="button"><i class="fas fa-sync"></i></button>
 
-        <form class="form-inline mr-1 mb-1" method="GET" th:action="@{/categories/page/1}">
-            <input name="sortField" th:value="${sortField}" type="hidden">
-            <input name="sortDir" th:value="${sortDir}" type="hidden">
-            <label class="input-group">
-                <input class="form-control" name="keyword" placeholder="البحث بالاسم " th:value="${keyword}" type="text"
-                       required/>
-            </label>
-            <button class="btn btn-sm btn-outline-secondary ml-1" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-            <button class="btn btn-sm btn-outline-secondary ml-1" onclick="clearFilter('/ShopmeAdmin/categories')"
-                    type="button">
-                <i class="fas fa-sync"></i>
-            </button>
-        </form>
+                <label><input class="form-control" name="keyword" placeholder="إبحث بلإيميل أو الإسم" th:value="${keyword}" type="text" required></label>
+
+                <input name="sortField" th:value="${sortField}" type="hidden">
+                <input name="sortDir" th:value="${sortDir}" type="hidden">
+
+                <a class="btn btn-sm btn-outline-primary m-1" th:href="@{/categories/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
+                <a class="btn btn-sm btn-outline-warning m-1" th:href="@{/categories/export/csv}"><i class="fas fa-file-csv"></i></a>
+                <a class="btn btn-sm btn-outline-success m-1" th:href="@{/categories/export/excel}"><i class="fas fa-file-excel"></i></a>
+                <a class="btn btn-sm btn-outline-danger m-1" th:href="@{/categories/export/pdf}"><i class="fas fa-file-pdf"></i></a>
+
+            </form>
+        </div>
     </div>
+</div>
+
+<div class="container-fluid">
+
 
     <div class="alert alert-success alert-dismissible" th:if="${message != null}">
         <button class="close" data-dismiss="alert" type="button">&times;</button>
@@ -47,7 +40,7 @@
     </div>
 
     <div class="full-details">
-        <table class="table table-responsive-xl table-striped table-bordered table-hover">
+        <table class="table table-responsive-xl table-striped table-bordered table-hover table-sm">
 
             <thead class="thead-dark">
             <tr>
