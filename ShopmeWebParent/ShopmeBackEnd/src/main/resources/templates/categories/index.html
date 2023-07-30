@@ -7,28 +7,26 @@
 
 <div th:replace="~{fragments/page_navbar}"></div>
 
-<div class="container-fluid">
-    <div class="row m-2">
-        <div class="col">
-            <h2 class="m-2">إدارة الأصناف</h2>
-            <form class="form-inline m-2" method="GET" th:action="@{/categories/page/1}">
+<div class="container-fluid d-flex justify-content-between">
 
-                <button class="btn btn-sm btn-outline-secondary m-1" type="submit"><i class="fas fa-search"></i></button>
-                <button class="btn btn-sm btn-outline-secondary m-1" onclick="clearFilter('/ShopmeAdmin/categories')" type="button"><i class="fas fa-sync"></i></button>
+    <h2 class="m-2">إدارة الأصناف</h2>
 
-                <label><input class="form-control" name="keyword" placeholder="إبحث بلإيميل أو الإسم" th:value="${keyword}" type="text" required></label>
+    <form class="form-inline m-2" method="GET" th:action="@{/categories/page/1}">
 
-                <input name="sortField" th:value="${sortField}" type="hidden">
-                <input name="sortDir" th:value="${sortDir}" type="hidden">
+        <button class="btn btn-sm btn-outline-secondary m-1" type="submit"><i class="fas fa-search"></i></button>
+        <button class="btn btn-sm btn-outline-secondary m-1" onclick="clearFilter('/ShopmeAdmin/categories')" type="button"><i class="fas fa-sync"></i></button>
 
-                <a class="btn btn-sm btn-outline-primary m-1" th:href="@{/categories/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
-                <a class="btn btn-sm btn-outline-warning m-1" th:href="@{/categories/export/csv}"><i class="fas fa-file-csv"></i></a>
-                <a class="btn btn-sm btn-outline-success m-1" th:href="@{/categories/export/excel}"><i class="fas fa-file-excel"></i></a>
-                <a class="btn btn-sm btn-outline-danger m-1" th:href="@{/categories/export/pdf}"><i class="fas fa-file-pdf"></i></a>
+        <label><input class="form-control" name="keyword" placeholder="إبحث بلإيميل أو الإسم" th:value="${keyword}" type="text" required></label>
 
-            </form>
-        </div>
-    </div>
+        <input name="sortField" th:value="${sortField}" type="hidden">
+        <input name="sortDir" th:value="${sortDir}" type="hidden">
+
+        <a class="btn btn-sm btn-outline-primary m-1" th:href="@{/categories/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
+        <a class="btn btn-sm btn-outline-warning m-1" th:href="@{/categories/export/csv}"><i class="fas fa-file-csv"></i></a>
+        <a class="btn btn-sm btn-outline-success m-1" th:href="@{/categories/export/excel}"><i class="fas fa-file-excel"></i></a>
+        <a class="btn btn-sm btn-outline-danger m-1" th:href="@{/categories/export/pdf}"><i class="fas fa-file-pdf"></i></a>
+
+    </form>
 </div>
 
 <div class="container-fluid">
