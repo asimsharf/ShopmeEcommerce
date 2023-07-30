@@ -84,7 +84,10 @@ mvn spring-boot:start # Start the project
 - Open your favorite browser and go to http://localhost:8080
 
 ## Screenshots
-
+![Login Page](screenshots/0.png)
+![Users Page](screenshots/00.png)
+![Create User](screenshots/000.png)
+![Update User](screenshots/0000.png)
 ![Login Page](screenshots/1.png)
 ![Users Page](screenshots/2.png)
 ![Create User](screenshots/3.png)
