@@ -24,7 +24,7 @@ import java.util.Objects;
 @Controller
 public class BrandController {
 
-    private String defaultRedirectURL = "redirect:/brands/page/1?sortField=name&sortDir=asc";
+    private final String defaultRedirectURL = "redirect:/brands/page/1?sortField=name&sortDir=asc";
     @Autowired
     private BrandService brandService;
     @Autowired
