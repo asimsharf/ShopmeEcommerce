@@ -2,6 +2,8 @@
 
 Shopme is a simple ecommerce website built with Spring Boot and bootstrap. It is a simple project to learn Spring Boot and bootstrap.
 
+[![wakatime](https://wakatime.com/badge/user/97b33033-14ee-4d8b-9a5e-95c4e7bee029/project/38c783a2-6618-4f54-8f76-59a7b77621b4.svg)](https://wakatime.com/badge/user/97b33033-14ee-4d8b-9a5e-95c4e7bee029/project/38c783a2-6618-4f54-8f76-59a7b77621b4)
+
 ## Features
 
 - User registration

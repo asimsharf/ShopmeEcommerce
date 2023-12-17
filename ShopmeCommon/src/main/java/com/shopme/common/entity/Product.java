@@ -18,6 +18,9 @@ public class Product {
     @Column(length = 256, nullable = false, unique = true)
     private String alias;
 
+    @Column(length = 128)
+    private String image;
+
     @Column(name = "short_description", length = 512, nullable = false)
     private String shortDescription;
 
@@ -77,6 +80,14 @@ public class Product {
 
     public void setAlias(String alias) {
         this.alias = alias;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getShortDescription() {
@@ -199,5 +210,37 @@ public class Product {
         this.brand = brand;
     }
 
+    @Transient
+    public String getImagePath() {
+        if (this.id == null || this.image == null) {
+            return "/images/image-thumbnail.png";
+        }
 
+        return "/product-image/" + this.id + "/" + this.image;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", alias='" + alias + '\'' +
+                ", image='" + image + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", fullDescription='" + fullDescription + '\'' +
+                ", createdTime=" + createdTime +
+                ", updatedTime=" + updatedTime +
+                ", enabled=" + enabled +
+                ", inStock=" + inStock +
+                ", cost=" + cost +
+                ", price=" + price +
+                ", discountPercent=" + discountPercent +
+                ", length=" + length +
+                ", width=" + width +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", category=" + category +
+                ", brand=" + brand +
+                '}';
+    }
 }

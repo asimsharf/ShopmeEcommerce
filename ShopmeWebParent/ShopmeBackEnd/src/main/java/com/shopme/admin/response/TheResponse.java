@@ -16,7 +16,6 @@ public class TheResponse {
         response.put("data", data);
         response.put("timestamp", System.currentTimeMillis());
         response.put("path", "/ShopmeAdmin/api/users/list_users");
-
         return new ResponseEntity<>(response, status);
     }
 

@@ -1,16 +1,26 @@
 package com.shopme.admin.product.controllers;
 
+import com.shopme.admin.product.services.ProductService;
+import com.shopme.common.entity.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 public class ProductController {
+
+    @Autowired
+    private ProductService productService;
 
     @GetMapping("/products")
     public String listProducts(Model model) {
 
-        model.addAttribute("message", "Welcome Product Page");
+        List<Product> listProducts = productService.listAll();
+
+        model.addAttribute("listProducts",  listProducts);
 
         return "products/index";
     }
