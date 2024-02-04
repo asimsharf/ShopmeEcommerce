@@ -18,7 +18,7 @@
     <artifactId>
         ShopmeBackEnd
     </artifactId>
-    <name>Ï
+    <name>
         ShopmeBackEnd
     </name>
     <description>
@@ -78,6 +78,11 @@
             <version>
                 1.3.30
             </version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>3.0.5</version> <!-- Use the correct version -->
         </dependency>
     </dependencies>
     <build>

@@ -29,7 +29,6 @@ public class PagingAndSortingArgumentResolver implements HandlerMethodArgumentRe
         model.addAttribute("keyword", keyword);
         model.addAttribute("moduleURL", Objects.requireNonNull(annotation).moduleURL());
 
-
         return new PagingAndSortingHelper(model, annotation.listName(), sortField, sortDir, keyword);
     }
 
