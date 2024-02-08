@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
 
-<div th:replace="~{fragments/page_head :: page_head('Your Account Details')}"> </div>
+<div class="p-1 m-1" th:replace="~{fragments/page_head :: page_head('معلومات الحساب الخاص بك')}"> </div>
 
 <body>
     <div class="container-fluid">
         <div th:replace="~{fragments/page_navbar}"> </div>
 
         <div>
-            <form enctype="multipart/form-data" method="post" style="max-width: 600px; margin: 0 auto;"
+            <form enctype="multipart/form-data" method="post" style="max-width: 700px; margin: 0 auto;"
                 th:action="@{/account/update}" th:object="${user}">
 
                 <div class="text-center">
@@ -25,32 +25,32 @@
                 <div class="border border-secondary rounded p-3">
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="email">E-mail:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="email">البريد الإلكتروني:</label>
+                        <div class="col-sm-9">
                             <input autocomplete="email" class="form-control" name="email" readonly="readonly"
                                 th:field="*{email}" type="email" />
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="firstName">First Name:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="firstName">الإسم الأول:</label>
+                        <div class="col-sm-9">
                             <input autocomplete="given-name" class="form-control" maxlength="45" minlength="2"
                                 name="firstName" required th:field="*{firstName}" type="text" />
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="lastName">Last Name:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="lastName">الإسم الأخير:</label>
+                        <div class="col-sm-9">
                             <input autocomplete="family-name" class="form-control" maxlength="20" minlength="8"
                                 name="lastName" required th:field="*{lastName}" type="text" />
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="password">Password:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="password">كلمة المرور:</label>
+                        <div class="col-sm-9">
                             <input autocomplete="new-password" class="form-control" maxlength="20" minlength="8"
                                 name="password" oninput="checkPasswordMath(document.getElementById('confirmPassword'))"
                                 placeholder="Leave blank if you don't want to to change" th:field="*{password}"
@@ -59,23 +59,23 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="password">Confirm Password:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="password">تأكيد كلمة المرور:</label>
+                        <div class="col-sm-9">
                             <input autocomplete="new-password" class="form-control" minlength="8" name="confirmPassword"
                                 oninput="checkPasswordMath(this)" type="password" />
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="roles">Assigned Roles:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="roles">الدور:</label>
+                        <div class="col-sm-9">
                             <span> <b>[[${user.roles}]]</b></span>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" th:for="image">Image:</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" th:for="image">الصورة:</label>
+                        <div class="col-sm-9">
                             <input name="fileImage" th:field="*{image}" type="hidden" />
                             <input accept="image/png, image/jpeg" class="mb-3" name="fileImage" type="file" />
                             <img alt="User Image" height="50" id="thumbnail" th:src="@{${user.getImagePath}}"
@@ -84,9 +84,9 @@
                     </div>
 
                     <div class="text-center">
-                        <input class="btn btn-primary m-3" type="submit" value="save">
+                        <input class="btn btn-primary m-3" type="submit" value="حفظ">
                         <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/users');" type="button"
-                            value="cancel">
+                            value="إلغاء">
                     </div>
 
                 </div>

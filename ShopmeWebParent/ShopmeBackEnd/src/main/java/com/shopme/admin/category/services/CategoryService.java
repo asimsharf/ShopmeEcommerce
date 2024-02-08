@@ -19,10 +19,13 @@ import com.shopme.common.exception.CategoryNotFoundException;
 @Service
 @Transactional
 public class CategoryService {
-    public static final int ROOT_CATEGORIES_PER_PAGE = 4;
+    public static final int ROOT_CATEGORIES_PER_PAGE = 1;
 
-    @Autowired
-    private CategoryRepository repo;
+    private final CategoryRepository repo;
+
+    public CategoryService(CategoryRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir, String keyword) {
         Sort sort = Sort.by("name");
@@ -51,7 +54,7 @@ public class CategoryService {
         if (keyword != null && !keyword.isEmpty()) {
             List<Category> searchResult = pageCategories.getContent();
             for (Category category : searchResult) {
-                category.setHasChildren(category.getChildren().size() > 0);
+                category.setHasChildren(!category.getChildren().isEmpty());
             }
 
             return searchResult;

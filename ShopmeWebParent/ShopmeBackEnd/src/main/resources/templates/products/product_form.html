@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
+
+<div th:replace="~{fragments/page_head :: page_head(${pageTitle})}"> </div>
+
+<body>
+<div class="container-fluid">
+    <div th:replace="~{fragments/page_navbar}"> </div>
+
+    <div class="table-header mx-2 my-2">
+        <h2 class="table-header-title mx-2 my-2">إدارة المتجات | [[${pageTitle}]]</h2>
+    </div>
+
+    <div>
+<!--         TODO: Add the form here-->
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="modalDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalTitle">Warning</h4>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="modalBody">Modal Body</div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/page_footer}"> </div>
+
+</div>
+
+</body>
+
+</html>

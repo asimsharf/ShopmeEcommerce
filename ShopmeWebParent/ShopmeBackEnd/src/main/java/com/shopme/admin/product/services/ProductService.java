@@ -13,13 +13,14 @@ import java.util.Objects;
 @Transactional
 public class ProductService {
 
-    @Autowired
-    private ProductRepository repo;
+    private final ProductRepository repo;
+    public ProductService(ProductRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Product> listAll(){
         return repo.findAll();
     }
-
 
     public String checkUnique(Integer id, String name) {
         boolean isCreatingNew = (id == null || id == 0);

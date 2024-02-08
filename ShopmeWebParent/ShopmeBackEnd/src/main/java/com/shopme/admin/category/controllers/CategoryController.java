@@ -27,8 +27,11 @@ import com.shopme.common.exception.CategoryNotFoundException;
 
 @Controller
 public class CategoryController {
-    @Autowired
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
+
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/categories")
     public String listFirstPage(String sortDir, Model model) {
@@ -77,7 +80,7 @@ public class CategoryController {
 
         model.addAttribute("category", new Category());
         model.addAttribute("listCategories", listCategories);
-        model.addAttribute("pageTitle", "Create New Category");
+        model.addAttribute("pageTitle", "إضافة صنف جديد");
 
         return "categories/category_form";
     }
@@ -110,7 +113,7 @@ public class CategoryController {
 
             model.addAttribute("category", category);
             model.addAttribute("listCategories", listCategories);
-            model.addAttribute("pageTitle", "Edit Category (ID: " + id + ")");
+            model.addAttribute("pageTitle", "تعديل الصنف (رقم: " + id + ")");
 
             return "categories/category_form";
         } catch (CategoryNotFoundException ex) {

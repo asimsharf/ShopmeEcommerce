@@ -22,19 +22,18 @@ import java.util.Objects;
 @Transactional
 public class UserService {
 
-    public static final int USER_PER_PAGE = 4;
+    public static final int USER_PER_PAGE = 10;
 
-    @Autowired
     private final UserRepository userRepo;
 
-    @Autowired
-    private RoleRepository roleRepo;
+    private final RoleRepository roleRepo;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository theRepo) {
-        this.userRepo = theRepo;
+    public UserService(UserRepository userRepo, RoleRepository roleRepo, PasswordEncoder passwordEncoder) {
+        this.userRepo = userRepo;
+        this.roleRepo = roleRepo;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User getUserByEmail(String email) {

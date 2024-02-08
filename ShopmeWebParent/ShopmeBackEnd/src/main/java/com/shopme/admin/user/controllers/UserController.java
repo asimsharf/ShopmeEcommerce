@@ -29,10 +29,9 @@ import java.util.Objects;
 @Controller
 public class UserController {
 
-    @Autowired
     private final UserService service;
 
-    public UserController(UserService theService) {
+    public UserController(UserService theService ) {
         this.service = theService;
     }
 
@@ -69,7 +68,7 @@ public class UserController {
 
     @GetMapping("/users/new")
     public String newUser(Model model) {
-        model.addAttribute("pageTitle", "Create New User");
+        model.addAttribute("pageTitle", "إضافة مستخدم جديد");
         User user = new User();
         model.addAttribute("user", user);
 
@@ -111,7 +110,7 @@ public class UserController {
     @GetMapping("/users/edit/{id}")
     public String editUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes thRa) {
         try {
-            model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
+            model.addAttribute("pageTitle", "تعديل المستخدم (رقم: " + id + ")");
             User user = service.get(id);
             model.addAttribute("user", user);
             List<Role> listRoles = service.listRoles();

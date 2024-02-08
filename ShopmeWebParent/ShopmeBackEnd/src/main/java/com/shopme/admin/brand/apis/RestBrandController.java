@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RestBrandController {
 
-    @Autowired
     private final BrandService service;
 
     public RestBrandController(BrandService service) {

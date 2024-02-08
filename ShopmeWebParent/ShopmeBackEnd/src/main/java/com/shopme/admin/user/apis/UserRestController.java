@@ -26,7 +26,6 @@ public class UserRestController {
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
 
-    @Autowired
     private final UserService service;
 
     public UserRestController(UserService service) {

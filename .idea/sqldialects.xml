@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/simple-data/Shopme Sample Address Book Data/address_book_data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/simple-data/Shopme Sample Brands Data/brands_data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/simple-data/Shopme Sample Countries and States Data/Sample countries and states data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/simple-data/Shopme Sample Shipping Rates Data/shipping_rates_data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/simple-data/Shopme Sample Users Data/users_roles_data.sql" dialect="MySQL" />
+  </component>
+</project>

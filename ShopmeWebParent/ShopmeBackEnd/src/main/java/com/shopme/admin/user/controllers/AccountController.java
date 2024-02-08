@@ -21,8 +21,11 @@ import java.util.Objects;
 @Controller
 public class AccountController {
 
-    @Autowired
-    private UserService service;
+    private final UserService service;
+
+    public AccountController(UserService service) {
+        this.service = service;
+    }
 
     @GetMapping("/account")
     public String viewDetails(@AuthenticationPrincipal ShompeUserDetails loggedUser, Model model) {

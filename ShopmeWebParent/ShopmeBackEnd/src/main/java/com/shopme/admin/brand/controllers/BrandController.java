@@ -24,15 +24,17 @@ import java.util.Objects;
 @Controller
 public class BrandController {
 
-    private final String defaultRedirectURL = "redirect:/brands/page/1?sortField=name&sortDir=asc";
-    @Autowired
-    private BrandService brandService;
-    @Autowired
-    private CategoryService categoryService;
+    private final BrandService brandService;
+    private final CategoryService categoryService;
+
+    public BrandController(BrandService brandService, CategoryService categoryService) {
+        this.brandService = brandService;
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/brands")
     public String listFirstPage() {
-        return defaultRedirectURL;
+        return "redirect:/brands/page/1?sortField=name&sortDir=asc";
     }
 
     @GetMapping("/brands/page/{pageNum}")
@@ -47,7 +49,7 @@ public class BrandController {
 
         model.addAttribute("listCategories", listCategories);
         model.addAttribute("brand", new Brand());
-        model.addAttribute("pageTitle", "Create New Brand");
+        model.addAttribute("pageTitle", "إضافة ماركة جديدة");
 
         return "brands/brand_form";
     }
@@ -81,7 +83,7 @@ public class BrandController {
 
             model.addAttribute("brand", brand);
             model.addAttribute("listCategories", listCategories);
-            model.addAttribute("pageTitle", "Edit Brand (ID: " + id + ")");
+            model.addAttribute("pageTitle", "تعديل الماركة (رقم: " + id + ")");
 
             return "brands/brand_form";
 
