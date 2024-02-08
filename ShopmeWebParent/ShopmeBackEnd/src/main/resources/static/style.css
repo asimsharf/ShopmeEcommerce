@@ -1,19 +1,17 @@
 @font-face {
-  font-family: 'Greta Arabic';
-  src: url(greta.ttf) format('truetype');
+    font-family: 'Greta Arabic';
+    src: url(greta.ttf) format('truetype');
 }
+
 body {
     margin: 0;
-    font-family: 'Greta Arabic';
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-     text-align: right!important;
+    text-align: right !important;
     background-color: #fff;
-}
-body {
-    font-family: 'Greta Arabic';
+    font-family: 'Greta Arabic', serif;
 }
 
 *.icon-white {
@@ -45,8 +43,8 @@ body {
 }
 
 .container-fluid {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .table .thead-dark th {
@@ -62,7 +60,7 @@ body {
 }
 
 .table-responsive-xl {
-    display: inline-table!important;
+    display: inline-table !important;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -103,7 +101,7 @@ body {
         display: none;
     }
 
-    .hideable-column {
+    .hideable-columns {
         display: none;
     }
 }
@@ -115,7 +113,7 @@ body {
         display: none;
     }
 
-    .hideable-column {
+    .hideable-columns {
         display: table-cell;
     }
 

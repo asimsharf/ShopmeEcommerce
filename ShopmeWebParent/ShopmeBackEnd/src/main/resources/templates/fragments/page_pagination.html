@@ -1,33 +1,41 @@
-<div class="mx-2 my-2" th:fragment="page_pagination(totalItems, currentPage, page, sortField, sortDir, keyword, totalPages, endCount, startCount)" xmlns:th="http://www.w3.org/1999/xhtml">
-  <div th:if="${totalItems > 0}">
-    <nav>
-      <ul class="pagination justify-content-center flex-wrap">
-        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-          <a class="page-link" th:href="@{'/'+ ${page} +'/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاول</a>
-        </li>
-        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-          <a class="page-link" th:href="@{'/'+ ${page} +'/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">السابق</a>
-        </li>
+<div class="mx-2 my-2"
+     th:fragment="page_pagination(totalItems, currentPage, page, sortField, sortDir, keyword, totalPages, endCount, startCount)"
+     xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:if="${totalItems > 0}">
+        <nav>
+            <ul class="pagination justify-content-center flex-wrap">
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a class="page-link"
+                       th:href="@{'/'+ ${page} +'/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاول</a>
+                </li>
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a class="page-link"
+                       th:href="@{'/'+ ${page} +'/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">السابق</a>
+                </li>
 
-        <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" th:each="i : ${#numbers.sequence(1, totalPages)}">
-          <a th:href="@{'/'+ ${page} +'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="page-link">[[${i}]]</a>
-        </li>
+                <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
+                    th:each="i : ${#numbers.sequence(1, totalPages)}">
+                    <a th:href="@{'/'+ ${page} +'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}"
+                       class="page-link">[[${i}]]</a>
+                </li>
 
-        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-          <a class="page-link" th:href="@{'/'+ ${page} +'/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">التالي</a>
-        </li>
+                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                    <a class="page-link"
+                       th:href="@{'/'+ ${page} +'/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">التالي</a>
+                </li>
 
-        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-          <a class="page-link" th:href="@{'/'+ ${page} +'/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاخير</a>
-        </li>
+                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                    <a class="page-link"
+                       th:href="@{'/'+ ${page} +'/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">الاخير</a>
+                </li>
 
-      </ul>
-    </nav>
-  </div>
-  <div class="text-center m-1" th:if="${totalItems > 0}">
-    <span>عرض الاصناف # [[${startCount}]] الى [[${endCount}]] من [[${totalItems}]]</span>
-  </div>
-  <div class="text-center m-1" th:unless="${totalItems > 0}">
-    <span>عفواً, لا يوجد</span>
-  </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="text-center m-1" th:if="${totalItems > 0}">
+        <span>عرض الاصناف # [[${startCount}]] الى [[${endCount}]] من [[${totalItems}]]</span>
+    </div>
+    <div class="text-center m-1" th:unless="${totalItems > 0}">
+        <span>عفواً, لا يوجد</span>
+    </div>
 </div>

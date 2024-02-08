@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"  xmlns:th="http://www.thymeleaf.org">
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="~{fragments/page_head :: page_head(${pageTitle})}"> </div>
+<div th:replace="~{fragments/page_head :: page_head(${pageTitle})}"></div>
 
 <body>
 <div class="container-fluid">
-    <div th:replace="~{fragments/page_navbar}"> </div>
+    <div th:replace="~{fragments/page_navbar}"></div>
 
     <div class="table-header mx-2 my-2">
         <h2 class="table-header-title mx-2 my-2">إدارة الماركات | [[${pageTitle}]]</h2>
     </div>
 
     <div>
-        <form enctype="multipart/form-data" method="post" style="max-width: 850px; margin: 0 auto;" th:action="@{/brands/save}" th:object="${brand}" onsubmit="return checkBrandUnique(this);">
+        <form enctype="multipart/form-data" method="post" style="max-width: 850px; margin: 0 auto;"
+              th:action="@{/brands/save}" th:object="${brand}" onsubmit="return checkBrandUnique(this);">
 
-            <input th:field="*{id}" type="hidden" />
+            <input th:field="*{id}" type="hidden"/>
 
             <div class="border border-secondary rounded p-3">
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-left" th:for="name">الاسم:</label>
                     <div class="col-sm-9">
-                        <input autocomplete="name" class="form-control" maxlength="28" minlength="8" name="name" required th:field="*{name}" type="text" />
+                        <input autocomplete="name" class="form-control" maxlength="28" minlength="8" name="name"
+                               required th:field="*{name}" type="text"/>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-left" th:for="category">الصنف:</label>
                     <div class="col-sm-9">
-                        <select class="form-control" id="categories" th:field="*{categories}" style="resize: vertical; height: 200px;" multiple required>
+                        <select class="form-control" id="categories" th:field="*{categories}"
+                                style="resize: vertical; height: 200px;" multiple required>
                             <th:block th:each="category : ${listCategories}">
                                 <option th:text="${category.name}" th:value="${category.id}"></option>
                             </th:block>
@@ -46,16 +49,18 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-left" th:for="image">الصورة:</label>
                     <div class="col-sm-9">
-                        <input name="image" th:field="*{image}" type="hidden" />
-                        <input accept="image/png, image/jpeg" class="mb-3" id="fileImage" name="fileImage" type="file" required />
-                        <img alt="Brand Image" height="50" id="thumbnail" th:src="@{${brand.getImagePath}}" width="50" />
+                        <input name="image" th:field="*{image}" type="hidden"/>
+                        <input accept="image/png, image/jpeg" class="mb-3" id="fileImage" name="fileImage" type="file"
+                               required/>
+                        <img alt="Brand Image" height="50" id="thumbnail" th:src="@{${brand.getImagePath}}" width="50"/>
                     </div>
                 </div>
 
 
                 <div class="text-center">
                     <input class="btn btn-primary m-3" type="submit" value="حفظ">
-                    <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/brands');" type="button" value="إلغاء" />
+                    <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/brands');" type="button"
+                           value="إلغاء"/>
                 </div>
 
             </div>
@@ -82,7 +87,7 @@
         </div>
     </div>
 
-    <div th:replace="~{fragments/page_footer}"> </div>
+    <div th:replace="~{fragments/page_footer}"></div>
 
 </div>
 

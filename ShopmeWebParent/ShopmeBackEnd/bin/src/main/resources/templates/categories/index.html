@@ -47,7 +47,7 @@
             <thead class="thead-dark">
                 <tr>
 
-                    <th class="hideable-column">
+                    <th class="hideable-columns">
 
                     <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','categories')}"></th>
 
@@ -55,9 +55,9 @@
 
                     <th th:replace="~{fragments/column_link :: column_link('name', 'Name', 'none','categories')}"></th>
 
-                    <th class="hideable-column">Categories</th>
+                    <th class="hideable-columns">Categories</th>
 
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('alias', 'Alias', 'tag','categories')}"></th>
+                    <th class="hideable-columns" th:replace="~{fragments/column_link :: column_link('alias', 'Alias', 'tag','categories')}"></th>
 
                     <th th:replace="~{fragments/column_link :: column_link('enabled', 'Enabled', 'none','categories')}"></th>
 
@@ -68,7 +68,7 @@
 
             <tbody>
             <tr th:each="category : ${listCategories}">
-                <td class="text-center align-middle hideable-column" th:text="${category.id}"
+                <td class="text-center align-middle hideable-columns" th:text="${category.id}"
                     style="width: 5%;"></td>
 
                 <td class="text-center align-middle">
@@ -78,7 +78,7 @@
                          th:src="@{${category.getImagePath}}" width="50"/>
                 </td>
 
-                <th class="align-middle hideable-column" th:text="${category.name}" style="width: 20%;"></th>
+                <th class="align-middle hideable-columns" th:text="${category.name}" style="width: 20%;"></th>
 
                 <td class="align-middle" th:text="${category.alias}" style="width: 20%;"></td>
 

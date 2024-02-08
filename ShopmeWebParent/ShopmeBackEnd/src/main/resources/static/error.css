@@ -1,7 +1,8 @@
 @font-face {
-  font-family: 'Greta Arabic';
-  src: url(greta.ttf) format('truetype');
+    font-family: 'Greta Arabic';
+    src: url(greta.ttf) format('truetype');
 }
+
 /* Error Page */
 .error .clip .shadow {
     height: 180px;
@@ -32,15 +33,15 @@
 
 .error h2
 
-/*Contrall*/
-    {
+    /*Contrall*/
+{
     font-size: 32px;
 }
 
 .error .msg
 
-/*Contrall*/
-    {
+    /*Contrall*/
+{
     top: -190px;
     left: 30%;
     width: 80px;
@@ -51,8 +52,8 @@
 
 .error span.triangle
 
-/*Contrall*/
-    {
+    /*Contrall*/
+{
     top: 70%;
     right: 0%;
     border-left: 20px solid #232937;
@@ -149,7 +150,7 @@
 }
 
 /* Error Page */
-@media(max-width: 767px) {
+@media (max-width: 767px) {
 
     /* Error Page */
     .error .clip .shadow {
@@ -180,15 +181,15 @@
 
     .error h2
 
-    /*Contrall*/
-        {
+        /*Contrall*/
+    {
         font-size: 24px;
     }
 
     .error .msg
 
-    /*Contrall*/
-        {
+        /*Contrall*/
+    {
         top: -110px;
         left: 15%;
         width: 40px;
@@ -199,8 +200,8 @@
 
     .error span.triangle
 
-    /*Contrall*/
-        {
+        /*Contrall*/
+    {
         top: 70%;
         right: -3%;
         border-left: 10px solid #232937;

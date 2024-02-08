@@ -31,7 +31,7 @@ public class UserController {
 
     private final UserService service;
 
-    public UserController(UserService theService ) {
+    public UserController(UserService theService) {
         this.service = theService;
     }
 

@@ -47,12 +47,12 @@
                 <thead class="thead-dark">
                     <tr>
 
-                        <th class="hideable-column">
+                        <th class="hideable-columns">
                         <th th:replace="~{fragments/column_link :: column_link('id', 'ID', 'tag','users')}"></th>
 
                         <th class="text-center">Image</th>
 
-                        <th class="hideable-column">
+                        <th class="hideable-columns">
                         <th th:replace="~{fragments/column_link :: column_link('email', 'Email', 'tag','users')}"></th>
 
                         <th th:replace="~{fragments/column_link :: column_link('firstName', 'First Name', 'none','users')}"> </th>
@@ -70,14 +70,14 @@
 
                 <tbody>
                     <tr th:each="user : ${listUsers}">
-                        <td class="text-center align-middle hideable-column" th:text="${user.id}" style="width: 5%;">
+                        <td class="text-center align-middle hideable-columns" th:text="${user.id}" style="width: 5%;">
                         </td>
                         <td class="text-center align-middle">
                             <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.image == null}"></span>
                             <img alt="User Image" height="50" th:if="${user.image != null}"
                                 th:src="@{${user.getImagePath}}" width="50" />
                         </td>
-                        <th class="align-middle hideable-column" th:text="${user.email}" style="width: 5%;"></th>
+                        <th class="align-middle hideable-columns" th:text="${user.email}" style="width: 5%;"></th>
                         <td class="align-middle" th:text="${user.firstName}" style="width: 20%;"></td>
                         <td class="align-middle" th:text="${user.lastName}" style="width: 20%;"></td>
                         <td class="align-middle" th:text="${user.roles}" style="width: 20%;"></td>

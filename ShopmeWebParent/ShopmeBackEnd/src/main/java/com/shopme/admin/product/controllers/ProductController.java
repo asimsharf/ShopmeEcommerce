@@ -22,7 +22,7 @@ public class ProductController {
 
         List<Product> listProducts = productService.listAll();
 
-        model.addAttribute("listProducts",  listProducts);
+        model.addAttribute("listProducts", listProducts);
 
         return "products/index";
     }
@@ -31,7 +31,7 @@ public class ProductController {
     public String newProduct(Model model) {
         List<Product> listProducts = productService.listAll();
         model.addAttribute("product", new Product());
-        model.addAttribute("listProducts",  listProducts);
+        model.addAttribute("listProducts", listProducts);
         model.addAttribute("pageTitle", "إضافة منتج جديد");
         return "products/product_form";
     }

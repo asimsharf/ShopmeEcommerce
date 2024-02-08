@@ -41,40 +41,40 @@
         <table class="table table-responsive-xl table-striped table-bordered table-hover table-sm">
             <thead class="thead-dark">
                 <tr>
-                    <th class="fit hideable-column">
+                    <th class="fit hideable-columns">
                     <th th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','products')}"></th>
                     <th class="text-center" style="width: 10%;">الصورة</th>
                     <th th:replace="~{fragments/column_link :: column_link('name', 'إسم المنتج', 'none','products')}"></th>
-                    <th class="hideable-column">
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('alias', 'الإسم المستعار', 'tag','products')}"></th>
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('brand.name', 'الماركة', 'none','products')}"></th>
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('category.name', 'الصنف', 'none','products')}"></th>
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('cost', 'التكلفة', 'none','products')}"></th>
-                    <th class="hideable-column" th:replace="~{fragments/column_link :: column_link('price', 'السعر', 'none','products')}"></th>
+                    <th class="hideable-columns">
+                    <th class="hideable-columns" th:replace="~{fragments/column_link :: column_link('alias', 'الإسم المستعار', 'tag','products')}"></th>
+                    <th class="hideable-columns" th:replace="~{fragments/column_link :: column_link('brand.name', 'الماركة', 'none','products')}"></th>
+                    <th class="hideable-columns" th:replace="~{fragments/column_link :: column_link('category.name', 'الصنف', 'none','products')}"></th>
+                    <th class="hideable-columns" th:replace="~{fragments/column_link :: column_link('cost', 'التكلفة', 'none','products')}"></th>
+                    <th class="hideable-columns" th:replace="~{fragments/column_link :: column_link('price', 'السعر', 'none','products')}"></th>
                     <th th:replace="~{fragments/column_link :: column_link('enabled', 'الحالة', 'none','products')}"></th>
                     <th class="actions text-center">الخيارات</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="product : ${listProducts}">
-                    <td class="text-center align-middle hideable-column" th:text="${product.id}" style="width: 5%;"></td>
+                    <td class="text-center align-middle hideable-columns" th:text="${product.id}" style="width: 5%;"></td>
 
                     <td class="text-center align-middle">
                         <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${product.image == null}"></span>
                         <img alt="Product Image" height="50" th:if="${product.image != null}" th:src="@{${product.getImagePath}}" width="50"/>
                     </td>
 
-                    <th class="align-middle hideable-column" th:text="${product.name}" style="width: 20%;"></th>
+                    <th class="align-middle hideable-columns" th:text="${product.name}" style="width: 20%;"></th>
 
                     <td class="align-middle" th:text="${product.alias}"></td>
 
-                    <td class="align-middle hideable-column" th:text="${product.brand.name}" ></td>
+                    <td class="align-middle hideable-columns" th:text="${product.brand.name}" ></td>
 
-                    <td class="align-middle hideable-column" th:text="${product.category.name}"></td>
+                    <td class="align-middle hideable-columns" th:text="${product.category.name}"></td>
 
-                    <td class="align-middle hideable-column" th:text="${product.cost}"></td>
+                    <td class="align-middle hideable-columns" th:text="${product.cost}"></td>
 
-                    <td class="align-middle hideable-column" th:text="${product.price}"></td>
+                    <td class="align-middle hideable-columns" th:text="${product.price}"></td>
 
                     <td class="text-center align-middle" style="width: 5%;">
                         <a class="btn btn-sm btn-outline-success" th:href="@{/products/{id}/enabled/{status}(id=${product.id}, status=${false})}" th:if="${product.enabled}" title="Click to disable">

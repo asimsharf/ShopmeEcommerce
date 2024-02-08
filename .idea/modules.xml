@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd.iml" filepath="$PROJECT_DIR$/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShopmeCommon/ShopmeCommon.iml" filepath="$PROJECT_DIR$/ShopmeCommon/ShopmeCommon.iml" />
     </modules>
   </component>
 </project>

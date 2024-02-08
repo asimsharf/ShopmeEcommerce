@@ -35,7 +35,7 @@ public class UserRepositoryTests {
     Integer theDefaultID = 48;
     String theDefaultPassword = "12345678";
 
-    public String theDefaultEmail(){
+    public String theDefaultEmail() {
         String domain = "@shopme.com";
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
@@ -43,7 +43,7 @@ public class UserRepositoryTests {
             char c = (char) (random.nextInt(26) + 'a');
             sb.append(c);
         }
-        return  sb + domain;
+        return sb + domain;
     }
 
     @Test

@@ -14,14 +14,17 @@
     <form class="form-inline m-2" method="GET" th:action="@{/users/page/1}">
 
         <button class="btn btn-sm btn-outline-secondary m-1" type="submit"><i class="fas fa-search"></i></button>
-        <button class="btn btn-sm btn-outline-secondary m-1" onclick="clearFilter('/ShopmeAdmin/users')" type="button"><i class="fas fa-sync"></i></button>
+        <button class="btn btn-sm btn-outline-secondary m-1" onclick="clearFilter('/ShopmeAdmin/users')" type="button">
+            <i class="fas fa-sync"></i></button>
 
-        <label><input class="form-control" name="keyword" placeholder="إبحث بلإيميل أو الإسم" th:value="${keyword}" type="text" required></label>
+        <label><input class="form-control" name="keyword" placeholder="إبحث بلإيميل أو الإسم" th:value="${keyword}"
+                      type="text" required></label>
 
         <input name="sortField" th:value="${sortField}" type="hidden">
         <input name="sortDir" th:value="${sortDir}" type="hidden">
 
-        <a class="btn btn-sm btn-outline-primary m-1" th:href="@{/users/new}"><i class="fas fa-square-plus fa-bounce"></i></a>
+        <a class="btn btn-sm btn-outline-primary m-1" th:href="@{/users/new}"><i
+                class="fas fa-square-plus fa-bounce"></i></a>
         <a class="btn btn-sm btn-outline-warning m-1" th:href="@{/users/export/csv}"><i class="fas fa-file-csv"></i></a>
         <a class="btn btn-sm btn-outline-success m-1" th:href="@{/users/export/excel}"><i class="fas fa-file-excel"></i></a>
         <a class="btn btn-sm btn-outline-danger m-1" th:href="@{/users/export/pdf}"><i class="fas fa-file-pdf"></i></a>
@@ -42,10 +45,11 @@
 
             <thead class="thead-dark">
             <tr>
-                <th class="hideable-column">
-                <th class="fit" th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','users')}"></th>
+                <th class="hideable-columns">
+                <th class="fit"
+                    th:replace="~{fragments/column_link :: column_link('id', 'المعرف', 'tag','users')}"></th>
                 <th class="text-center" style="width: 10%;">الصورة</th>
-                <th class="hideable-column">
+                <th class="hideable-columns">
                 <th th:replace="~{fragments/column_link :: column_link('email', 'البريد الإلكتروني', 'tag','users')}"></th>
                 <th th:replace="~{fragments/column_link :: column_link('firstName', 'الإسم الإول', 'none','users')}"></th>
                 <th th:replace="~{fragments/column_link :: column_link('lastName', 'إسم العائلة', 'none','users')}"></th>
@@ -57,14 +61,14 @@
 
             <tbody>
             <tr th:each="user : ${listUsers}">
-                <td class="text-center align-middle hideable-column" th:text="${user.id}" style="width: 5%;">
+                <td class="text-center align-middle hideable-columns" th:text="${user.id}" style="width: 5%;">
                 </td>
                 <td class="text-center align-middle">
                     <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${user.image == null}"></span>
                     <img alt="User Image" height="50" th:if="${user.image != null}" th:src="@{${user.getImagePath}}"
                          width="50"/>
                 </td>
-                <th class="align-middle hideable-column" th:text="${user.email}" style="width: 5%;"></th>
+                <th class="align-middle hideable-columns" th:text="${user.email}" style="width: 5%;"></th>
                 <td class="align-middle" th:text="${user.firstName}" style="width: 20%;"></td>
                 <td class="align-middle" th:text="${user.lastName}" style="width: 20%;"></td>
                 <td class="align-middle" th:text="${user.roles}" style="width: 20%;"></td>

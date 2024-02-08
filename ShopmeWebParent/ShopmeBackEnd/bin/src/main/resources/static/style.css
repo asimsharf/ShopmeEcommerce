@@ -83,7 +83,7 @@ body {
         display: none;
     }
 
-    .hideable-column {
+    .hideable-columns {
         display: none;
     }
 }
@@ -95,7 +95,7 @@ body {
         display: none;
     }
 
-    .hideable-column {
+    .hideable-columns {
         display: table-cell;
     }
 

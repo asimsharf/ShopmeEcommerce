@@ -14,11 +14,12 @@ import java.util.Objects;
 public class ProductService {
 
     private final ProductRepository repo;
+
     public ProductService(ProductRepository repo) {
         this.repo = repo;
     }
 
-    public List<Product> listAll(){
+    public List<Product> listAll() {
         return repo.findAll();
     }
 

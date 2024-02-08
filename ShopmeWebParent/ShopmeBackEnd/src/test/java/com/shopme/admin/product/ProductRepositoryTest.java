@@ -27,7 +27,7 @@ public class ProductRepositoryTest {
     private TestEntityManager testEntityManager;
 
     @Test
-    public void testCreateProduct(){
+    public void testCreateProduct() {
 
         Brand brand = testEntityManager.find(Brand.class, 10);
         Category category = testEntityManager.find(Category.class, 15);
@@ -51,21 +51,21 @@ public class ProductRepositoryTest {
         Product savedProduct = repo.save(product);
 
         assertThat(savedProduct).isNotNull();
-        assert(savedProduct.getId() > 0);
+        assert (savedProduct.getId() > 0);
 
     }
 
 
     @Test
-    public void testListAllProducts(){
+    public void testListAllProducts() {
         Iterable<Product> products = repo.findAll();
         products.forEach(System.out::println);
     }
 
     @Test
-    public void testGetProduct(){
+    public void testGetProduct() {
         Integer id = 1;
-        if (repo.findById(id).isPresent()){
+        if (repo.findById(id).isPresent()) {
             Product product = repo.findById(id).get();
             System.out.println(product.getName());
             assertThat(product).isNotNull();
@@ -73,7 +73,7 @@ public class ProductRepositoryTest {
     }
 
     @Test
-    public void testUpdateProduct(){
+    public void testUpdateProduct() {
         Integer id = 1;
         Product product = repo.findById(id).get();
         product.setPrice(1000);

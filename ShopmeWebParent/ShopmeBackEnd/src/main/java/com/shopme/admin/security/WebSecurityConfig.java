@@ -40,18 +40,7 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests()
-                .requestMatchers("/users/**")
-                .hasAuthority("Admin")
-                .requestMatchers("/settings/**")
-                .hasAuthority("Admin")
-                .requestMatchers("/categories/**", "/brands/**")
-                .hasAnyAuthority("Admin", "Editor")
-                .requestMatchers("/products/**", "/product_categories/**")
-                .hasAnyAuthority("Admin", "Editor", "Salesperson", "Shipper")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin(login -> login.loginPage("/login").usernameParameter("email").defaultSuccessUrl("/", true).permitAll()).logout(LogoutConfigurer::permitAll).rememberMe(me -> me.key("abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").tokenValiditySeconds(7 * 24 * 60 * 60));
+        http.authorizeHttpRequests().requestMatchers("/users/**").hasAuthority("Admin").requestMatchers("/settings/**").hasAuthority("Admin").requestMatchers("/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor").requestMatchers("/products/**", "/product_categories/**").hasAnyAuthority("Admin", "Editor", "Salesperson", "Shipper").anyRequest().authenticated().and().formLogin(login -> login.loginPage("/login").usernameParameter("email").defaultSuccessUrl("/", true).permitAll()).logout(LogoutConfigurer::permitAll).rememberMe(me -> me.key("abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").tokenValiditySeconds(7 * 24 * 60 * 60));
         http.headers(headers -> headers.frameOptions().sameOrigin());
         return http.build();
     }
