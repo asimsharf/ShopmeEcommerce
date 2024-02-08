@@ -1,12 +1,12 @@
 package com.shopme.admin.paging;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.method.support.ModelAndViewContainer;
+
+import java.util.List;
 
 public class PagingAndSortingHelper {
     private final ModelAndViewContainer model;

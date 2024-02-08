@@ -1,22 +1,17 @@
 package com.shopme.admin.user.export;
 
-import java.awt.Color;
-import java.io.IOException;
-import java.util.List;
-
-import com.shopme.admin.utils.AbstractExporter;
-import jakarta.servlet.http.HttpServletResponse;
-
-import com.lowagie.text.Document;
 import com.lowagie.text.Font;
-import com.lowagie.text.FontFactory;
-import com.lowagie.text.PageSize;
-import com.lowagie.text.Paragraph;
-import com.lowagie.text.Phrase;
+import com.lowagie.text.*;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
+import com.shopme.admin.utils.AbstractExporter;
 import com.shopme.common.entity.User;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.awt.*;
+import java.io.IOException;
+import java.util.List;
 
 public class UserPdfExporter extends AbstractExporter {
 

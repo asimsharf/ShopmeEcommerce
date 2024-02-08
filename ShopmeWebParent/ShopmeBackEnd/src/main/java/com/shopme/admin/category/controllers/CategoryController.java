@@ -1,16 +1,12 @@
 package com.shopme.admin.category.controllers;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
-
 import com.shopme.admin.category.CategoryPageInfo;
 import com.shopme.admin.category.exports.CategoryCsvExporter;
 import com.shopme.admin.category.services.CategoryService;
 import com.shopme.admin.utils.FileUploadUtil;
+import com.shopme.common.entity.Category;
+import com.shopme.common.exception.CategoryNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.shopme.common.entity.Category;
-import com.shopme.common.exception.CategoryNotFoundException;
+import java.io.IOException;
+import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class CategoryController {

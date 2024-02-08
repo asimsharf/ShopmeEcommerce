@@ -1,20 +1,17 @@
 package com.shopme.admin.category.services;
 
-import java.util.*;
-
 import com.shopme.admin.category.CategoryPageInfo;
 import com.shopme.admin.category.repositories.CategoryRepository;
+import com.shopme.common.entity.Category;
+import com.shopme.common.exception.CategoryNotFoundException;
 import jakarta.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.shopme.common.entity.Category;
-import com.shopme.common.exception.CategoryNotFoundException;
+import java.util.*;
 
 @Service
 @Transactional

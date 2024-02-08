@@ -5,7 +5,6 @@ import com.shopme.admin.user.repositories.RoleRepository;
 import com.shopme.admin.user.repositories.UserRepository;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

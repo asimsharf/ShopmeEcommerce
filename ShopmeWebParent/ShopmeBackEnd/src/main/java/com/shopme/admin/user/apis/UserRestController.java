@@ -3,7 +3,6 @@ package com.shopme.admin.user.apis;
 import com.shopme.admin.response.TheResponse;
 import com.shopme.admin.user.services.UserService;
 import com.shopme.common.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
