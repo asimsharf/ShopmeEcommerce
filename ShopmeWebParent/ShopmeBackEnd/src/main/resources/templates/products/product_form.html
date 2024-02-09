@@ -1,35 +1,80 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="~{fragments/page_head :: page_head(${pageTitle})}"> </div>
+<div>
+    <div th:replace="~{fragments/page_head :: page_head(${pageTitle}, 'tag')}"></div>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}" type="text/css" />
+    <script th:src="@{/richtext/jquery.richtext.min.js}" type="text/javascript"></script>
+</div>
 
 <body>
 <div class="container-fluid">
-    <div th:replace="~{fragments/page_navbar}"> </div>
+    <div th:replace="~{fragments/page_navbar}"></div>
 
     <div class="table-header mx-2 my-2">
-        <h2 class="table-header-title mx-2 my-2">إدارة المتجات | [[${pageTitle}]]</h2>
+        <h2 class="table-header-title mx-2 my-2">إدارة المنتجات | [[${pageTitle}]]</h2>
     </div>
 
     <div>
-<!--         TODO: Add the form here-->
+        <form enctype="multipart/form-data" method="post" th:action="@{/products/save}" th:object="${product}" class="p-5" >
+
+            <div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview" href="#overview" role="tab">معلومات المنتج</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#description" href="#description" role="tab">وصف المنتج</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#image" href="#image" role="tab">صور المنتج</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#details" href="#details" role="tab">تفاصيل المنتج</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#shipping" href="#shipping" role="tab">شحن المنتج</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active p-3" id="overview" role="tabpanel">
+                        <div th:replace="~{fragments/product_overview :: content}"></div>
+                    </div>
+                    <div class="tab-pane" id="description" role="tabpanel">Description</div>
+                    <div class="tab-pane" id="image" role="tabpanel">Image</div>
+                    <div class="tab-pane" id="details" role="tabpanel">Details</div>
+                    <div class="tab-pane" id="shipping" role="tabpanel">Shipping</div>
+                </div>
+
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-primary m-3" type="submit" value="حفظ">
+                <input class="btn btn-secondary" onclick="theBtnCancel('/ShopmeAdmin/products');" type="button"
+                       value="إلغاء"/>
+            </div>
+
+
+
+        </form>
     </div>
 
-    <!-- The Modal -->
+
     <div class="modal" id="modalDialog">
         <div class="modal-dialog">
             <div class="modal-content">
 
-                <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title" id="modalTitle">Warning</h4>
                     <button class="close" data-dismiss="modal" type="button">&times;</button>
                 </div>
 
-                <!-- Modal body -->
                 <div class="modal-body" id="modalBody">Modal Body</div>
 
-                <!-- Modal footer -->
                 <div class="modal-footer">
                     <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
                 </div>
@@ -38,7 +83,7 @@
         </div>
     </div>
 
-    <div th:replace="~{fragments/page_footer}"> </div>
+    <div th:replace="~{fragments/page_footer}"></div>
 
 </div>
 

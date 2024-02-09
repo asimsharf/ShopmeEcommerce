@@ -54,7 +54,7 @@ public class AccountController {
         loggedUser.setFirstName(user.getFirstName());
         loggedUser.setLastName(user.getLastName());
 
-        thRa.addFlashAttribute("message", "Your account details have been updated successfully.");
+        thRa.addFlashAttribute("message", "تم تحديث الحساب بنجاح");
 
         return "redirect:/account";
     }

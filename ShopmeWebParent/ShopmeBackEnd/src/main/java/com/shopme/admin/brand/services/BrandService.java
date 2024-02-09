@@ -1,6 +1,7 @@
 package com.shopme.admin.brand.services;
 
 
+import com.shopme.admin.brand.dto.CategoryDTO;
 import com.shopme.admin.brand.exceptions.BrandNotFoundException;
 import com.shopme.admin.brand.repositories.BrandRepository;
 import com.shopme.admin.paging.PagingAndSortingHelper;
@@ -68,6 +69,5 @@ public class BrandService {
 
         return "OK";
     }
-
 
 }

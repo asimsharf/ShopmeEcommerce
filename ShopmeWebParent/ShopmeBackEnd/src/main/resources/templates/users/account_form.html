@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org">
 
-<div class="p-1 m-1" th:replace="~{fragments/page_head :: page_head('معلومات الحساب الخاص بك')}"></div>
+<div class="p-1 m-1" th:replace="~{fragments/page_head :: page_head('معلومات الحساب الخاص بك','none')}"></div>
 
 <body>
 <div class="container-fluid">
@@ -11,8 +11,8 @@
         <form enctype="multipart/form-data" method="post" style="max-width: 700px; margin: 0 auto;"
               th:action="@{/account/update}" th:object="${user}">
 
-            <div class="text-center">
-                <h2>Your Account Details</h2>
+            <div class="text-center p-5">
+                <h2>معلومات الحساب الخاص بك.</h2>
             </div>
 
             <div class="alert alert-success alert-dismissible" th:if="${message != null}">
@@ -53,7 +53,7 @@
                     <div class="col-sm-9">
                         <input autocomplete="new-password" class="form-control" maxlength="20" minlength="8"
                                name="password" oninput="checkPasswordMath(document.getElementById('confirmPassword'))"
-                               placeholder="Leave blank if you don't want to to change" th:field="*{password}"
+                               placeholder="اتركه فارغًا إذا كنت لا ترغب في التغيير." th:field="*{password}"
                                type="password"/>
                     </div>
                 </div>

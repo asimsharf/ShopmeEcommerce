@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="~{fragments/page_head :: page_head(${pageTitle})}"></div>
+<div th:replace="~{fragments/page_head :: page_head(${pageTitle}, 'none')}"></div>
 
 <body>
 <div class="container-fluid">
@@ -22,8 +22,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-left" th:for="name">الاسم:</label>
                     <div class="col-sm-9">
-                        <input autocomplete="name" class="form-control" maxlength="28" minlength="8" name="name"
-                               required th:field="*{name}" type="text"/>
+                        <input autocomplete="name" class="form-control" maxlength="28" minlength="8" name="name" required th:field="*{name}" type="text"/>
                     </div>
                 </div>
 

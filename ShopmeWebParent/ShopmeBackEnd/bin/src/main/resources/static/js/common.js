@@ -80,7 +80,7 @@ function logoutLink() {
 
 function fileImage() {
     $("#fileImage").change(function () {
-        fileSize = this.files[0].size;
+        let fileSize = this.files[0].size;
         if (fileSize > 10485760) {
             $("#modalTitle").text("Warning");
             $("#modalBody").text("The file size must not exceed 10MB.");
