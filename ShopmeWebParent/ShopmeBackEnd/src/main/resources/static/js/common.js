@@ -215,6 +215,9 @@ function getCategories() {
         });
     }
 
+    $("#shortDescription").richText();
+    $("#fullDescription").richText();
+
     dropdownBrand.change(function(){
         let brandId = $(this).val();
         if (brandId) {

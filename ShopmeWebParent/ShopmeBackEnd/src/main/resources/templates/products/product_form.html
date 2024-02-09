@@ -42,12 +42,20 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane active p-3" id="overview" role="tabpanel">
-                        <div th:replace="~{fragments/product_overview :: content}"></div>
+                        <div th:replace="~{fragments/products/product_overview :: content}"></div>
                     </div>
-                    <div class="tab-pane" id="description" role="tabpanel">Description</div>
-                    <div class="tab-pane" id="image" role="tabpanel">Image</div>
-                    <div class="tab-pane" id="details" role="tabpanel">Details</div>
-                    <div class="tab-pane" id="shipping" role="tabpanel">Shipping</div>
+                    <div class="tab-pane" id="description" role="tabpanel">
+                        <div th:replace="~{fragments/products/product_description :: content}"></div>
+                    </div>
+                    <div class="tab-pane" id="image" role="tabpanel">
+                        <div th:replace="~{fragments/products/product_image :: content}"></div>
+                    </div>
+                    <div class="tab-pane" id="details" role="tabpanel">
+                        <div th:replace="~{fragments/products/product_details :: content}"></div>
+                    </div>
+                    <div class="tab-pane  p-3" id="shipping" role="tabpanel">
+                        <div th:replace="~{fragments/products/product_shipping :: content}"></div>
+                    </div>
                 </div>
 
             </div>
