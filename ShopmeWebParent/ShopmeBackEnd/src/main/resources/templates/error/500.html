@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
 
-<div th:replace="~{fragments/page_head('Error - Shopme Admin')}"> </div>
+<div th:replace="~{fragments/page_head :: page_head('500', 'none')}"></div>
 
 <body>
     <div class="container-fluid">
@@ -24,7 +24,10 @@
                         </div>
                         <div class="msg">OH!<span class="triangle"></span></div>
                     </div>
-                    <h2 class="h1">Sorry! the server has encountered an error while processing your request</h2>
+                    <h2 class="h1">
+<!--                        Sorry! the server has encountered an error while processing your request-->
+                        عفواً! حدث خطأ في الخادم أثناء معالجة طلبك
+                    </h2>
                 </div>
             </div>
         </div>

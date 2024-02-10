@@ -4,10 +4,7 @@ package com.shopme.admin.product.apis;
 import com.shopme.admin.product.services.ProductService;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -25,10 +22,9 @@ public class RestProductController {
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
 
-    @GetMapping("/products/check_unique")
-    public String checkUnique(Integer id, String name) {
-        return productService.checkUnique(id, name);
+    @PostMapping("/products/check_unique")
+    public String checkUnique(Integer id, String name, String alias) {
+        return productService.checkUnique(id, name, alias);
     }
-
 
 }

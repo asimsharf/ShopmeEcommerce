@@ -49,7 +49,7 @@ public class RestBrandController {
            }
            return listCategories;
        } catch (BrandNotFoundException ex) {
-           throw new BrandNotFoundRestException("Could not find any brand with ID " + brandId);
+           throw new BrandNotFoundRestException("لم يتم العثو على ماركة بالمعرف " + brandId);
        }
     }
 

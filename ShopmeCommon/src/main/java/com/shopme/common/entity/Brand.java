@@ -69,15 +69,15 @@ public class Brand {
         this.categories = categories;
     }
 
-    @Override
-    public String toString() {
-        return "Brand{" + "id=" + id + ", name='" + name + '\'' + ", image='" + image + '\'' + '}';
-    }
-
     @Transient
     public String getImagePath() {
         if (this.id == null || this.image == null) return "/images/image-thumbnail.png";
         return "/brand-image/" + this.id + "/" + this.image;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Brand [id=%d, name=%s]", id, name);
     }
 
 }

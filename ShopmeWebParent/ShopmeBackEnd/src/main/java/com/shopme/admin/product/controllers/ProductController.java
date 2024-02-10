@@ -1,14 +1,18 @@
 package com.shopme.admin.product.controllers;
 
 import com.shopme.admin.brand.services.BrandService;
+import com.shopme.admin.product.exceptions.ProductNotFoundException;
 import com.shopme.admin.product.services.ProductService;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -44,13 +48,30 @@ public class ProductController {
         return "products/product_form";
     }
 
-
     @PostMapping("/products/save")
-    public String saveProduct(Product product) {
-
-        System.out.println(product);
-
+    public String saveProduct(Product product, RedirectAttributes ra) throws IOException {
+        productService.save(product);
+        ra.addFlashAttribute("message", "تم حفظ المنتج بنجاح");
         return "redirect:/products";
     }
+
+    @GetMapping("/products/{id}/enabled/{status}")
+    public String updateProductEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
+        productService.updateProductEnabledStatus(id, enabled);
+        String status = enabled ? "تم تفعيل" : "تم إلغاء التفعيل";
+        String message = "المنتج رقم " + id + " تم " + status;
+        redirectAttributes.addFlashAttribute("message", message);
+        return "redirect:/products";
+    }
+
+
+    @GetMapping("/products/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Integer id, RedirectAttributes ra) throws ProductNotFoundException {
+        productService.delete(id);
+        String message = "تم حذف المنتج رقم " + id + " بنجاح";
+        ra.addFlashAttribute("message", message);
+        return "redirect:/products";
+    }
+
 
 }

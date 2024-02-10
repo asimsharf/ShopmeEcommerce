@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" >
 
-<div th:replace="~{fragments/page_head('Error - Shopme Admin')}"> </div>
+<div th:replace="~{fragments/page_head :: page_head('404', 'none')}"></div>
 
 <body>
     <div class="container-fluid">
@@ -24,7 +24,10 @@
                         </div>
                         <div class="msg">OH!<span class="triangle"></span></div>
                     </div>
-                    <h2 class="h1">Sorry! Page not found</h2>
+                    <h2 class="h1">
+<!--                        Sorry! Page not found-->
+                        عفواً! الصفحة غير موجودة
+                    </h2>
                 </div>
             </div>
         </div>

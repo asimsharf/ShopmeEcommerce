@@ -98,7 +98,7 @@ public class CategoryController {
             categoryService.save(category);
         }
 
-        ra.addFlashAttribute("message", "The category has been saved successfully.");
+        ra.addFlashAttribute("message", "تم حفظ الصنف بنجاح");
         return "redirect:/categories";
     }
 
@@ -136,7 +136,7 @@ public class CategoryController {
             String categoryDir = "category-image/" + id;
             FileUploadUtil.removeDir(categoryDir);
 
-            ra.addFlashAttribute("message", "The category ID " + id + " has been deleted successfully");
+            ra.addFlashAttribute("message", "الصنف بالمعرف  " + id + " تم حذفه بنجاح");
         } catch (CategoryNotFoundException | IOException ex) {
             ra.addFlashAttribute("message", ex.getMessage());
         }

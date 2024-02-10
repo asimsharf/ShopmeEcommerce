@@ -16,7 +16,7 @@
     </div>
 
     <div>
-        <form enctype="multipart/form-data" method="post" th:action="@{/products/save}" th:object="${product}" class="p-5" >
+        <form enctype="multipart/form-data" method="post" th:action="@{/products/save}" th:object="${product}" class="p-5" onsubmit="return checkProductUnique(this)">
 
             <div>
 

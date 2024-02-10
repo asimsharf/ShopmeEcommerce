@@ -169,17 +169,17 @@ public class Category {
     @Transient
     private boolean hasChildren;
 
-    @Override
-    public String toString() {
-        return this.name;
-    }
-
     public String getAllParentIDs() {
         return allParentIDs;
     }
 
     public void setAllParentIDs(String allParentIDs) {
         this.allParentIDs = allParentIDs;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Category [id=%d, name=%s]", id, name);
     }
 
 }

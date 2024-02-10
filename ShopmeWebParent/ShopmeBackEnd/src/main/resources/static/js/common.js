@@ -59,7 +59,7 @@ function customizeDropdown() {
 
 function checkPasswordMath(confirmPassword) {
     if (confirmPassword.value !== $("#password").val()) {
-        confirmPassword.setCustomValidity("Passwords do not match");
+        confirmPassword.setCustomValidity("كلمة المرور غير متطابقة");
     } else {
         confirmPassword.setCustomValidity("");
     }
@@ -82,8 +82,8 @@ function fileImage() {
     $("#fileImage").change(function () {
         let fileSize = this.files[0].size;
         if (fileSize > 10485760) {
-            $("#modalTitle").text("Warning");
-            $("#modalBody").text("The file size must not exceed 10MB.");
+            $("#modalTitle").text("تحذير");
+            $("#modalBody").text("حجم الملف يجب أن يكون أقل من 10 ميغابايت. الرجاء تحميل ملف أصغر");
             $("#modalDialog").modal();
             this.value = "";
             this.reportValidity();
@@ -99,7 +99,7 @@ function linkDelete() {
         let link = $(this);
         let  theID = link.attr("theID");
         $("#yesButton").attr("href", link.attr("href"));
-        $("#confirmText").text("Are you sure you want to delete this user with ID " + theID + "?");
+        $("#confirmText").text("هل أنت متأكد أنك تريد حذف السجل رقم " + theID + "?");
         $("#confirmModal").modal();
     });
 }
@@ -118,12 +118,12 @@ function checkEmailUnique(form) {
         if (res === "OK") {
             form.submit();
         } else if (res === "Duplicated") {
-            showModalDialog("Warning", "The email is already in use " + userEmail);
+            showModalDialog("تحذير", "البريد الإلكتروني " + userEmail + " مستخدم بالفعل ");
         } else {
-            showModalDialog("Error", "Unknown response from server: ");
+            showModalDialog("خطأ", "استجابة غير معروفة من الخادم");
         }
     }).fail(function (xhr, status, error) {
-        showModalDialog("Error", "Could not connect to server: " + error);
+        showModalDialog("خطأ", "تعذر الاتصال بالخادم: " + error);
     });
     return false;
 }
@@ -144,12 +144,12 @@ function checkCategoryAndAliasUnique(form) {
         if (res === "OK") {
             form.submit();
         } else if (res === "DuplicateName" || res === "DuplicateAlias") {
-            showModalDialog("Warning", "The Category name " + categoryName + " or Alias name " + aliasName + " is already in use ");
+            showModalDialog("تحذير", "اسم الفئة " + categoryName + " أو اسم الاسم المستعار " + aliasName + " مستخدم بالفعل ");
         } else {
-            showModalDialog("Error", "Unknown response from server: ");
+            showModalDialog("خطأ", "استجابة غير معروفة من الخادم");
         }
     }).fail(function (xhr, status, error) {
-        showModalDialog("Error", "Could not connect to server: " + error);
+        showModalDialog("خطأ", "تعذر الاتصال بالخادم: " + error);
     });
     return false;
 }
@@ -168,12 +168,38 @@ function checkBrandUnique(form) {
         if (res === "OK") {
             form.submit();
         } else if (res === "DuplicateName") {
-            showModalDialog("Warning", "The Brand name " + brandName + " is already in use ");
+            showModalDialog("تحذير", "اسم العلامة التجارية " + brandName + " مستخدم بالفعل ");
         } else {
-            showModalDialog("Error", "Unknown response from server");
+            showModalDialog("خطأ", "استجابة غير معروفة من الخادم");
         }
     }).fail(function (xhr, status, error) {
-        showModalDialog("Error", "Could not connect to server: " + error);
+        showModalDialog("خطأ", "تعذر الاتصال بالخادم: " + error);
+    });
+    return false;
+}
+
+function checkProductUnique(form) {
+    let url = "/ShopmeAdmin/api/products/check_unique";
+    let  productName = $("[name='name']").val();
+    let  productAlias = $("[name='alias']").val();
+    let csrfToken = $("input[name='_csrf']").val();
+    let  theProductId = $("[name='id']").val();
+    let  params = {
+        id: theProductId,
+        name: productName,
+        alias: productAlias,
+        _csrf: csrfToken
+    };
+    $.post(url, params, function (res) {
+        if (res === "OK") {
+            form.submit();
+        } else if (res === "DuplicateName" || res === "DuplicateAlias") {
+            showModalDialog("تحذير", "اسم المنتج " + productName + " أو اسم الاسم المستعار " + productAlias + " مستخدم بالفعل ");
+        } else {
+            showModalDialog("خطأ", "استجابة غير معروفة من الخادم");
+        }
+    }).fail(function (xhr, status, error) {
+        showModalDialog("خطأ", "تعذر الاتصال بالخادم: " + error);
     });
     return false;
 }

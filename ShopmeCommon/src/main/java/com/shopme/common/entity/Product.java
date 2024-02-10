@@ -3,6 +3,8 @@ package com.shopme.common.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -17,9 +19,6 @@ public class Product {
 
     @Column(length = 256, nullable = false, unique = true)
     private String alias;
-
-    @Column(length = 128)
-    private String image;
 
     @Column(name = "short_description", length = 512, nullable = false)
     private String shortDescription;
@@ -44,9 +43,17 @@ public class Product {
     @Column(name = "discount_percent")
     private float discountPercent;
 
+
+    @Column(name = "length")
     private float length;
+
+    @Column(name = "width")
     private float width;
+
+    @Column(name = "height")
     private float height;
+
+    @Column(name = "weight")
     private float weight;
 
 
@@ -57,6 +64,14 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
+
+    @Column(name = "main_image")
+    private String mainImage;
+
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<ProductImage> images = new HashSet<>();
+
 
     public Integer getId() {
         return id;
@@ -80,14 +95,6 @@ public class Product {
 
     public void setAlias(String alias) {
         this.alias = alias;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getShortDescription() {
@@ -210,37 +217,36 @@ public class Product {
         this.brand = brand;
     }
 
+    public String getMainImage() {
+        return mainImage;
+    }
+
+    public void setMainImage(String mainImage) {
+        this.mainImage = mainImage;
+    }
+
+    public Set<ProductImage> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<ProductImage> images) {
+        this.images = images;
+    }
+
+    public void addExtraImage(String imageName) {
+        this.images.add(new ProductImage(imageName, this));
+    }
     @Transient
     public String getImagePath() {
-        if (this.id == null || this.image == null) {
-            return "/images/image-thumbnail.png";
-        }
-
-        return "/product-image/" + this.id + "/" + this.image;
+        if (id == null || mainImage == null) return "/images/default-product.png";
+        return "/product-images/" + this.id + "/" + this.mainImage;
     }
+
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", alias='" + alias + '\'' +
-                ", image='" + image + '\'' +
-                ", shortDescription='" + shortDescription + '\'' +
-                ", fullDescription='" + fullDescription + '\'' +
-                ", createdTime=" + createdTime +
-                ", updatedTime=" + updatedTime +
-                ", enabled=" + enabled +
-                ", inStock=" + inStock +
-                ", cost=" + cost +
-                ", price=" + price +
-                ", discountPercent=" + discountPercent +
-                ", length=" + length +
-                ", width=" + width +
-                ", height=" + height +
-                ", weight=" + weight +
-                ", category=" + category +
-                ", brand=" + brand +
-                '}';
+        return String.format(
+                "Product [id=%s, name=%s, alias=%s, shortDescription=%s, fullDescription=%s, createdTime=%s, updatedTime=%s, enabled=%s, inStock=%s, cost=%s, price=%s, discountPercent=%s, length=%s, width=%s, height=%s, weight=%s, category=%s, brand=%s, mainImage=%s, images=%s]",
+                id, name, alias, shortDescription, fullDescription, createdTime, updatedTime, enabled, inStock, cost, price, discountPercent, length, width, height, weight, category, brand, mainImage, images);
     }
 }

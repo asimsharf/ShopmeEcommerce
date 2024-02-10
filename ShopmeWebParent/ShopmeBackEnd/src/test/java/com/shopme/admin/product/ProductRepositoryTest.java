@@ -82,5 +82,16 @@ public class ProductRepositoryTest {
         assertThat(updatedProduct.getPrice()).isEqualTo(1000);
     }
 
+    @Test
+    public void testSaveProductWithImages() {
+        Integer productId = 1;
+        Product product = repo.findById(productId).get();
+        product.addExtraImage("image_1.jpg");
+        product.addExtraImage("image_2.jpg");
+        product.addExtraImage("image_3.jpg");
+        Product savedProduct = repo.save(product);
+        assertThat(savedProduct.getImages().size()).isEqualTo(3);
+    }
+
 
 }

@@ -117,11 +117,6 @@ public class User {
         this.roles = roles;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", enabled=" + enabled + ", image='" + image + '\'' + '}';
-    }
-
     @Transient
     public String getImagePath() {
         if (id == null || image == null) return "/images/default-user.png";
@@ -131,5 +126,10 @@ public class User {
     @Transient
     public String getFullName() {
         return firstName + " " + lastName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("User [id=%s, email=%s, firstName=%s, lastName=%s]", id, email, firstName, lastName);
     }
 }

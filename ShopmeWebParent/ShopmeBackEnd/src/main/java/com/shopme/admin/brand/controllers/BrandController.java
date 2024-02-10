@@ -72,7 +72,7 @@ public class BrandController {
             brandService.save(brand);
         }
 
-        ra.addFlashAttribute("message", "The Brand has been saved successfully.");
+        ra.addFlashAttribute("message", "تم حفظ الماركة بنجاح");
         return "redirect:/brands";
     }
 
@@ -102,7 +102,7 @@ public class BrandController {
             String brandDir = "brand-image/" + id;
             FileUploadUtil.removeDir(brandDir);
 
-            ra.addFlashAttribute("message", "The brand ID " + id + " has been deleted successfully");
+            ra.addFlashAttribute("message", "الماركة بالمعرف " + id + " تم حذفها بنجاح");
         } catch (BrandNotFoundException | IOException ex) {
             ra.addFlashAttribute("message", ex.getMessage());
         }

@@ -70,6 +70,6 @@ public class Role {
 
     @Override
     public String toString() {
-        return this.name;
+        return String.format("Role [id=%d, name=%s]", id, name);
     }
 }

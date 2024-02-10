@@ -95,7 +95,7 @@ public class UserController {
 
         if (user.getImage().isEmpty()) user.setImage(null);
 
-        thRa.addFlashAttribute("message", "The User has been saved successfully.");
+        thRa.addFlashAttribute("message", "تم حفظ المستخدم بنجاح");
         service.save(user);
 
         return getRedirectURLtoAffectedUser(user);
@@ -127,7 +127,7 @@ public class UserController {
             service.delete(id);
             FileUploadUtil.removeDir("user-image/" + id);
 
-            thRa.addFlashAttribute("message", "The user ID " + id + " has been deleted successfully.");
+            thRa.addFlashAttribute("message", "المستخدم بالمعرف " + id + " تم حذفه بنجاح");
         } catch (UserNotFoundException ex) {
             thRa.addFlashAttribute("message", ex.getMessage());
         }
