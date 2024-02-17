@@ -2,6 +2,7 @@ package com.shopme.admin.utils;
 
 import com.shopme.admin.paging.PagingAndSortingArgumentResolver;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -14,10 +15,11 @@ import java.util.List;
 public class MvcConfig implements WebMvcConfigurer {
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(@NonNull ResourceHandlerRegistry registry) {
         exposeDirectory("user-image", registry);
         exposeDirectory("category-image", registry);
         exposeDirectory("brand-image", registry);
+        exposeDirectory("product-images", registry);
     }
 
     private void exposeDirectory(String s, ResourceHandlerRegistry registry) {

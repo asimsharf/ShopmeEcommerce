@@ -1,0 +1,426 @@
+2024-02-16T16:00:37.194+03:00  WARN 31760 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T16:00:37.210+03:00  WARN 31760 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T16:00:37.211+03:00  WARN 31760 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T16:00:37.211+03:00  WARN 31760 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T16:00:37.211+03:00  WARN 31760 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T16:00:37.211+03:00  WARN 31760 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:25:35.819+03:00  WARN 42994 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [52C14F5909242E8F70F33F23463CD449]
+2024-02-16T20:25:37.795+03:00  WARN 42994 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:25:37.795+03:00  WARN 42994 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:25:37.795+03:00  WARN 42994 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:25:37.795+03:00  WARN 42994 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:25:37.795+03:00  WARN 42994 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:25:37.795+03:00  WARN 42994 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:28:42.459+03:00  WARN 43049 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [E2D7B1C60E9818F68C9BD409452A8455]
+2024-02-16T20:28:44.239+03:00  WARN 43049 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:28:44.240+03:00  WARN 43049 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:28:44.240+03:00  WARN 43049 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:28:44.240+03:00  WARN 43049 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:28:44.240+03:00  WARN 43049 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:28:44.240+03:00  WARN 43049 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:30:33.415+03:00  WARN 43092 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:30:33.416+03:00  WARN 43092 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:30:33.416+03:00  WARN 43092 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:30:33.416+03:00  WARN 43092 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:30:33.416+03:00  WARN 43092 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:30:33.417+03:00  WARN 43092 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:32:03.804+03:00  WARN 43106 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:32:05.399+03:00  WARN 43106 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:32:05.399+03:00  WARN 43106 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:32:05.399+03:00  WARN 43106 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:32:05.399+03:00  WARN 43106 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:32:05.399+03:00  WARN 43106 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:32:05.399+03:00  WARN 43106 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:34:53.513+03:00  WARN 43145 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:34:55.175+03:00  WARN 43145 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:34:55.175+03:00  WARN 43145 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:34:55.175+03:00  WARN 43145 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:34:55.175+03:00  WARN 43145 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:34:55.175+03:00  WARN 43145 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:34:55.175+03:00  WARN 43145 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:36:02.979+03:00  WARN 43199 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:36:04.633+03:00  WARN 43199 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:36:04.633+03:00  WARN 43199 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:36:04.633+03:00  WARN 43199 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:36:04.633+03:00  WARN 43199 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:36:04.633+03:00  WARN 43199 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:36:04.633+03:00  WARN 43199 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:42:43.535+03:00  WARN 43355 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:42:45.341+03:00  WARN 43355 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:42:45.341+03:00  WARN 43355 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:42:45.341+03:00  WARN 43355 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:42:45.341+03:00  WARN 43355 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:42:45.341+03:00  WARN 43355 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:42:45.341+03:00  WARN 43355 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:44:00.733+03:00  WARN 43416 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:44:02.318+03:00  WARN 43416 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:44:02.318+03:00  WARN 43416 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:44:02.318+03:00  WARN 43416 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:44:02.318+03:00  WARN 43416 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:44:02.318+03:00  WARN 43416 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:44:02.318+03:00  WARN 43416 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:45:53.366+03:00  WARN 43459 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:45:55.066+03:00  WARN 43459 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:45:55.066+03:00  WARN 43459 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:45:55.066+03:00  WARN 43459 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:45:55.066+03:00  WARN 43459 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:45:55.066+03:00  WARN 43459 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:45:55.066+03:00  WARN 43459 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:24.343+03:00  WARN 43505 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:47:25.718+03:00  WARN 43505 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:25.718+03:00  WARN 43505 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:25.718+03:00  WARN 43505 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:25.718+03:00  WARN 43505 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:25.718+03:00  WARN 43505 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:25.718+03:00  WARN 43505 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:55.104+03:00  WARN 43523 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:47:57.147+03:00  WARN 43523 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:57.147+03:00  WARN 43523 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:57.147+03:00  WARN 43523 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:57.147+03:00  WARN 43523 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:57.147+03:00  WARN 43523 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:47:57.147+03:00  WARN 43523 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:48:23.712+03:00  WARN 43545 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:48:25.173+03:00  WARN 43545 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:48:25.174+03:00  WARN 43545 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:48:25.174+03:00  WARN 43545 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:48:25.174+03:00  WARN 43545 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:48:25.174+03:00  WARN 43545 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:48:25.174+03:00  WARN 43545 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:35.981+03:00  WARN 43558 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:49:37.405+03:00  WARN 43558 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:37.405+03:00  WARN 43558 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:37.405+03:00  WARN 43558 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:37.405+03:00  WARN 43558 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:37.405+03:00  WARN 43558 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:37.405+03:00  WARN 43558 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:57.649+03:00  WARN 43567 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:49:59.093+03:00  WARN 43567 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:59.093+03:00  WARN 43567 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:59.093+03:00  WARN 43567 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:59.093+03:00  WARN 43567 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:59.093+03:00  WARN 43567 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:49:59.093+03:00  WARN 43567 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:51:07.902+03:00  WARN 43595 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:51:09.445+03:00  WARN 43595 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:51:09.445+03:00  WARN 43595 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:51:09.445+03:00  WARN 43595 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:51:09.445+03:00  WARN 43595 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:51:09.445+03:00  WARN 43595 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:51:09.445+03:00  WARN 43595 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:56:10.482+03:00  WARN 43740 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T20:56:12.419+03:00  WARN 43740 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:56:12.421+03:00  WARN 43740 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:56:12.424+03:00  WARN 43740 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:56:12.425+03:00  WARN 43740 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:56:12.426+03:00  WARN 43740 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:56:12.426+03:00  WARN 43740 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:59:12.926+03:00  WARN 43792 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:59:12.927+03:00  WARN 43792 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:59:12.927+03:00  WARN 43792 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:59:12.927+03:00  WARN 43792 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:59:12.927+03:00  WARN 43792 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T20:59:12.927+03:00  WARN 43792 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:00:09.985+03:00 ERROR 43792 --- [http-nio-3000-exec-7] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-3000-exec-7] Exception processing template "products/index": An error happened during template parsing (template: "class path resource [templates/products/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:537) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:110) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "product.getImagePath" (template: "products/index" - line 64, col 99)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	... 95 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "product.getImagePath" (template: "products/index" - line 64, col 99)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:290) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:294) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	... 97 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'getImagePath' cannot be found on object of type 'com.shopme.common.entity.Product' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:405) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	... 126 common frames omitted
+
+2024-02-16T21:00:09.999+03:00 ERROR 43792 --- [http-nio-3000-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/ShopmeAdmin] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'getImagePath' cannot be found on object of type 'com.shopme.common.entity.Product' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:405) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.0.7.jar:6.0.7]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:290) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:294) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.6.RELEASE.jar:2.0.6.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:537) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:110) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-02-16T21:01:41.840+03:00  WARN 43878 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T21:01:43.682+03:00  WARN 43878 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:01:43.683+03:00  WARN 43878 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:01:43.683+03:00  WARN 43878 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:01:43.683+03:00  WARN 43878 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:01:43.683+03:00  WARN 43878 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:01:43.683+03:00  WARN 43878 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:02:55.111+03:00  WARN 43905 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C144579044376E2DD69676A335A9DF82]
+2024-02-16T21:02:56.646+03:00  WARN 43905 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:02:56.646+03:00  WARN 43905 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:02:56.646+03:00  WARN 43905 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:02:56.646+03:00  WARN 43905 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:02:56.646+03:00  WARN 43905 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T21:02:56.646+03:00  WARN 43905 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T23:59:13.725+03:00  WARN 45243 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T23:59:13.726+03:00  WARN 45243 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T23:59:13.726+03:00  WARN 45243 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T23:59:13.726+03:00  WARN 45243 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T23:59:13.726+03:00  WARN 45243 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/fonts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-16T23:59:13.726+03:00  WARN 45243 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.

@@ -12,9 +12,6 @@ public class ShopmeUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository repo;
 
-    public ShopmeUserDetailsService() {
-    }
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = repo.getUserByEmail(email);

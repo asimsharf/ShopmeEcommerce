@@ -61,7 +61,7 @@
 
                     <td class="text-center align-middle">
                         <span class="fas fa-user-secret fa-2xl icon-silver" th:if="${product.mainImage == null}"></span>
-                        <img alt="Product Image" height="50" th:if="${product.mainImage != null}" th:src="@{${product.getImagePath}}" width="50"/>
+                        <img alt="صورة المنتج" height="50" th:if="${product.mainImage != null}" th:src="@{${product.getMainImagePath}}" width="50"/>
                     </td>
 
                     <th class="align-middle hideable-columns" th:text="${product.name}" style="width: 20%;"></th>

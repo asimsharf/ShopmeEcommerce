@@ -1010,7 +1010,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="292" parent="1" name="shopmedb">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-02-10.21:28:29</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-02-15.17:29:09</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="ecomarket">
@@ -1189,7 +1189,7 @@ category_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="331" parent="301" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
