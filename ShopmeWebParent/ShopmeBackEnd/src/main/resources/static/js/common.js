@@ -24,13 +24,13 @@ function showThumbnail(fileInput, img) {
     }
 }
 
-function showModalDialog(title, message) {
-    $("#email").focus();
-    $("#email").css("border-color", "#dc3545");
+const showModalDialog = (title, message) => {
+    let email = $("#email");
+    email.focus().css("border-color", "#dc3545");
     $("#modalTitle").text(title);
     $("#modalBody").text(message);
     $("#modalDialog").modal();
-}
+};
 
 function clearFilter(page) {
     window.location.href = page;
