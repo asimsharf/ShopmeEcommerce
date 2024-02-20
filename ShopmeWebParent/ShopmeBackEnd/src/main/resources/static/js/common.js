@@ -18,7 +18,7 @@ function showThumbnail(fileInput, img) {
     if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function (e) {
-            $(img).attr('src', e.target.result).width(100).height(100);
+            $(img).attr('src', e.target.result).width(200).height(200);
         }
         reader.readAsDataURL(fileInput.files[0]);
     }
@@ -211,26 +211,26 @@ function activateTab() {
     });
 }
 
-function showExtraImageThumbnail(fileInput) {
+function showExtraImageThumbnail(fileInput, index) {
     let file = fileInput.files[0];
     let reader = new FileReader();
     reader.onload = function (e) {
-        $("#extraThumbnail1").attr("src", e.target.result).width(100).height(100);
+        $("#extraThumbnail" + index).attr("src", e.target.result).width(200).height(200);
     }
     reader.readAsDataURL(file);
 
-    addExtraFileImageSection();
+    addExtraFileImageSection(index + 1);
 }
 
-function addExtraFileImageSection() {
+function addExtraFileImageSection(index) {
     let html = `
-        <div class="col border m-4 p-2">
-            <div class=""><label>صورة إضافية للمنتج:</label></div>
+        <div class="col border m-3 p-2">
+            <div class=""><label>صورة إضافية للمنتج ${index + 1}:</label></div>
             <div class="m-2">
-                <img id="extraThumbnail2" src="/ShopmeAdmin/images/image-thumbnail.png" alt="صورة إضافية للمنتج" class="img-fluid"  width="100" height="100"/>
+                <img id="extraThumbnail${index + 1}" src="/ShopmeAdmin/images/image-thumbnail.png" alt="صورة إضافية للمنتج ${index + 1}:" class="img-fluid"  width="200" height="200"/>
             </div>
             <div class="m-2">
-                <input type="file" id="extraFileImage2" name="extraFileImage2" class="form-control" accept="image/png, image/jpeg" required/>
+                <input type="file" name="extraFileImage" class="form-control" onchange="showExtraImageThumbnail(this, ${index + 1})" accept="image/png, image/jpeg" required/>
             </div>
         </div>
     `;
@@ -270,9 +270,11 @@ function getCategories() {
     }
 
 
-    $("#extraFileImage1").change(function () {
-        checkFileSize(this);
-        showExtraImageThumbnail(this);
+    $("input[name='extraFileImage']").each(function (index) {
+        $(this).change(function () {
+            checkFileSize(this);
+            showExtraImageThumbnail(this, index);
+        });
     });
 
 }

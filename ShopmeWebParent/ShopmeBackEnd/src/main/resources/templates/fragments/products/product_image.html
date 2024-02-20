@@ -1,22 +1,22 @@
 <div th:fragment="content" th:remove="tag" xmlns:th="http://www.w3.org/1999/xhtml">
     <div class="row" id="divProductImages">
-        <div class="col border m-4 p-2">
+        <div class="col border m-3 p-2">
             <div class=""><label>صورة المنتج:</label></div>
             <div class="m-2">
-                <img id="thumbnail" th:src="@{${product.mainImagePath}}" alt="صورة المنتج" class="img-fluid" width="100" height="100"/>
+                <img id="thumbnail" th:src="@{${product.mainImagePath}}" alt="صورة المنتج" class="img-fluid" width="200" height="200"/>
             </div>
-            <div class="m-2">
+            <div class="m-2">œœ
                 <input type="file" id="fileImage" name="fileImage" class="form-control" accept="image/png, image/jpeg" required/>
             </div>
         </div>
 
-        <div class="col border m-4 p-2">
-            <div class=""><label>صورة إضافية للمنتج:</label></div>
+        <div class="col border m-3 p-2">
+            <div class=""><label>صورة إضافية للمنتج 1:</label></div>
             <div class="m-2">
-                <img id="extraThumbnail1" th:src="@{/images/image-thumbnail.png}" alt="صورة إضافية للمنتج" class="img-fluid" width="100" height="100"/>
+                <img id="extraThumbnail0" th:src="@{/images/image-thumbnail.png}" alt="1 صورة إضافية للمنتج" class="img-fluid" width="200" height="200"/>
             </div>
             <div class="m-2">
-                <input type="file" id="extraFileImage1" name="extraFileImage1" class="form-control" accept="image/png, image/jpeg" required/>
+                <input type="file" name="extraFileImage" class="form-control" accept="image/png, image/jpeg" required/>
             </div>
         </div>
 
