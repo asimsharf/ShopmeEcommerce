@@ -17,8 +17,6 @@ import java.util.List;
 @RequestMapping("/api")
 public class UserRestController {
 
-    private User user;
-
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);

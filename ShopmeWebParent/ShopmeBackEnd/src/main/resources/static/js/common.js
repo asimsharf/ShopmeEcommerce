@@ -1,7 +1,8 @@
-MAX_FILE_SIZE = 10485760; // 10MB
-productModuleURL = "[[@{/products}]]";
-brandModuleURL = "[[@{/brands}]]";
-defaultFileImageSrc = "/images/image-thumbnail.png";
+let MAX_FILE_SIZE = 10485760; // 10MB
+let productModuleURL = "[[@{/products}]]";
+let brandModuleURL = "[[@{/brands}]]";
+let defaultFileImageSrc = "/images/image-thumbnail.png";
+let extraImagesCount = 0;
 
 $(document).ready(function () {
     keyword()
@@ -188,7 +189,6 @@ function checkProductUnique(form) {
     return false;
 }
 
-
 function chosenCategories() {
     let url = "[[@{/brands}]]";
 
@@ -219,23 +219,38 @@ function showExtraImageThumbnail(fileInput, index) {
     }
     reader.readAsDataURL(file);
 
-    addExtraFileImageSection(index + 1);
+    if (index >= extraImagesCount - 1) {
+        addNextExtraFileImageSection(index + 1);
+    }
+
+
 }
 
-function addExtraFileImageSection(index) {
-    let html = `
-        <div class="col border m-3 p-2">
-            <div class=""><label>صورة إضافية للمنتج ${index + 1}:</label></div>
+function addNextExtraFileImageSection(index) {
+    let htmlExtraImage = `
+        <div class="col border m-3 p-2" id="divExtraImage${index}">
+            <div id="extraImageHeader${index}"><label>صورة إضافية للمنتج ${index + 1}:</label></div>
             <div class="m-2">
-                <img id="extraThumbnail${index + 1}" src="/ShopmeAdmin/images/image-thumbnail.png" alt="صورة إضافية للمنتج ${index + 1}:" class="img-fluid"  width="200" height="200"/>
+                <img id="extraThumbnail${index}" src="/ShopmeAdmin/images/image-thumbnail.png" alt="صورة إضافية للمنتج ${index + 1}:" class="img-fluid"  width="200" height="200"/>
             </div>
             <div class="m-2">
-                <input type="file" name="extraFileImage" class="form-control" onchange="showExtraImageThumbnail(this, ${index + 1})" accept="image/png, image/jpeg" required/>
+                <input type="file" name="extraFileImage" class="form-control" onchange="showExtraImageThumbnail(this, ${index})" accept="image/png, image/jpeg"/>
             </div>
         </div>
     `;
 
-    $("#divProductImages").append(html);
+    let htmlRemove = `
+        <a class="btn fas fa-times-circle fa-2x icon-dark float-left" href="javascript:removeExtraFileImageSection(${index-1})"></a>
+    `;
+
+    $("#divProductImages").append(htmlExtraImage);
+    $("#extraImageHeader" + (index-1)).append(htmlRemove);
+
+    extraImagesCount++;
+}
+
+function removeExtraFileImageSection(index) {
+    $("#divExtraImage" + index).remove();
 }
 
 function getCategories() {
@@ -271,6 +286,7 @@ function getCategories() {
 
 
     $("input[name='extraFileImage']").each(function (index) {
+        extraImagesCount++;
         $(this).change(function () {
             checkFileSize(this);
             showExtraImageThumbnail(this, index);
@@ -278,7 +294,6 @@ function getCategories() {
     });
 
 }
-
 
 function checkFileSize(fileInput) {
     let fileSize = fileInput.files[0].size;

@@ -6,7 +6,6 @@ import com.shopme.admin.brand.exceptions.BrandNotFoundRestException;
 import com.shopme.admin.brand.services.BrandService;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
-import org.apache.poi.ss.usermodel.charts.ScatterChartData;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.WebDataBinder;

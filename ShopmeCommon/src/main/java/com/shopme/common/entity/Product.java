@@ -246,8 +246,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format(
-                "Product [id=%s, name=%s, alias=%s, shortDescription=%s, fullDescription=%s, createdTime=%s, updatedTime=%s, enabled=%s, inStock=%s, cost=%s, price=%s, discountPercent=%s, length=%s, width=%s, height=%s, weight=%s, category=%s, brand=%s, mainImage=%s, images=%s]",
-                id, name, alias, shortDescription, fullDescription, createdTime, updatedTime, enabled, inStock, cost, price, discountPercent, length, width, height, weight, category, brand, mainImage, images);
+        return String.format("Product [id=%s, name=%s, alias=%s, shortDescription=%s, fullDescription=%s, createdTime=%s, updatedTime=%s, enabled=%s, inStock=%s, cost=%s, price=%s, discountPercent=%s, length=%s, width=%s, height=%s, weight=%s, category=%s, brand=%s, mainImage=%s, images=%s]", id, name, alias, shortDescription, fullDescription, createdTime, updatedTime, enabled, inStock, cost, price, discountPercent, length, width, height, weight, category, brand, mainImage, images);
     }
 }

@@ -5,18 +5,18 @@
             <div class="m-2">
                 <img id="thumbnail" th:src="@{${product.mainImagePath}}" alt="صورة المنتج" class="img-fluid" width="200" height="200"/>
             </div>
-            <div class="m-2">œœ
+            <div class="m-2">
                 <input type="file" id="fileImage" name="fileImage" class="form-control" accept="image/png, image/jpeg" required/>
             </div>
         </div>
 
-        <div class="col border m-3 p-2">
-            <div class=""><label>صورة إضافية للمنتج 1:</label></div>
+        <div class="col border m-3 p-2" id="divExtraImage0">
+            <div id="extraImageHeader0"><label>صورة إضافية للمنتج 1:</label></div>
             <div class="m-2">
                 <img id="extraThumbnail0" th:src="@{/images/image-thumbnail.png}" alt="1 صورة إضافية للمنتج" class="img-fluid" width="200" height="200"/>
             </div>
             <div class="m-2">
-                <input type="file" name="extraFileImage" class="form-control" accept="image/png, image/jpeg" required/>
+                <input type="file" name="extraFileImage" class="form-control" accept="image/png, image/jpeg"/>
             </div>
         </div>
 

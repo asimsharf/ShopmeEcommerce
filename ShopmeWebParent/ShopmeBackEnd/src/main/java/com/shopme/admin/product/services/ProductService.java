@@ -2,7 +2,6 @@ package com.shopme.admin.product.services;
 
 import com.shopme.admin.product.exceptions.ProductNotFoundException;
 import com.shopme.admin.product.repositories.ProductRepository;
-import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Product;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
