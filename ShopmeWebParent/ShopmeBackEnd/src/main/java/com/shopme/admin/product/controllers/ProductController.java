@@ -8,6 +8,7 @@ import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,19 +53,56 @@ public class ProductController {
     }
 
     @PostMapping("/products/save")
-    public String saveProduct(Product product, RedirectAttributes ra, @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
-        if (!multipartFile.isEmpty()) {
-            String fileName = multipartFile.getOriginalFilename();
-            product.setMainImage(fileName);
-            Product savedProduct = productService.save(product);
-            String uploadDir = "product-images/" + savedProduct.getId();
-            FileUploadUtil.cleanDir(uploadDir);
-            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        } else {
-            productService.save(product);
-        }
+    public String saveProduct(Product product, RedirectAttributes ra, @RequestParam("fileImage") MultipartFile mainImageMultipart, @RequestParam("extraFileImage") MultipartFile[] extraImageMultiparts) throws IOException {
+
+        setMainImageName(mainImageMultipart, product);
+        setExtraImageNames(extraImageMultiparts, product);
+    
+        Product savedProduct = productService.save(product);
+
+        saveUploadedImages(extraImageMultiparts, savedProduct, mainImageMultipart);
+
         ra.addFlashAttribute("message", "تم حفظ المنتج رقم " + product.getId() + " بنجاح");
         return "redirect:/products";
+    }
+
+    private void setMainImageName(MultipartFile mainImageMultipart, Product product) {
+        if (!mainImageMultipart.isEmpty()) {
+            String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+            product.setMainImage(fileName);
+        }
+    }
+
+    private void setExtraImageNames(MultipartFile[] extraImageMultiparts, Product product) {
+        if (extraImageMultiparts.length > 0){
+            for (MultipartFile multipartFile : extraImageMultiparts) {
+                if (!multipartFile.isEmpty()) {
+                    String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+                    product.addExtraImage(fileName);
+                }
+            }
+        }
+    }
+
+    private void saveUploadedImages(MultipartFile[] extraImageMultiparts, Product savedProduct, MultipartFile mainImageMultipart) throws IOException {
+
+        if (!mainImageMultipart.isEmpty()) {
+            String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+            String uploadDir = "product-images/" + savedProduct.getId();
+            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, mainImageMultipart);
+        }
+
+        if (extraImageMultiparts.length > 0) {
+            String uploadDir = "product-images/" + savedProduct.getId() + "/extras";
+            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
+            for (MultipartFile multipartFile : extraImageMultiparts) {
+                if (!multipartFile.isEmpty()) continue;
+                String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+                FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+            }
+        }
+
     }
 
     @GetMapping("/products/{id}/enabled/{status}")
@@ -78,10 +116,22 @@ public class ProductController {
 
 
     @GetMapping("/products/delete/{id}")
-    public String deleteProduct(@PathVariable("id") Integer id, RedirectAttributes ra) throws ProductNotFoundException {
-        productService.delete(id);
-        String message = "تم حذف المنتج رقم " + id + " بنجاح";
-        ra.addFlashAttribute("message", message);
+    public String deleteProduct(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) throws ProductNotFoundException, IOException {
+        try{
+            productService.delete(id);
+
+            String productDir = "product-images/" + id;
+            if (FileUploadUtil.isDirExists(productDir)) FileUploadUtil.removeDir(productDir);
+
+            String productExtraImagesDir = "product-images/" + id + "/extras";
+            if (FileUploadUtil.isDirExists(productExtraImagesDir)) FileUploadUtil.removeDir(productExtraImagesDir);
+            
+            ra.addFlashAttribute("message", "تم حذف المنتج رقم " + id + " بنجاح");
+
+        } catch (ProductNotFoundException ex) {
+            ra.addFlashAttribute("message", ex.getMessage());
+        }
+
         return "redirect:/products";
     }
 

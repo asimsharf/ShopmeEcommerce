@@ -1,20 +1,18 @@
 package com.shopme.admin.utils;
 
-// import org.slf4j.Logger;
-// import org.slf4j.LoggerFactory;
-
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FileUploadUtil {
 
-    // private static final Logger LOGGER = LoggerFactory.getLogger(FileUploadUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileUploadUtil.class);
 
     public static void saveFile(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException {
         Path uploadPath = Paths.get(uploadDir);
@@ -27,6 +25,7 @@ public class FileUploadUtil {
             Path filePath = uploadPath.resolve(fileName);
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException ex) {
+            LOGGER.error("Could not save file: " + fileName, ex);
             throw new IOException("Could Not Save file: " + fileName, ex);
         }
     }
@@ -39,46 +38,69 @@ public class FileUploadUtil {
                     try {
                         Files.delete(file);
                     } catch (IOException e) {
+                        LOGGER.error("Could not delete file" + e.getMessage());
                         throw new IllegalArgumentException("Could not delete file" + e.getMessage());
                     }
                 }
             });
         } catch (IOException e) {
+            LOGGER.error("Could not delete files", e);
             throw new IOException("Could not delete files", e);
         }
     }
 
     public static String renameFile(String fileName) {
-        if (fileName.contains("..")) {
-            throw new IllegalArgumentException("Sorry! Filename contains invalid path sequence " + fileName);
+        try {
+            if (fileName.contains("..")) {
+                LOGGER.error("Sorry! Filename contains invalid path sequence " + fileName);
+                throw new IllegalArgumentException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+            String[] tokens = fileName.split("\\.");
+            String extension = tokens[1];
+            return System.currentTimeMillis() + "." + extension;
+        } catch (Exception e) {
+            LOGGER.error("Could not rename file: " + fileName, e);
+            throw new IllegalArgumentException("Could not rename file: " + fileName, e);
         }
-        String[] tokens = fileName.split("\\.");
-        String extension = tokens[1];
-        return System.currentTimeMillis() + "." + extension;
     }
 
     public static void removeDir(String dir) throws IOException {
-        Path dirPath = Paths.get(dir);
-        Files.list(dirPath).forEach(file -> {
-            if (!Files.isDirectory(file)) {
-                try {
-                    Files.delete(file);
-                } catch (IOException e) {
-                    e.printStackTrace();
+        try{
+            Path dirPath = Paths.get(dir);
+            Files.list(dirPath).forEach(file -> {
+                if (!Files.isDirectory(file)) {
+                    try {
+                        Files.delete(file);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
-        Files.delete(dirPath);
+            });
+            Files.delete(dirPath);
+        } catch (IOException e) {
+            LOGGER.error("Could not delete directory: " + dir, e);
+            throw new IOException("Could not delete directory: " + dir, e);
+        }
     }
 
     public static boolean isDirExists(String uploadDir) {
-        Path uploadPath = Paths.get(uploadDir);
-        return Files.exists(uploadPath);
+       try {
+            Path uploadPath = Paths.get(uploadDir);
+            return Files.exists(uploadPath);
+       } catch (Exception e) {
+           LOGGER.error("Could not check directory: " + uploadDir, e);
+           throw new IllegalArgumentException("Could not check directory: " + uploadDir, e);
+       }
     }
 
     public static void removeFile(String dir, String fileName) throws IOException {
-        Path filePath = Paths.get(dir + "/" + fileName);
-        Files.delete(filePath);
+        try {
+            Path filePath = Paths.get(dir + "/" + fileName);
+            Files.delete(filePath);
+        } catch (IOException e) {
+            LOGGER.error("Could not delete file: " + fileName, e);
+            throw new IOException("Could not delete file: " + fileName, e);
+        }
     }
 
 }
