@@ -83,7 +83,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>3.0.5</version> <!-- Use the correct version -->
+            <version>3.2.1</version> <!-- Use the correct version -->
         </dependency>
     </dependencies>
     <build>
