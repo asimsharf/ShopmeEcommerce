@@ -77,7 +77,7 @@ public class Brand {
 
     @Override
     public String toString() {
-        return String.format("Brand [id=%d, name=%s]", id, name);
+        return String.format("Brand [id=%d, name=%s, image=%s, categories=%s]", id, name, image, categories);
     }
 
 }

@@ -53,6 +53,6 @@ public class ProductImage {
 
     @Override
     public String toString() {
-        return String.format("ProductImage [id=%s, name=%s]", id, name);
+        return String.format("ProductImage [id=%s, name=%s, product=%s]", id, name, product);
     }
 }

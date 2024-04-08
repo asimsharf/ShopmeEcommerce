@@ -130,6 +130,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("User [id=%s, email=%s, firstName=%s, lastName=%s]", id, email, firstName, lastName);
+        return String.format("User [id=%s, email=%s, firstName=%s, lastName=%s, enabled=%s, image=%s]", id, email, firstName, lastName, enabled, image);
     }
 }

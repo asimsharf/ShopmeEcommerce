@@ -179,7 +179,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return String.format("Category [id=%d, name=%s]", id, name);
+        return String.format("Category [id=%d, name=%s, alias=%s, image=%s, enabled=%s, parent=%s, children=%s]", id, name, alias, image, enabled, parent, children);
     }
 
 }
