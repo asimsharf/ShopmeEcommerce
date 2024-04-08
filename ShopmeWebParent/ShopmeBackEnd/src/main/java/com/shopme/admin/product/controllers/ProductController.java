@@ -104,7 +104,6 @@ public class ProductController {
             }
         }
 
-
     }
 
     @GetMapping("/products/{id}/enabled/{status}")

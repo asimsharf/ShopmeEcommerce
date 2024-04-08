@@ -51,7 +51,6 @@ public class FileUploadUtil {
 
     public static String renameFile(String fileName) {
         try {
-            // Generate a random UUID to append to the file name
             return  java.util.UUID.randomUUID().toString() + fileName.substring(fileName.lastIndexOf("."));
         } catch (Exception e) {
             LOGGER.error("Could not rename file: " + fileName, e);

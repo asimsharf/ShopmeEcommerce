@@ -37,8 +37,7 @@ public class AccountController {
     @PostMapping("/account/update")
     public String updateDetails(@AuthenticationPrincipal ShompeUserDetails loggedUser, User user, RedirectAttributes thRa, @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
         if (!multipartFile.isEmpty()) {
-            String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
-            fileName = FileUploadUtil.renameFile(fileName);
+            String fileName = FileUploadUtil.renameFile(StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename())));
             user.setImage(fileName);
             User savedUser = service.updateAccount(user);
             String uploadDir = "user-image/" + savedUser.getId();
