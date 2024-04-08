@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class ProductController {
@@ -68,7 +69,7 @@ public class ProductController {
 
     private void setMainImageName(MultipartFile mainImageMultipart, Product product) {
         if (!mainImageMultipart.isEmpty()) {
-            String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+            String fileName = FileUploadUtil.renameFile(StringUtils.cleanPath(Objects.requireNonNull(mainImageMultipart.getOriginalFilename())));
             product.setMainImage(fileName);
         }
     }
@@ -77,7 +78,7 @@ public class ProductController {
         if (extraImageMultiparts.length > 0){
             for (MultipartFile multipartFile : extraImageMultiparts) {
                 if (!multipartFile.isEmpty()) {
-                    String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+                    String fileName = FileUploadUtil.renameFile(StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename())));
                     product.addExtraImage(fileName);
                 }
             }
@@ -87,21 +88,22 @@ public class ProductController {
     private void saveUploadedImages(MultipartFile[] extraImageMultiparts, Product savedProduct, MultipartFile mainImageMultipart) throws IOException {
 
         if (!mainImageMultipart.isEmpty()) {
-            String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
             String uploadDir = "product-images/" + savedProduct.getId();
             if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
-            FileUploadUtil.saveFile(uploadDir, fileName, mainImageMultipart);
+            FileUploadUtil.saveFile(uploadDir, savedProduct.getMainImage(), mainImageMultipart);
         }
 
         if (extraImageMultiparts.length > 0) {
             String uploadDir = "product-images/" + savedProduct.getId() + "/extras";
             if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
             for (MultipartFile multipartFile : extraImageMultiparts) {
-                if (!multipartFile.isEmpty()) continue;
-                String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+                if (multipartFile.isEmpty()) continue;
+                String fileName = FileUploadUtil.renameFile(StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename())));
+                savedProduct.addExtraImage(fileName);
                 FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
             }
         }
+
 
     }
 
@@ -120,12 +122,12 @@ public class ProductController {
         try{
             productService.delete(id);
 
+            String productExtraImagesDir = "product-images/" + id + "/extras";
+            if (FileUploadUtil.isDirExists(productExtraImagesDir)) FileUploadUtil.removeDir(productExtraImagesDir);
+
             String productDir = "product-images/" + id;
             if (FileUploadUtil.isDirExists(productDir)) FileUploadUtil.removeDir(productDir);
 
-            String productExtraImagesDir = "product-images/" + id + "/extras";
-            if (FileUploadUtil.isDirExists(productExtraImagesDir)) FileUploadUtil.removeDir(productExtraImagesDir);
-            
             ra.addFlashAttribute("message", "تم حذف المنتج رقم " + id + " بنجاح");
 
         } catch (ProductNotFoundException ex) {

@@ -51,13 +51,8 @@ public class FileUploadUtil {
 
     public static String renameFile(String fileName) {
         try {
-            if (fileName.contains("..")) {
-                LOGGER.error("Sorry! Filename contains invalid path sequence " + fileName);
-                throw new IllegalArgumentException("Sorry! Filename contains invalid path sequence " + fileName);
-            }
-            String[] tokens = fileName.split("\\.");
-            String extension = tokens[1];
-            return System.currentTimeMillis() + "." + extension;
+            // Generate a random UUID to append to the file name
+            return  java.util.UUID.randomUUID().toString() + fileName.substring(fileName.lastIndexOf("."));
         } catch (Exception e) {
             LOGGER.error("Could not rename file: " + fileName, e);
             throw new IllegalArgumentException("Could not rename file: " + fileName, e);

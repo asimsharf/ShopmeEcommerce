@@ -60,6 +60,7 @@ public class BrandController {
     public String saveBrand(Brand brand, @RequestParam("fileImage") MultipartFile multipartFile, RedirectAttributes ra) throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
+            fileName = FileUploadUtil.renameFile(fileName);
             brand.setImage(fileName);
 
             Brand savedBrand = brandService.save(brand);
