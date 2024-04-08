@@ -6,6 +6,8 @@ import com.shopme.admin.product.services.ProductService;
 import com.shopme.admin.utils.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Product;
+import com.shopme.common.entity.ProductImage;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Controller
 public class ProductController {
@@ -61,7 +64,7 @@ public class ProductController {
     
         Product savedProduct = productService.save(product);
 
-        saveUploadedImages(extraImageMultiparts, savedProduct, mainImageMultipart);
+        saveUploadedImages(savedProduct, mainImageMultipart);
 
         ra.addFlashAttribute("message", "تم حفظ المنتج رقم " + product.getId() + " بنجاح");
         return "redirect:/products";
@@ -85,7 +88,7 @@ public class ProductController {
         }
     }
 
-    private void saveUploadedImages(MultipartFile[] extraImageMultiparts, Product savedProduct, MultipartFile mainImageMultipart) throws IOException {
+    private void saveUploadedImages(Product savedProduct, MultipartFile mainImageMultipart) throws IOException {
 
         if (!mainImageMultipart.isEmpty()) {
             String uploadDir = "product-images/" + savedProduct.getId();
@@ -93,14 +96,11 @@ public class ProductController {
             FileUploadUtil.saveFile(uploadDir, savedProduct.getMainImage(), mainImageMultipart);
         }
 
-        if (extraImageMultiparts.length > 0) {
-            String uploadDir = "product-images/" + savedProduct.getId() + "/extras";
-            if (FileUploadUtil.isDirExists(uploadDir)) FileUploadUtil.cleanDir(uploadDir);
-            for (MultipartFile multipartFile : extraImageMultiparts) {
-                if (multipartFile.isEmpty()) continue;
-                String fileName = FileUploadUtil.renameFile(StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename())));
-                savedProduct.addExtraImage(fileName);
-                FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+        if (!savedProduct.getImages().isEmpty()) {
+            Set<ProductImage> productImages = savedProduct.getImages();
+            for (ProductImage productImage : productImages) {
+                String uploadDir = "product-images/" + savedProduct.getId() + "/extras";
+                FileUploadUtil.saveFile(uploadDir, productImage.getName(), mainImageMultipart);
             }
         }
 
