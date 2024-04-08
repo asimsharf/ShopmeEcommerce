@@ -2,9 +2,12 @@ package com.shopme.common.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "products")
@@ -71,6 +74,9 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<ProductImage> images = new HashSet<>();
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<ProductDetail> details = new ArrayList<>();
 
 
     public Integer getId() {
@@ -237,15 +243,29 @@ public class Product {
         this.images.add(new ProductImage(imageName, this));
     }
 
-    @Transient
+   @Transient
     public String getMainImagePath() {
         if (id == null || mainImage == null) return "/images/image-thumbnail.png";
         return "/product-images/" + this.id + "/" + this.mainImage;
     }
 
+    public List<ProductDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<ProductDetail> details) {
+        this.details = details;
+    }
+    public void addDetail(String name, String value) {
+        this.details.add(new ProductDetail(name, value, this));
+    }
+ 
+
 
     @Override
     public String toString() {
-        return String.format("Product [id=%s, name=%s, alias=%s, shortDescription=%s, fullDescription=%s, createdTime=%s, updatedTime=%s, enabled=%s, inStock=%s, cost=%s, price=%s, discountPercent=%s, length=%s, width=%s, height=%s, weight=%s, category=%s, brand=%s, mainImage=%s, images=%s]", id, name, alias, shortDescription, fullDescription, createdTime, updatedTime, enabled, inStock, cost, price, discountPercent, length, width, height, weight, category, brand, mainImage, images);
+        return String.format("Product [id=%s, name=%s, alias=%s, shortDescription=%s, fullDescription=%s, createdTime=%s, updatedTime=%s, enabled=%s, inStock=%s, cost=%s, price=%s, discountPercent=%s, length=%s, width=%s, height=%s, weight=%s, category=%s, brand=%s, mainImage=%s, images=%s, details=%s]", id, name, alias, shortDescription, fullDescription, createdTime, updatedTime, enabled, inStock, cost, price, discountPercent, length, width, height, weight, category, brand, mainImage, images, details);
     }
+
+
 }
